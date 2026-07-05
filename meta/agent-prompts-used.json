@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-05T06:00:00Z",
+  "entities": {
+    "non-exec": {
+      "label": "non-exec.ai",
+      "site": "https://www.non-exec.ai",
+      "promptFile": "prompts/entities/non-exec-ranking-check.md",
+      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "conditionsAtLastPrompt": {
+        "cursorTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": ["nist.gov", "iso.org", "eu.ai"],
+        "losingQueries": ["AI corporate governance board oversight best practices"],
+        "promptLevers": ["Publish llms.txt", "Expand registry/agents-models.json", "Governance FAQ blocks"]
+      }
+    },
+    "edgephone": {
+      "label": "edgephone.ai",
+      "site": "https://edgephone.ai",
+      "promptFile": "prompts/entities/edgephone-ranking-check.md",
+      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "conditionsAtLastPrompt": {
+        "cursorTier": 3,
+        "geminiTier": 4,
+        "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"],
+        "losingQueries": ["edge AI models and agents reference comparison"],
+        "promptLevers": ["Public reference catalog", "Chip/model comparison tables", "llms.txt"]
+      }
+    },
+    "greenh2s": {
+      "label": "greenh2s.ai",
+      "site": "https://www.greenh2s.ai",
+      "promptFile": "prompts/entities/greenh2s-ranking-check.md",
+      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "conditionsAtLastPrompt": {
+        "cursorTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"],
+        "losingQueries": ["green hydrogen electrolyzer selection industrial scale"],
+        "promptLevers": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"]
+      }
+    }
+  }
+}

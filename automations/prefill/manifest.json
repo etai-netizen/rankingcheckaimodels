@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-07-05T10:21:35.044Z",
+  "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
+  "schedule": "06:00 GMT daily (4 models)",
+  "gitRepo": "etai-netizen/rankingcheckaimodels",
+  "automations": [
+    {
+      "file": "automations/prefill/daily-composer-0600.json",
+      "name": "Ranking Check — Composer 2.5 (06:00 GMT)",
+      "schedule": "06:00 GMT daily",
+      "model": "composer-2.5-fast",
+      "cursorAutomationId": null
+    },
+    {
+      "file": "automations/prefill/daily-gpt55-0600.json",
+      "name": "Ranking Check — GPT-5.5 High (06:00 GMT)",
+      "schedule": "06:00 GMT daily",
+      "model": "gpt-5.5-high",
+      "cursorAutomationId": null
+    },
+    {
+      "file": "automations/prefill/daily-codex-0600.json",
+      "name": "Ranking Check — Codex 5.3 High (06:00 GMT)",
+      "schedule": "06:00 GMT daily",
+      "model": "gpt-5.3-codex",
+      "cursorAutomationId": null
+    },
+    {
+      "file": "automations/prefill/daily-fable-0600.json",
+      "name": "Ranking Check — Fable 5 High (06:00 GMT)",
+      "schedule": "06:00 GMT daily",
+      "model": "claude-fable-5-thinking-high",
+      "cursorAutomationId": null
+    }
+  ]
+}

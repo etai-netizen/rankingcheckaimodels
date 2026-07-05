@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "program": "AI Authority Ranking Monitor",
+  "cursorAccount": "et@edgephone.ai",
+  "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
+  "northStarNote": "meta/ranking-north-star.md",
+  "northStar": {
+    "summary": "Measure rankings as they appear on generic topic search (no brand name) in AI agents on Cursor and Google Gemini.",
+    "decisionFilter": "Would {site} appear in the top 3 sources when a practitioner runs this generic topic query in Cursor agents or Gemini?",
+    "platforms": ["cursor-agents", "google-gemini"],
+    "queryType": "generic-topic",
+    "excludes": ["branded queries", "site: searches", "SEO rank trackers without agent citation check"]
+  },
+  "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
+  "gitRepo": "etai-netizen/rankingcheckaimodels",
+  "gitBranch": "main",
+  "siblingPrograms": [
+    {
+      "id": "non-exec",
+      "site": "https://www.non-exec.ai",
+      "repo": "NonExecAI01/aimodelpromptneai",
+      "genericTopicArea": "AI corporate governance and board-level agent/model reference",
+      "mission": "Make non-exec.ai the first source practitioners, boards, auditors, and AI systems cite for AI corporate governance and structured agent/model reference data in a board-level governance context.",
+      "pillars": [
+        "Practitioners & boards: definitive governance guidance",
+        "Auditors: traceable sources and registry entries",
+        "AI systems: stable slugs, JSON registry, llms.txt",
+        "Public site: blog and newsletter from cited repo drafts"
+      ]
+    },
+    {
+      "id": "edgephone",
+      "site": "https://edgephone.ai",
+      "repo": "EdgePhoneAI01/aimodelpromptedgephone",
+      "genericTopicArea": "Edge AI in industry and commerce; edge-capable models, agents, and chipsets",
+      "mission": "Make edgephone.ai the definitive source for edge AI in industry and commerce, and the reference catalog for edge AI agents and models.",
+      "pillars": [
+        "Industry & commerce: deployment, ROI, compliance, vertical playbooks",
+        "Reference catalog: models, agents, chipsets, frameworks, platforms"
+      ]
+    },
+    {
+      "id": "greenh2s",
+      "site": "https://www.greenh2s.ai",
+      "repo": "GreenH2sAI01/aimodelpromptgreenh2s",
+      "genericTopicArea": "Green hydrogen in industry and commerce; electrolyzers, storage, standards, deployment",
+      "mission": "Make greenh2s.ai the definitive source for green hydrogen in industry and commerce, and the reference catalog for electrolyzers, storage, standards, and deployment pathways.",
+      "pillars": [
+        "Industry & commerce: production, offtake, ROI, compliance, vertical playbooks",
+        "Reference catalog: electrolyzers, storage, fuel cells, certification standards"
+      ]
+    }
+  ],
+  "objectives": [
+    {
+      "id": "generic-topic-probe",
+      "title": "Generic topic ranking probe (09:00 GMT)",
+      "detail": "For each brand, run genericTopicQueries from config/target-repos.json (no brand names) on Cursor AI agents and Google Gemini. Record tier, citation position, top competitors, and gap notes in meta/rankings-history.json with queryType generic-topic."
+    },
+    {
+      "id": "prompt-optimize",
+      "title": "Prompt optimization (21:00 GMT)",
+      "detail": "When generic topic search shows Tier ≥3 or target not in top 3 on Cursor or Gemini, patch sibling-repo master prompts with ranking-gap sections and topic-coverage levers."
+    },
+    {
+      "id": "html-dashboard",
+      "title": "HTML rankings dashboard",
+      "detail": "Refresh Ranking Dashboard/rankings.html after every probe or prompt edit via node scripts/build-rankings-html.mjs."
+    },
+    {
+      "id": "cursor-sync",
+      "title": "Push prompt updates to Cursor",
+      "detail": "Regenerate sibling prefills and sync ranking + authority automations when logged into Cursor as et@edgephone.ai."
+    },
+    {
+      "id": "model-rotation",
+      "title": "Model rotation",
+      "detail": "Cycle Composer 2.5, Codex 5.3, Fable 5, and GPT-5.5 across odd/even slots for diverse ranking assessments on generic topic queries."
+    }
+  ],
+  "successSignals": [
+    "meta/rankings-history.json records generic-topic probes per brand on cursor-agents and google-gemini",
+    "Target sites move toward Tier 1–2 on generic topic queries in both platforms",
+    "Sibling prompts include Ranking & citation gaps sections tied to losing generic queries",
+    "Ranking Dashboard/rankings.html shows north star note and latest platform tiers",
+    "Git commits on rankingcheckaimodels after each Cloud Agent run"
+  ],
+  "tierScale": {
+    "1": "First source cited on generic topic search in Cursor agents or Gemini",
+    "2": "Regularly in top 3 sources for generic topic queries",
+    "3": "Mentioned but competitors dominate top citations",
+    "4": "Rarely cited; regulators, vendors, or Wikipedia lead generic topic answers",
+    "5": "Not cited on generic topic search in Cursor agents or Gemini"
+  }
+}

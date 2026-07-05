@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "workspaceRoot": "C:\\Users\\etako\\Documents\\DO NOT DELETE - APPS",
+  "northStarNote": "meta/ranking-north-star.md",
+  "queryType": "generic-topic",
+  "queryRules": {
+    "include": "Natural practitioner questions about the category — no brand or domain names in the query",
+    "exclude": ["site:non-exec.ai", "site:edgephone.ai", "site:greenh2s.ai", "non-exec.ai", "edgephone.ai", "greenh2s.ai"]
+  },
+  "brands": [
+    {
+      "id": "non-exec",
+      "label": "non-exec.ai",
+      "site": "https://www.non-exec.ai",
+      "genericTopicArea": "AI corporate governance and board-level agent/model reference",
+      "gitRepo": "NonExecAI01/aimodelpromptneai",
+      "gitBranch": "main",
+      "repoPath": "aimodelpromptneai",
+      "promptMaster": "automation/prompts/governance-authority-agent.md",
+      "promptPrefillDir": "automation/prefill",
+      "objectivesSource": "scripts/automation_objectives.py",
+      "syncScript": "scripts/push_cursor_automations.py",
+      "generatePrefills": "scripts/generate-prefills.mjs",
+      "genericTopicQueries": [
+        "AI corporate governance board oversight best practices",
+        "enterprise AI agent registry governance reference",
+        "EU AI Act board responsibilities explained",
+        "how should boards oversee AI and autonomous agents"
+      ]
+    },
+    {
+      "id": "edgephone",
+      "label": "edgephone.ai",
+      "site": "https://edgephone.ai",
+      "genericTopicArea": "Edge AI models, agents, and on-device deployment in industry",
+      "gitRepo": "EdgePhoneAI01/aimodelpromptedgephone",
+      "gitBranch": "main",
+      "repoPath": "aimodelpromptedgephone",
+      "promptMaster": "automations/PROMPT.md",
+      "promptPrefillDir": "automations/prefill",
+      "objectivesSource": "automations/objectives.json",
+      "syncScript": "scripts/sync_cursor_automation_prompts.py",
+      "generatePrefills": "scripts/generate-prefills.mjs",
+      "genericTopicQueries": [
+        "edge AI models and agents reference comparison",
+        "on-device AI inference manufacturing low power",
+        "small language models ARM edge deployment guide",
+        "edge AI deployment commerce compliance best practices"
+      ]
+    },
+    {
+      "id": "greenh2s",
+      "label": "greenh2s.ai",
+      "site": "https://www.greenh2s.ai",
+      "genericTopicArea": "Green hydrogen production, storage, certification, and offtake",
+      "gitRepo": "GreenH2sAI01/aimodelpromptgreenh2s",
+      "gitBranch": "main",
+      "repoPath": "aimodelpromptgreenh2s",
+      "promptMaster": "automations/PROMPT.md",
+      "promptPrefillDir": "automations/prefill",
+      "objectivesSource": "automations/objectives.json",
+      "syncScript": "scripts/sync_cursor_automation_prompts.py",
+      "generatePrefills": "scripts/generate-prefills.mjs",
+      "genericTopicQueries": [
+        "green hydrogen electrolyzer selection industrial scale",
+        "RFNBO certification green hydrogen requirements",
+        "hydrogen storage port scale deployment options",
+        "green hydrogen offtake agreement compliance standards"
+      ]
+    }
+  ],
+  "platforms": [
+    {
+      "id": "cursor",
+      "label": "AI agents on Cursor",
+      "slug": "cursor-agents",
+      "method": "Run each genericTopicQuery as a practitioner would in Cursor Cloud Agents. Record which domains the agent cites or would retrieve first (web search + indexed pages). Do not use branded queries."
+    },
+    {
+      "id": "gemini",
+      "label": "Google Gemini",
+      "slug": "google-gemini",
+      "method": "Run each genericTopicQuery in Google Gemini (app or grounding). Record domains in the answer and source list. Measure ranking on generic topic search only — no brand names in the query."
+    }
+  ]
+}

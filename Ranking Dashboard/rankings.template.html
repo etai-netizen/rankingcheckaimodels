@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="3600" />
+  <title>AI Ranking Monitor — non-exec · edgephone · greenh2s</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b0f14;
+      --panel: #151b24;
+      --text: #e8edf4;
+      --muted: #8b9cb3;
+      --border: rgba(255,255,255,0.08);
+      --accent: #3b82f6;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f0f4f8; --panel: #fff; --text: #1e293b; --muted: #64748b; --border: rgba(15,23,42,0.1); }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--text); line-height: 1.45; }
+    header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.08)); }
+    header h1 { margin: 0 0 0.35rem; font-size: 1.3rem; }
+    header p { margin: 0.2rem 0; color: var(--muted); font-size: 0.9rem; }
+    .model-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .model-badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.55rem; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; font-size: 0.75rem; }
+    .model-logo { width: 16px; height: 16px; object-fit: contain; }
+    main { padding: 1.25rem; max-width: 1400px; margin: 0 auto; }
+    h2.section-title { font-size: 1rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .entity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+    @media (max-width: 1100px) { .entity-grid { grid-template-columns: 1fr; } }
+    .entity-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; min-height: 420px; }
+    .entity-header { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
+    .entity-logo { width: 48px; height: 48px; border-radius: 10px; object-fit: contain; background: rgba(255,255,255,0.05); }
+    .entity-logo.logo-missing { display: none; }
+    .entity-header h2 { margin: 0; font-size: 1.05rem; }
+    .entity-header h2 a { color: inherit; text-decoration: none; }
+    .entity-objective { margin: 0.25rem 0 0; font-size: 0.82rem; color: var(--muted); }
+    .agent-tier-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .agent-tier { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 0.5rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
+    .agent-logo { width: 28px; height: 28px; object-fit: contain; }
+    .agent-name { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); }
+    .tier-badge { font-size: 1.1rem; font-weight: 700; }
+    .tier-good { border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.08); }
+    .tier-mid { border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.08); }
+    .tier-bad { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.08); }
+    .prompt-heading { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 0 0 0.25rem; }
+    .prompt-meta { font-size: 0.72rem; color: var(--muted); margin: 0 0 0.35rem; }
+    .agent-prompt-box { flex: 1; margin: 0; padding: 0.65rem; font-size: 0.68rem; line-height: 1.4; background: rgba(0,0,0,0.2); border: 1px solid var(--border); border-radius: 8px; overflow: auto; max-height: 280px; white-space: pre-wrap; word-break: break-word; }
+    .chart-section { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1rem; }
+    .chart-wrap { position: relative; height: 220px; }
+    .chart-wrap.tall { height: 180px; }
+    .chart-note { font-size: 0.75rem; color: var(--muted); margin: 0.35rem 0 0; }
+    footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI Ranking Monitor</h1>
+    <p>{{MISSION}}</p>
+    <p><strong>Schedule:</strong> {{SCHEDULE}} · <strong>Updated:</strong> {{GENERATED_AT}}</p>
+    <div class="model-badges">{{MODEL_BADGES}}</div>
+  </header>
+
+  <main>
+    <h2 class="section-title">Entities — side by side</h2>
+    <div class="entity-grid">{{ENTITY_COLUMNS}}</div>
+
+    <h2 class="section-title">Ranking trends — daily (lower tier = better)</h2>
+    <section class="chart-section">
+      <div class="chart-wrap"><canvas id="chartDaily"></canvas></div>
+      <p class="chart-note">Average tier per entity per day across Cursor + Gemini checks. Tier 1 = first cited.</p>
+    </section>
+
+    <h2 class="section-title">Ranking trends — monthly</h2>
+    <section class="chart-section">
+      <div class="chart-wrap tall"><canvas id="chartMonthly"></canvas></div>
+    </section>
+
+    <h2 class="section-title">Ranking trends — yearly</h2>
+    <section class="chart-section">
+      <div class="chart-wrap tall"><canvas id="chartYearly"></canvas></div>
+    </section>
+  </main>
+
+  <footer>rankingcheckaimodels · Generic topic search · Cursor agents + Google Gemini</footer>
+
+  <script>
+    const chartData = {{CHART_DATA_JSON}};
+    const chartOpts = (title) => ({
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+      scales: {
+        y: {
+          reverse: true,
+          min: 1,
+          max: 5,
+          ticks: { stepSize: 1 },
+          title: { display: true, text: 'Avg tier (1=best)' }
+        },
+        x: { ticks: { maxRotation: 45, font: { size: 10 } } }
+      }
+    });
+    new Chart(document.getElementById('chartDaily'), { type: 'line', data: chartData.daily, options: chartOpts('Daily') });
+    new Chart(document.getElementById('chartMonthly'), { type: 'line', data: chartData.monthly, options: chartOpts('Monthly') });
+    new Chart(document.getElementById('chartYearly'), { type: 'line', data: chartData.yearly, options: chartOpts('Yearly') });
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "cursorAccount": "et@edgephone.ai",
+  "plan": "Pro+",
+  "planCostUsdPerMonth": 60,
+  "onDemandLimitUsd": 20,
+  "usageSnapshot": {
+    "apiPercent": 94,
+    "notedAt": "2026-07-04"
+  },
+  "dashboardUsage": "https://cursor.com/dashboard?tab=usage",
+  "dashboardAutomations": "https://cursor.com/automations"
+}

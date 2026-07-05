@@ -1,0 +1,735 @@
+{
+  "generatedAt": "2026-07-05T10:20:21.818Z",
+  "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
+  "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
+  "charts": {
+    "daily": {
+      "labels": [
+        "2026-07-01",
+        "2026-07-02",
+        "2026-07-03",
+        "2026-07-04",
+        "2026-07-05"
+      ],
+      "datasets": [
+        {
+          "label": "non-exec.ai",
+          "data": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "borderColor": "#6366f1",
+          "backgroundColor": "#6366f133",
+          "tension": 0.25,
+          "spanGaps": true
+        },
+        {
+          "label": "edgephone.ai",
+          "data": [
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5
+          ],
+          "borderColor": "#8b5cf6",
+          "backgroundColor": "#8b5cf633",
+          "tension": 0.25,
+          "spanGaps": true
+        },
+        {
+          "label": "greenh2s.ai",
+          "data": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "borderColor": "#10b981",
+          "backgroundColor": "#10b98133",
+          "tension": 0.25,
+          "spanGaps": true
+        }
+      ]
+    },
+    "monthly": {
+      "labels": [
+        "2026-07"
+      ],
+      "datasets": [
+        {
+          "label": "non-exec.ai",
+          "data": [
+            4
+          ],
+          "borderColor": "#6366f1",
+          "backgroundColor": "#6366f133",
+          "tension": 0.25,
+          "spanGaps": true
+        },
+        {
+          "label": "edgephone.ai",
+          "data": [
+            3.5
+          ],
+          "borderColor": "#8b5cf6",
+          "backgroundColor": "#8b5cf633",
+          "tension": 0.25,
+          "spanGaps": true
+        },
+        {
+          "label": "greenh2s.ai",
+          "data": [
+            4
+          ],
+          "borderColor": "#10b981",
+          "backgroundColor": "#10b98133",
+          "tension": 0.25,
+          "spanGaps": true
+        }
+      ]
+    },
+    "yearly": {
+      "labels": [
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "non-exec.ai",
+          "data": [
+            4
+          ],
+          "borderColor": "#6366f1",
+          "backgroundColor": "#6366f133",
+          "tension": 0.25,
+          "spanGaps": true
+        },
+        {
+          "label": "edgephone.ai",
+          "data": [
+            3.5
+          ],
+          "borderColor": "#8b5cf6",
+          "backgroundColor": "#8b5cf633",
+          "tension": 0.25,
+          "spanGaps": true
+        },
+        {
+          "label": "greenh2s.ai",
+          "data": [
+            4
+          ],
+          "borderColor": "#10b981",
+          "backgroundColor": "#10b98133",
+          "tension": 0.25,
+          "spanGaps": true
+        }
+      ]
+    }
+  },
+  "entities": [
+    "non-exec",
+    "edgephone",
+    "greenh2s"
+  ],
+  "runs": [
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "iso.org"
+      ]
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai"
+      ]
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "edge AI models agents reference",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "ai.google.dev"
+      ]
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "edge AI models agents reference",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com"
+      ]
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer industrial",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org"
+      ]
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer industrial",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "hydrogen.europa.eu"
+      ]
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "EU AI Act board responsibilities",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "eu.ai",
+        "nist.gov"
+      ]
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "EU AI Act board responsibilities",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "eu.ai",
+        "iso.org"
+      ]
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "on-device AI manufacturing",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.nvidia.com",
+        "chip.computer"
+      ]
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "on-device AI manufacturing",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ai.google.dev",
+        "apple.com"
+      ]
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "RFNBO green hydrogen",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "irena.org",
+        "hydrogen.europa.eu"
+      ]
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "RFNBO green hydrogen",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org"
+      ]
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "gpt-5.3-codex",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "enterprise AI agent registry governance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "sec.gov"
+      ]
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "gpt-5.3-codex",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "enterprise AI agent registry governance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "iso.org"
+      ]
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "gpt-5.3-codex",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "SLMs ARM edge deployment",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "huggingface.co"
+      ]
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "gpt-5.3-codex",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "SLMs ARM edge deployment",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "qualcomm.com",
+        "arm.com"
+      ]
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "gpt-5.3-codex",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org"
+      ]
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "gpt-5.3-codex",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "hydrogen.europa.eu",
+        "iea.org"
+      ]
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "boards oversee AI agents",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "iso.org"
+      ]
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "boards oversee AI agents",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "eu.ai",
+        "nist.gov"
+      ]
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "edge AI commerce compliance",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "developer.nvidia.com"
+      ]
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "edge AI commerce compliance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ai.google.dev",
+        "chip.computer"
+      ]
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "green hydrogen offtake compliance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org"
+      ]
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "green hydrogen offtake compliance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "hydrogen.europa.eu",
+        "iea.org"
+      ]
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "iso.org",
+        "sec.gov"
+      ]
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai",
+        "iso.org"
+      ]
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "ai.google.dev",
+        "developer.nvidia.com"
+      ]
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com",
+        "apple.com"
+      ]
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu"
+      ]
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu"
+      ]
+    }
+  ],
+  "agentPromptsUsed": {
+    "version": 1,
+    "updatedAt": "2026-07-05T06:00:00Z",
+    "entities": {
+      "non-exec": {
+        "label": "non-exec.ai",
+        "site": "https://www.non-exec.ai",
+        "promptFile": "prompts/entities/non-exec-ranking-check.md",
+        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "conditionsAtLastPrompt": {
+          "cursorTier": 4,
+          "geminiTier": 4,
+          "topCompetitors": [
+            "nist.gov",
+            "iso.org",
+            "eu.ai"
+          ],
+          "losingQueries": [
+            "AI corporate governance board oversight best practices"
+          ],
+          "promptLevers": [
+            "Publish llms.txt",
+            "Expand registry/agents-models.json",
+            "Governance FAQ blocks"
+          ]
+        }
+      },
+      "edgephone": {
+        "label": "edgephone.ai",
+        "site": "https://edgephone.ai",
+        "promptFile": "prompts/entities/edgephone-ranking-check.md",
+        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "conditionsAtLastPrompt": {
+          "cursorTier": 3,
+          "geminiTier": 4,
+          "topCompetitors": [
+            "chip.computer",
+            "ai.google.dev",
+            "developer.nvidia.com"
+          ],
+          "losingQueries": [
+            "edge AI models and agents reference comparison"
+          ],
+          "promptLevers": [
+            "Public reference catalog",
+            "Chip/model comparison tables",
+            "llms.txt"
+          ]
+        }
+      },
+      "greenh2s": {
+        "label": "greenh2s.ai",
+        "site": "https://www.greenh2s.ai",
+        "promptFile": "prompts/entities/greenh2s-ranking-check.md",
+        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "conditionsAtLastPrompt": {
+          "cursorTier": 4,
+          "geminiTier": 4,
+          "topCompetitors": [
+            "iea.org",
+            "irena.org",
+            "hydrogen.europa.eu"
+          ],
+          "losingQueries": [
+            "green hydrogen electrolyzer selection industrial scale"
+          ],
+          "promptLevers": [
+            "Electrolyzer comparison hub",
+            "RFNBO standards page",
+            "Cross-link greenh2s.com"
+          ]
+        }
+      }
+    }
+  },
+  "latestByBrand": {
+    "non-exec": {
+      "cursor": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T06:00:00Z"
+      },
+      "gemini": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T06:00:00Z"
+      }
+    },
+    "edgephone": {
+      "cursor": {
+        "tier": 3,
+        "updatedAt": "2026-07-05T06:00:00Z"
+      },
+      "gemini": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T06:00:00Z"
+      }
+    },
+    "greenh2s": {
+      "cursor": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T06:00:00Z"
+      },
+      "gemini": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T06:00:00Z"
+      }
+    }
+  }
+}

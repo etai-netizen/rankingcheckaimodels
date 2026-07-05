@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "cursorAccount": "et@edgephone.ai",
+  "gitRepo": "etai-netizen/rankingcheckaimodels",
+  "gitBranch": "main",
+  "scheduleNote": "06:00 GMT daily — one automation per assessed Cursor model",
+  "automations": [
+    {
+      "name": "Ranking Check — Composer 2.5 (06:00 GMT)",
+      "status": "Draft",
+      "slot": "daily-check",
+      "utcHour": 6,
+      "model": "composer-2.5-fast",
+      "modelDisplayName": "Composer 2.5",
+      "cron": "0 6 * * *",
+      "cursorAutomationId": null,
+      "prefillFile": "automations/prefill/daily-composer-0600.json"
+    },
+    {
+      "name": "Ranking Check — GPT-5.5 High (06:00 GMT)",
+      "status": "Draft",
+      "slot": "daily-check",
+      "utcHour": 6,
+      "model": "gpt-5.5-high",
+      "modelDisplayName": "GPT-5.5 High",
+      "cron": "0 6 * * *",
+      "cursorAutomationId": null,
+      "prefillFile": "automations/prefill/daily-gpt55-0600.json"
+    },
+    {
+      "name": "Ranking Check — Codex 5.3 High (06:00 GMT)",
+      "status": "Draft",
+      "slot": "daily-check",
+      "utcHour": 6,
+      "model": "gpt-5.3-codex",
+      "modelDisplayName": "Codex 5.3 High",
+      "cron": "0 6 * * *",
+      "cursorAutomationId": null,
+      "prefillFile": "automations/prefill/daily-codex-0600.json"
+    },
+    {
+      "name": "Ranking Check — Fable 5 High (06:00 GMT)",
+      "status": "Draft",
+      "slot": "daily-check",
+      "utcHour": 6,
+      "model": "claude-fable-5-thinking-high",
+      "modelDisplayName": "Fable 5 High",
+      "cron": "0 6 * * *",
+      "cursorAutomationId": null,
+      "prefillFile": "automations/prefill/daily-fable-0600.json"
+    }
+  ]
+}
