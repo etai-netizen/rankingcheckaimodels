@@ -60,7 +60,7 @@
   <header>
     <h1>AI Ranking Monitor</h1>
     <p>Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.</p>
-    <p><strong>Schedule:</strong> 06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High) · <strong>Updated:</strong> 2026-07-05 10:20:21 UTC</p>
+    <p><strong>Schedule:</strong> 06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High) · <strong>Updated:</strong> 2026-07-06 06:04:02 UTC</p>
     <div class="model-badges"><span class="model-badge"><img src="brand/agent-cursor.png" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Composer 2.5</span></span><span class="model-badge"><img src="brand/agent-openai.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>GPT-5.5 High</span></span><span class="model-badge"><img src="brand/agent-openai.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Codex 5.3 High</span></span><span class="model-badge"><img src="brand/agent-anthropic.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Fable 5 High</span></span></div>
   </header>
 
@@ -233,17 +233,17 @@ When conditions change, update this file, `meta/agent-prompts-used.json`, and re
         <div class="agent-tier tier-bad">
           <img src="brand/agent-cursor.png" alt="Cursor" class="agent-logo" onerror="this.src='brand/agent-cursor.svg'" />
           <span class="agent-name">Cursor agents</span>
-          <span class="tier-badge">Tier 4</span>
+          <span class="tier-badge">Tier 5</span>
         </div>
         <div class="agent-tier tier-bad">
           <img src="brand/agent-gemini.svg" alt="Gemini" class="agent-logo" />
           <span class="agent-name">Google Gemini</span>
-          <span class="tier-badge">Tier 4</span>
+          <span class="tier-badge">Tier 5</span>
         </div>
       </div>
 
       <h3 class="prompt-heading">Agent Prompt Used to Check Ranking</h3>
-      <p class="prompt-meta">Last updated: 2026-07-05T06:00:00 · Conditions: Cursor T4, Gemini T4</p>
+      <p class="prompt-meta">Last updated: 2026-07-06T06:00:00 · Conditions: Cursor T5, Gemini T5</p>
       <pre class="agent-prompt-box"># greenh2s.ai — Ranking Check Agent Prompt
 
 **Entity:** greenh2s.ai · **Site:** https://www.greenh2s.ai  
@@ -277,12 +277,12 @@ Green hydrogen production, electrolyzers, RFNBO certification, hydrogen storage,
 
 | Field | Value |
 |-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
-| **Cursor tier** | 4 |
-| **Gemini tier** | 4 |
-| **Top competitors** | iea.org, irena.org, hydrogen.europa.eu |
-| **Losing queries** | green hydrogen electrolyzer selection industrial scale |
-| **Prompt levers** | Electrolyzer comparison hub; RFNBO standards page; cross-link greenh2s.com |
+| **Last checked** | 2026-07-06T06:00:00Z |
+| **Cursor tier** | 5 |
+| **Gemini tier** | 5 |
+| **Top competitors** | rvo.nl, rina.org, springer.com |
+| **Losing queries** | RFNBO certification green hydrogen requirements; hydrogen storage port scale deployment options |
+| **Prompt levers** | RFNBO certification checklist; port storage deployment options page; electrolyzer comparison hub; cross-link greenh2s.com |
 
 ## Prompt adjustment rule
 
@@ -314,7 +314,7 @@ When conditions change, update this file, `meta/agent-prompts-used.json`, and re
   <footer>rankingcheckaimodels · Generic topic search · Cursor agents + Google Gemini</footer>
 
   <script>
-    const chartData = {"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05"],"datasets":[{"label":"non-exec.ai","data":[4,4,4,4,4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5,3.5,3.5,3.5,3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4,4,4,4,4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]}};
+    const chartData = {"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05","2026-07-06"],"datasets":[{"label":"non-exec.ai","data":[4,4,4,4,4,null],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5,3.5,3.5,3.5,3.5,null],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4,4,4,4,4,5],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4.3],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4.3],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]}};
     const chartOpts = (title) => ({
       responsive: true,
       maintainAspectRatio: false,

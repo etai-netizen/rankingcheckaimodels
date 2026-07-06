@@ -1,3 +1,24 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "updatedAt": "2026-07-06T06:00:00Z",
+      "brand": "greenh2s",
+      "model": "gpt-5.5-high",
+      "reason": "Daily greenh2s-only GPT-5.5 High check found greenh2s.ai absent from selected RFNBO certification and port-scale hydrogen storage generic topic source sets.",
+      "conditionsBefore": {
+        "cursorTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"],
+        "losingQueries": ["green hydrogen electrolyzer selection industrial scale"],
+        "promptLevers": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"]
+      },
+      "conditionsAfter": {
+        "cursorTier": 5,
+        "geminiTier": 5,
+        "topCompetitors": ["rvo.nl", "rina.org", "springer.com"],
+        "losingQueries": ["RFNBO certification green hydrogen requirements", "hydrogen storage port scale deployment options"],
+        "promptLevers": ["RFNBO certification checklist", "Port storage deployment options page", "Electrolyzer comparison hub", "Cross-link greenh2s.com"]
+      }
+    }
+  ]
 }
