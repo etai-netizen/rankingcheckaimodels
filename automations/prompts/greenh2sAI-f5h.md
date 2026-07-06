@@ -1,7 +1,6 @@
-# Ranking Check — Composer 2.5 (06:00 GMT)
+# Ranking Check - greenh2sAI - F5H
 
-**Model:** composer-2.5-fast
-**Cron:** 0 6 * * *
+**Entity:** greenh2s · **Model:** claude-fable-5-thinking-high
 
 ---
 
@@ -117,48 +116,51 @@ The dashboard shows for each entity:
 
 ---
 
-## Configured model (this automation)
+## This automation (single entity — replaces placeholder)
 
-- **Model:** composer-2.5-fast (Composer 2.5)
-- **Strength:** Fast structured generic-topic ranking probes
-- **Schedule:** 06:00 GMT daily
-- **Entities:** non-exec.ai, edgephone.ai, greenh2s.ai
-- **Platforms:** Cursor (this model) + Google Gemini
+| Field | Value |
+|-------|-------|
+| **Automation** | Ranking Check - greenh2sAI - F5H |
+| **Entity** | greenh2s.ai (https://www.greenh2s.ai) |
+| **Cursor model** | claude-fable-5-thinking-high (Fable 5 High) |
+| **Schedule** | 06:00 GMT daily |
+| **Platforms** | Cursor (this model) + Google Gemini |
+| **Brand id** | `greenh2s` |
+
+**Scope:** Check **greenh2s.ai only** — do not probe the other entities in this run.
 
 ---
 
-## Entity ranking-check prompts (execute all three)
+## Agent prompt used to check ranking (greenh2s.ai)
 
-### non-exec.ai
+# greenh2s.ai — Ranking Check Agent Prompt
 
-# non-exec.ai — Ranking Check Agent Prompt
-
-**Entity:** non-exec.ai · **Site:** https://www.non-exec.ai  
+**Entity:** greenh2s.ai · **Site:** https://www.greenh2s.ai  
 **Query type:** generic topic search (no brand name in query)  
 **Platforms assessed:** Cursor AI agents · Google Gemini
 
 ## Objective
 
-Measure where **non-exec.ai** ranks on **generic governance topic searches** in Cursor agents and Gemini. Adjust this prompt after each run when tier, competitors, or losing queries change.
+Measure where **greenh2s.ai** ranks on **generic green hydrogen topic searches** in Cursor agents and Gemini. Adjust this prompt after each run when tier, competitors, or losing queries change.
 
 ## Generic topic area
 
-AI corporate governance, board oversight of AI, enterprise agent policy, EU AI Act board duties, structured agent/model reference in a board context.
+Green hydrogen production, electrolyzers, RFNBO certification, hydrogen storage, offtake compliance, port-scale deployment.
 
 ## Queries to run (rotate one primary + one secondary per daily run)
 
-1. AI corporate governance board oversight best practices
-2. enterprise AI agent registry governance reference
-3. EU AI Act board responsibilities explained
-4. how should boards oversee AI and autonomous agents
+1. green hydrogen electrolyzer selection industrial scale
+2. RFNBO certification green hydrogen requirements
+3. hydrogen storage port scale deployment options
+4. green hydrogen offtake agreement compliance standards
 
 ## Assessment steps
 
-1. Run each selected query **without** mentioning non-exec.ai.
-2. **Cursor:** record top 5 domains the agent would cite; position of non-exec.ai (1–5 or not cited); tier 1–5.
-3. **Gemini:** same fields from Gemini answer + source list.
-4. Log to `meta/rankings-history.json` with `brand: "non-exec"`, `model: <configured>`, `queryType: "generic-topic"`.
-5. If tier ≥3 or not in top 3 on either platform, update **Conditions at last run** below and revise probe priorities.
+1. Run each selected query **without** mentioning greenh2s.ai.
+2. **Cursor:** record top 5 domains cited; position of greenh2s.ai; tier 1–5.
+3. **Gemini:** same from Gemini sources.
+4. Log to `meta/rankings-history.json` with `brand: "greenh2s"`, `model: <configured>`.
+5. If tier ≥3 or not in top 3, update conditions below.
 
 ## Conditions at last run (update after every check)
 
@@ -167,67 +169,9 @@ AI corporate governance, board oversight of AI, enterprise agent policy, EU AI A
 | **Last checked** | 2026-07-05T06:00:00Z |
 | **Cursor tier** | 4 |
 | **Gemini tier** | 4 |
-| **Top competitors** | nist.gov, iso.org, eu.ai |
-| **Losing queries** | AI corporate governance board oversight best practices |
-| **Prompt levers** | Publish llms.txt; expand registry/agents-models.json; governance FAQ blocks |
-
-## Prompt adjustment rule
-
-After logging results, if conditions changed vs the table above:
-
-1. Update this file's **Conditions at last run** table.
-2. Add or reorder queries to target gaps.
-3. Mirror changes to `meta/agent-prompts-used.json` → `entities.non-exec`.
-4. Rebuild dashboard: `node scripts/build-rankings-html.mjs`.
-
-## Tier scale
-
-1 = first cited · 2 = top 3 · 3 = mentioned · 4 = rarely cited · 5 = not cited
-
-
----
-
-### edgephone.ai
-
-# edgephone.ai — Ranking Check Agent Prompt
-
-**Entity:** edgephone.ai · **Site:** https://edgephone.ai  
-**Query type:** generic topic search (no brand name in query)  
-**Platforms assessed:** Cursor AI agents · Google Gemini
-
-## Objective
-
-Measure where **edgephone.ai** ranks on **generic edge AI topic searches** in Cursor agents and Gemini. Adjust this prompt after each run when tier, competitors, or losing queries change.
-
-## Generic topic area
-
-Edge AI models and agents, on-device inference, edge AI in manufacturing and commerce, SLMs on ARM edge, low-power vision pipelines.
-
-## Queries to run (rotate one primary + one secondary per daily run)
-
-1. edge AI models and agents reference comparison
-2. on-device AI inference manufacturing low power
-3. small language models ARM edge deployment guide
-4. edge AI deployment commerce compliance best practices
-
-## Assessment steps
-
-1. Run each selected query **without** mentioning edgephone.ai.
-2. **Cursor:** record top 5 domains cited; position of edgephone.ai; tier 1–5.
-3. **Gemini:** same from Gemini sources.
-4. Log to `meta/rankings-history.json` with `brand: "edgephone"`, `model: <configured>`.
-5. If tier ≥3 or not in top 3, update conditions below and refine queries.
-
-## Conditions at last run (update after every check)
-
-| Field | Value |
-|-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
-| **Cursor tier** | 3 |
-| **Gemini tier** | 4 |
-| **Top competitors** | chip.computer, ai.google.dev, developer.nvidia.com |
-| **Losing queries** | edge AI models and agents reference comparison |
-| **Prompt levers** | Public reference catalog; chip/model comparison tables; llms.txt |
+| **Top competitors** | iea.org, irena.org, hydrogen.europa.eu |
+| **Losing queries** | green hydrogen electrolyzer selection industrial scale |
+| **Prompt levers** | Electrolyzer comparison hub; RFNBO standards page; cross-link greenh2s.com |
 
 ## Prompt adjustment rule
 
@@ -240,6 +184,8 @@ When conditions change, update this file, `meta/agent-prompts-used.json`, and re
 
 ---
 
-### greenh2s.ai
+## Model directive
 
-# greenh2s.ai — Ranking…
+- **Configured model:** claude-fable-5-thinking-high
+- **Listed strength:** Long-form ranking reports and entity prompt tuning
+- Use this model's perspec…

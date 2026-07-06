@@ -9,6 +9,7 @@
       "lastPromptUpdate": "2026-07-05T06:00:00Z",
       "conditionsAtLastPrompt": {
         "cursorTier": 4,
+        "googleWebTier": 4,
         "geminiTier": 4,
         "topCompetitors": ["nist.gov", "iso.org", "eu.ai"],
         "losingQueries": ["AI corporate governance board oversight best practices"],
@@ -22,6 +23,7 @@
       "lastPromptUpdate": "2026-07-05T06:00:00Z",
       "conditionsAtLastPrompt": {
         "cursorTier": 3,
+        "googleWebTier": 4,
         "geminiTier": 4,
         "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"],
         "losingQueries": ["edge AI models and agents reference comparison"],
@@ -35,6 +37,7 @@
       "lastPromptUpdate": "2026-07-05T06:00:00Z",
       "conditionsAtLastPrompt": {
         "cursorTier": 4,
+        "googleWebTier": 4,
         "geminiTier": 4,
         "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"],
         "losingQueries": ["green hydrogen electrolyzer selection industrial scale"],

@@ -3,7 +3,7 @@
   "cursorAccount": "et@edgephone.ai",
   "gitRepo": "etai-netizen/rankingcheckaimodels",
   "gitBranch": "main",
-  "automationsImported": false,
-  "promptsSyncedToCursorAt": null,
+  "automationsImported": true,
+  "promptsSyncedToCursorAt": "2026-07-05T10:37:48.590736Z",
   "note": "Import automations/workflows/*.json in Cursor Automations UI, then add UUIDs to automations/cursor-agents.json"
 }

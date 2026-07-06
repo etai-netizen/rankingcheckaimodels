@@ -1,7 +1,6 @@
-# Ranking Check — Fable 5 High (06:00 GMT)
+# Ranking Check - NonExecAI - G5.5H
 
-**Model:** claude-fable-5-thinking-high
-**Cron:** 0 6 * * *
+**Entity:** non-exec · **Model:** gpt-5.5-high
 
 ---
 
@@ -117,19 +116,22 @@ The dashboard shows for each entity:
 
 ---
 
-## Configured model (this automation)
+## This automation (single entity — replaces placeholder)
 
-- **Model:** claude-fable-5-thinking-high (Fable 5 High)
-- **Strength:** Long-form ranking reports and entity prompt tuning
-- **Schedule:** 06:00 GMT daily
-- **Entities:** non-exec.ai, edgephone.ai, greenh2s.ai
-- **Platforms:** Cursor (this model) + Google Gemini
+| Field | Value |
+|-------|-------|
+| **Automation** | Ranking Check - NonExecAI - G5.5H |
+| **Entity** | non-exec.ai (https://www.non-exec.ai) |
+| **Cursor model** | gpt-5.5-high (GPT-5.5 High) |
+| **Schedule** | 06:00 GMT daily |
+| **Platforms** | Cursor (this model) + Google Gemini |
+| **Brand id** | `non-exec` |
+
+**Scope:** Check **non-exec.ai only** — do not probe the other entities in this run.
 
 ---
 
-## Entity ranking-check prompts (execute all three)
-
-### non-exec.ai
+## Agent prompt used to check ranking (non-exec.ai)
 
 # non-exec.ai — Ranking Check Agent Prompt
 
@@ -177,69 +179,4 @@ After logging results, if conditions changed vs the table above:
 
 1. Update this file's **Conditions at last run** table.
 2. Add or reorder queries to target gaps.
-3. Mirror changes to `meta/agent-prompts-used.json` → `entities.non-exec`.
-4. Rebuild dashboard: `node scripts/build-rankings-html.mjs`.
-
-## Tier scale
-
-1 = first cited · 2 = top 3 · 3 = mentioned · 4 = rarely cited · 5 = not cited
-
-
----
-
-### edgephone.ai
-
-# edgephone.ai — Ranking Check Agent Prompt
-
-**Entity:** edgephone.ai · **Site:** https://edgephone.ai  
-**Query type:** generic topic search (no brand name in query)  
-**Platforms assessed:** Cursor AI agents · Google Gemini
-
-## Objective
-
-Measure where **edgephone.ai** ranks on **generic edge AI topic searches** in Cursor agents and Gemini. Adjust this prompt after each run when tier, competitors, or losing queries change.
-
-## Generic topic area
-
-Edge AI models and agents, on-device inference, edge AI in manufacturing and commerce, SLMs on ARM edge, low-power vision pipelines.
-
-## Queries to run (rotate one primary + one secondary per daily run)
-
-1. edge AI models and agents reference comparison
-2. on-device AI inference manufacturing low power
-3. small language models ARM edge deployment guide
-4. edge AI deployment commerce compliance best practices
-
-## Assessment steps
-
-1. Run each selected query **without** mentioning edgephone.ai.
-2. **Cursor:** record top 5 domains cited; position of edgephone.ai; tier 1–5.
-3. **Gemini:** same from Gemini sources.
-4. Log to `meta/rankings-history.json` with `brand: "edgephone"`, `model: <configured>`.
-5. If tier ≥3 or not in top 3, update conditions below and refine queries.
-
-## Conditions at last run (update after every check)
-
-| Field | Value |
-|-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
-| **Cursor tier** | 3 |
-| **Gemini tier** | 4 |
-| **Top competitors** | chip.computer, ai.google.dev, developer.nvidia.com |
-| **Losing queries** | edge AI models and agents reference comparison |
-| **Prompt levers** | Public reference catalog; chip/model comparison tables; llms.txt |
-
-## Prompt adjustment rule
-
-When conditions change, update this file, `meta/agent-prompts-used.json`, and rebuild HTML.
-
-## Tier scale
-
-1 = first cited · 2 = top 3 · 3 = mentioned · 4 = rarely cited · 5 = not cited
-
-
----
-
-### greenh2s.ai
-
-# gree…
+3. Mirror changes to `meta/agent-prompts-used.json` → `entities.non-…

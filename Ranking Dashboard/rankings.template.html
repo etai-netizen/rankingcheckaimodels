@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="refresh" content="3600" />
   <title>AI Ranking Monitor — non-exec · edgephone · greenh2s</title>
+  <link rel="icon" href="brand/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="brand/ranking-logo.svg" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
     :root {
@@ -22,13 +24,25 @@
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--text); line-height: 1.45; }
     header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.08)); }
+    .header-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .header-brand { display: flex; align-items: flex-start; gap: 0.85rem; flex: 1; min-width: 280px; }
+    .site-logo { width: 44px; height: 44px; flex-shrink: 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(59,130,246,0.25); }
     header h1 { margin: 0 0 0.35rem; font-size: 1.3rem; }
     header p { margin: 0.2rem 0; color: var(--muted); font-size: 0.9rem; }
+    .automation-status-block { margin: 0.45rem 0 0.5rem; }
+    .automation-status-block .automations-link { font-size: 0.82rem; color: var(--accent); word-break: break-all; }
+    .automation-status-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; margin-top: 0.35rem; }
+    .automation-status-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+    .status-select { font-size: 0.78rem; padding: 0.28rem 0.5rem; border-radius: 8px; border: 1px solid var(--border); background: var(--panel); color: var(--text); max-width: 100%; cursor: pointer; }
+    .status-select.status-active { border-color: rgba(16,185,129,0.45); background: rgba(16,185,129,0.08); }
+    .status-select.status-inactive-high-cost { border-color: rgba(245,158,11,0.45); background: rgba(245,158,11,0.1); }
+    .automation-account-note { margin: 0.35rem 0 0; font-size: 0.72rem; color: var(--muted); }
     .model-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
     .model-badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.55rem; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; font-size: 0.75rem; }
     .model-logo { width: 16px; height: 16px; object-fit: contain; }
     main { padding: 1.25rem; max-width: 1400px; margin: 0 auto; }
     h2.section-title { font-size: 1rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    h3.chart-subtitle { font-size: 0.85rem; margin: 0 0 0.5rem; color: var(--muted); font-weight: 600; }
     .entity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
     @media (max-width: 1100px) { .entity-grid { grid-template-columns: 1fr; } }
     .entity-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; min-height: 420px; }
@@ -39,6 +53,10 @@
     .entity-header h2 a { color: inherit; text-decoration: none; }
     .entity-objective { margin: 0.25rem 0 0; font-size: 0.82rem; color: var(--muted); }
     .agent-tier-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .agent-tier-grid { display: grid; gap: 0.5rem; margin-bottom: 0.65rem; }
+    .agent-tier-grid.cursor-models { grid-template-columns: repeat(3, 1fr); }
+    .agent-tier-grid.web-agents { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 700px) { .agent-tier-grid.cursor-models { grid-template-columns: 1fr 1fr; } }
     .agent-tier { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 0.5rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
     .agent-logo { width: 28px; height: 28px; object-fit: contain; }
     .agent-name { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); }
@@ -53,46 +71,126 @@
     .chart-wrap { position: relative; height: 220px; }
     .chart-wrap.tall { height: 180px; }
     .chart-note { font-size: 0.75rem; color: var(--muted); margin: 0.35rem 0 0; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; margin: 0 0 0.65rem; }
+    .legend-item { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; color: var(--muted); }
+    .legend-logo { width: 16px; height: 16px; object-fit: contain; }
+    .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
     footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; }
+    .sync-banner { display: none; padding: 0.65rem 1rem; background: rgba(245,158,11,0.15); border-bottom: 1px solid rgba(245,158,11,0.35); color: var(--text); font-size: 0.85rem; }
+    .sync-banner a { color: var(--accent); }
+    body.show-sync-banner .sync-banner { display: block; }
+    .cost-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem 0.9rem; min-width: 240px; max-width: 320px; flex-shrink: 0; }
+    .cost-panel-title { margin: 0 0 0.2rem; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .cost-panel-sub { margin: 0 0 0.5rem; font-size: 0.72rem; color: var(--muted); }
+    .cost-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .cost-table th, .cost-table td { padding: 0.2rem 0.25rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .cost-table th { color: var(--muted); font-weight: 600; font-size: 0.68rem; text-transform: uppercase; }
+    .cost-src { text-transform: capitalize; color: var(--muted); font-size: 0.68rem; }
+    .cost-total { margin: 0.5rem 0 0.25rem; font-size: 0.8rem; }
+    .cost-tag { display: inline-block; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.65rem; text-transform: uppercase; border: 1px solid var(--border); margin-left: 0.25rem; }
+    .cost-tag-actual { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.35); }
+    .cost-tag-estimated { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.35); }
+    .cost-tag-mixed { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.35); }
+    .cost-link { margin: 0; font-size: 0.68rem; }
+    .cost-link a { color: var(--accent); }
+    .methodology-note { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; font-size: 0.84rem; line-height: 1.55; }
+    .methodology-note p { margin: 0 0 0.65rem; color: var(--text); }
+    .methodology-note p:last-child { margin-bottom: 0; }
+    .methodology-note ul { margin: 0.35rem 0 0.65rem 1.1rem; padding: 0; color: var(--muted); font-size: 0.8rem; }
+    .methodology-note li { margin: 0.2rem 0; }
+    .methodology-note .tier-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; margin: 0.5rem 0 0.65rem; }
+    .methodology-note .tier-table th, .methodology-note .tier-table td { padding: 0.25rem 0.4rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .methodology-note .tier-table th { color: var(--muted); font-weight: 600; }
+    .methodology-note strong { color: var(--text); }
   </style>
 </head>
-<body>
+<body data-generated-at="{{GENERATED_AT_ISO}}">
+  <div class="sync-banner" id="syncBanner">
+    For latest data from Cursor Cloud runs, open via
+    <strong>Open Dashboard.cmd</strong> in this folder (syncs git + rebuilds HTML).
+  </div>
   <header>
-    <h1>AI Ranking Monitor</h1>
-    <p>{{MISSION}}</p>
-    <p><strong>Schedule:</strong> {{SCHEDULE}} · <strong>Updated:</strong> {{GENERATED_AT}}</p>
-    <div class="model-badges">{{MODEL_BADGES}}</div>
+    <div class="header-inner">
+      <div class="header-brand">
+        <img class="site-logo" src="brand/ranking-logo.svg" alt="AI Ranking Monitor" width="44" height="44" />
+        <div>
+          <h1>AI Ranking Monitor</h1>
+          <div class="automation-status-block">
+            <a class="automations-link" href="{{AUTOMATIONS_URL}}" target="_blank" rel="noopener">{{AUTOMATIONS_URL}}</a>
+            {{AUTOMATION_STATUS_CONTROL}}
+          </div>
+          <p>{{MISSION}}</p>
+          <p><strong>Schedule:</strong> {{SCHEDULE}} · <strong>Updated:</strong> {{GENERATED_AT}}</p>
+          <div class="model-badges">{{MODEL_BADGES}}</div>
+        </div>
+      </div>
+      {{COST_PANEL}}
+    </div>
   </header>
 
   <main>
+    <h2 class="section-title" id="methodology-heading">Ranking methodology</h2>
+    {{METHODOLOGY_NOTE}}
+
     <h2 class="section-title">Entities — side by side</h2>
     <div class="entity-grid">{{ENTITY_COLUMNS}}</div>
 
-    <h2 class="section-title">Ranking trends — daily (lower tier = better)</h2>
+    <h2 class="section-title">Ranking by agent model (lower tier = better)</h2>
+    <div class="chart-legend">{{AGENT_LEGEND}}</div>
+
     <section class="chart-section">
-      <div class="chart-wrap"><canvas id="chartDaily"></canvas></div>
-      <p class="chart-note">Average tier per entity per day across Cursor + Gemini checks. Tier 1 = first cited.</p>
+      <h3 class="chart-subtitle">Daily</h3>
+      <div class="chart-wrap"><canvas id="chartAgentDaily"></canvas></div>
+      <p class="chart-note">Average tier per agent across all entities — Composer 2.5, GPT-5.5 High, Fable 5 High, Google Web, Google Gemini.</p>
     </section>
 
-    <h2 class="section-title">Ranking trends — monthly</h2>
+    <section class="chart-section">
+      <h3 class="chart-subtitle">Monthly</h3>
+      <div class="chart-wrap tall"><canvas id="chartAgentMonthly"></canvas></div>
+    </section>
+
+    <section class="chart-section">
+      <h3 class="chart-subtitle">Yearly</h3>
+      <div class="chart-wrap tall"><canvas id="chartAgentYearly"></canvas></div>
+    </section>
+
+    <h2 class="section-title">Ranking by entity — daily (all agents combined)</h2>
+    <section class="chart-section">
+      <div class="chart-wrap"><canvas id="chartDaily"></canvas></div>
+      <p class="chart-note">Average tier per entity per day across all agent checks. Tier 1 = first cited.</p>
+    </section>
+
+    <h2 class="section-title">Ranking by entity — monthly</h2>
     <section class="chart-section">
       <div class="chart-wrap tall"><canvas id="chartMonthly"></canvas></div>
     </section>
 
-    <h2 class="section-title">Ranking trends — yearly</h2>
+    <h2 class="section-title">Ranking by entity — yearly</h2>
     <section class="chart-section">
       <div class="chart-wrap tall"><canvas id="chartYearly"></canvas></div>
     </section>
+
+    <h2 class="section-title">Cursor automation cost — monthly (USD)</h2>
+    <section class="chart-section">
+      <div class="chart-wrap tall"><canvas id="chartCostMonthly"></canvas></div>
+      <p class="chart-note">Sum of Ranking Check Cloud Agent runs per month · 9 automations at 06:00 GMT · actual billing when synced from Cursor.</p>
+    </section>
+
+    <h2 class="section-title">Cursor automation cost — yearly (USD)</h2>
+    <section class="chart-section">
+      <div class="chart-wrap tall"><canvas id="chartCostYearly"></canvas></div>
+    </section>
   </main>
 
-  <footer>rankingcheckaimodels · Generic topic search · Cursor agents + Google Gemini</footer>
+  <footer>rankingcheckaimodels · Generic topic search · Cursor agents · Google Web · Google Gemini</footer>
 
   <script>
     const chartData = {{CHART_DATA_JSON}};
+    const costChartData = {{COST_CHART_DATA_JSON}};
     const chartOpts = (title) => ({
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+      plugins: { legend: { display: false } },
       scales: {
         y: {
           reverse: true,
@@ -104,9 +202,113 @@
         x: { ticks: { maxRotation: 45, font: { size: 10 } } }
       }
     });
-    new Chart(document.getElementById('chartDaily'), { type: 'line', data: chartData.daily, options: chartOpts('Daily') });
-    new Chart(document.getElementById('chartMonthly'), { type: 'line', data: chartData.monthly, options: chartOpts('Monthly') });
-    new Chart(document.getElementById('chartYearly'), { type: 'line', data: chartData.yearly, options: chartOpts('Yearly') });
+    const charts = {
+      agentDaily: new Chart(document.getElementById('chartAgentDaily'), { type: 'line', data: chartData.byAgent.daily, options: chartOpts('Agent Daily') }),
+      agentMonthly: new Chart(document.getElementById('chartAgentMonthly'), { type: 'line', data: chartData.byAgent.monthly, options: chartOpts('Agent Monthly') }),
+      agentYearly: new Chart(document.getElementById('chartAgentYearly'), { type: 'line', data: chartData.byAgent.yearly, options: chartOpts('Agent Yearly') }),
+      daily: new Chart(document.getElementById('chartDaily'), { type: 'line', data: chartData.byEntity.daily, options: { ...chartOpts('Daily'), plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } } }),
+      monthly: new Chart(document.getElementById('chartMonthly'), { type: 'line', data: chartData.byEntity.monthly, options: { ...chartOpts('Monthly'), plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } } }),
+      yearly: new Chart(document.getElementById('chartYearly'), { type: 'line', data: chartData.byEntity.yearly, options: { ...chartOpts('Yearly'), plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } } })
+    };
+
+    const costChartOpts = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: (v) => '$' + v.toFixed(2) },
+          title: { display: true, text: 'USD' }
+        },
+        x: { ticks: { maxRotation: 45, font: { size: 10 } } }
+      }
+    };
+    if (costChartData?.monthly?.labels?.length) {
+      new Chart(document.getElementById('chartCostMonthly'), { type: 'bar', data: costChartData.monthly, options: costChartOpts });
+    }
+    if (costChartData?.yearly?.labels?.length) {
+      new Chart(document.getElementById('chartCostYearly'), { type: 'bar', data: costChartData.yearly, options: costChartOpts });
+    }
+
+    (function initAutomationStatus() {
+      const sel = document.getElementById('automationScheduleStatus');
+      if (!sel) return;
+
+      function applyStatusStyle() {
+        sel.classList.remove('status-active', 'status-inactive-high-cost');
+        sel.classList.add('status-' + sel.value);
+      }
+
+      function setStatus(value) {
+        if (value !== 'active' && value !== 'inactive-high-cost') return;
+        sel.value = value;
+        applyStatusStyle();
+      }
+
+      async function loadStatus() {
+        const isLocalServer = location.hostname === '127.0.0.1' && location.port === '8787';
+        if (isLocalServer) {
+          try {
+            const r = await fetch('/api/automation-status', { cache: 'no-store' });
+            if (r.ok) {
+              const data = await r.json();
+              if (data.status) {
+                setStatus(data.status);
+                localStorage.setItem('rankingAutomationStatus', data.status);
+                return;
+              }
+            }
+          } catch (_) {}
+        }
+        const stored = localStorage.getItem('rankingAutomationStatus');
+        setStatus(stored || sel.dataset.defaultStatus || 'inactive-high-cost');
+      }
+
+      sel.addEventListener('change', async () => {
+        localStorage.setItem('rankingAutomationStatus', sel.value);
+        applyStatusStyle();
+        const isLocalServer = location.hostname === '127.0.0.1' && location.port === '8787';
+        if (isLocalServer) {
+          try {
+            await fetch('/api/automation-status', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ status: sel.value }),
+            });
+          } catch (_) {}
+        }
+      });
+
+      loadStatus();
+    })();
+
+    (async function syncOnOpen() {
+      const builtAt = document.body.dataset.generatedAt || '';
+      const isLocalServer = location.hostname === '127.0.0.1' && location.port === '8787';
+
+      if (location.protocol === 'file:') {
+        try {
+          const health = await fetch('http://127.0.0.1:8787/health', { cache: 'no-store' });
+          if (health.ok) {
+            location.replace('http://127.0.0.1:8787/rankings.html');
+            return;
+          }
+        } catch (_) {}
+        document.body.classList.add('show-sync-banner');
+        return;
+      }
+
+      if (!isLocalServer) return;
+
+      try {
+        const sync = await fetch('/api/sync', { cache: 'no-store' });
+        const payload = sync.ok ? await sync.json() : null;
+        if (payload?.generatedAt && builtAt && payload.generatedAt !== builtAt) {
+          location.reload();
+        }
+      } catch (_) {}
+    })();
   </script>
 </body>
 </html>

@@ -4,14 +4,11 @@ param(
 
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$Html = Join-Path $Root "Ranking Dashboard\rankings.html"
+$Launcher = Join-Path $Root "Ranking Dashboard\Open Dashboard.cmd"
 
-if (-not (Test-Path $Html)) {
-    Write-Host "Building dashboard first..."
-    node (Join-Path $Root "scripts\build-rankings-html.mjs")
+if (-not $NoBrowser -and (Test-Path $Launcher)) {
+    & $Launcher
+} else {
+    & (Join-Path $Root "scripts\Sync-RankingsOnLogin.ps1") -SyncOnly -Quiet
 }
-
-if (-not $NoBrowser) {
-    Start-Process $Html
-}
-Write-Output "Opened $Html"
+Write-Output "Dashboard ready at Ranking Dashboard\rankings.html"

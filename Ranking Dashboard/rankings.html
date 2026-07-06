@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="refresh" content="3600" />
   <title>AI Ranking Monitor — non-exec · edgephone · greenh2s</title>
+  <link rel="icon" href="brand/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="brand/ranking-logo.svg" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
     :root {
@@ -22,13 +24,25 @@
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--text); line-height: 1.45; }
     header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.08)); }
+    .header-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .header-brand { display: flex; align-items: flex-start; gap: 0.85rem; flex: 1; min-width: 280px; }
+    .site-logo { width: 44px; height: 44px; flex-shrink: 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(59,130,246,0.25); }
     header h1 { margin: 0 0 0.35rem; font-size: 1.3rem; }
     header p { margin: 0.2rem 0; color: var(--muted); font-size: 0.9rem; }
+    .automation-status-block { margin: 0.45rem 0 0.5rem; }
+    .automation-status-block .automations-link { font-size: 0.82rem; color: var(--accent); word-break: break-all; }
+    .automation-status-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; margin-top: 0.35rem; }
+    .automation-status-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+    .status-select { font-size: 0.78rem; padding: 0.28rem 0.5rem; border-radius: 8px; border: 1px solid var(--border); background: var(--panel); color: var(--text); max-width: 100%; cursor: pointer; }
+    .status-select.status-active { border-color: rgba(16,185,129,0.45); background: rgba(16,185,129,0.08); }
+    .status-select.status-inactive-high-cost { border-color: rgba(245,158,11,0.45); background: rgba(245,158,11,0.1); }
+    .automation-account-note { margin: 0.35rem 0 0; font-size: 0.72rem; color: var(--muted); }
     .model-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
     .model-badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.55rem; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; font-size: 0.75rem; }
     .model-logo { width: 16px; height: 16px; object-fit: contain; }
     main { padding: 1.25rem; max-width: 1400px; margin: 0 auto; }
     h2.section-title { font-size: 1rem; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    h3.chart-subtitle { font-size: 0.85rem; margin: 0 0 0.5rem; color: var(--muted); font-weight: 600; }
     .entity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
     @media (max-width: 1100px) { .entity-grid { grid-template-columns: 1fr; } }
     .entity-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; min-height: 420px; }
@@ -39,6 +53,10 @@
     .entity-header h2 a { color: inherit; text-decoration: none; }
     .entity-objective { margin: 0.25rem 0 0; font-size: 0.82rem; color: var(--muted); }
     .agent-tier-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .agent-tier-grid { display: grid; gap: 0.5rem; margin-bottom: 0.65rem; }
+    .agent-tier-grid.cursor-models { grid-template-columns: repeat(3, 1fr); }
+    .agent-tier-grid.web-agents { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 700px) { .agent-tier-grid.cursor-models { grid-template-columns: 1fr 1fr; } }
     .agent-tier { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 0.5rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
     .agent-logo { width: 28px; height: 28px; object-fit: contain; }
     .agent-name { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); }
@@ -53,18 +71,105 @@
     .chart-wrap { position: relative; height: 220px; }
     .chart-wrap.tall { height: 180px; }
     .chart-note { font-size: 0.75rem; color: var(--muted); margin: 0.35rem 0 0; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; margin: 0 0 0.65rem; }
+    .legend-item { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; color: var(--muted); }
+    .legend-logo { width: 16px; height: 16px; object-fit: contain; }
+    .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
     footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; }
+    .sync-banner { display: none; padding: 0.65rem 1rem; background: rgba(245,158,11,0.15); border-bottom: 1px solid rgba(245,158,11,0.35); color: var(--text); font-size: 0.85rem; }
+    .sync-banner a { color: var(--accent); }
+    body.show-sync-banner .sync-banner { display: block; }
+    .cost-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem 0.9rem; min-width: 240px; max-width: 320px; flex-shrink: 0; }
+    .cost-panel-title { margin: 0 0 0.2rem; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .cost-panel-sub { margin: 0 0 0.5rem; font-size: 0.72rem; color: var(--muted); }
+    .cost-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .cost-table th, .cost-table td { padding: 0.2rem 0.25rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .cost-table th { color: var(--muted); font-weight: 600; font-size: 0.68rem; text-transform: uppercase; }
+    .cost-src { text-transform: capitalize; color: var(--muted); font-size: 0.68rem; }
+    .cost-total { margin: 0.5rem 0 0.25rem; font-size: 0.8rem; }
+    .cost-tag { display: inline-block; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.65rem; text-transform: uppercase; border: 1px solid var(--border); margin-left: 0.25rem; }
+    .cost-tag-actual { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.35); }
+    .cost-tag-estimated { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.35); }
+    .cost-tag-mixed { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.35); }
+    .cost-link { margin: 0; font-size: 0.68rem; }
+    .cost-link a { color: var(--accent); }
+    .methodology-note { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; font-size: 0.84rem; line-height: 1.55; }
+    .methodology-note p { margin: 0 0 0.65rem; color: var(--text); }
+    .methodology-note p:last-child { margin-bottom: 0; }
+    .methodology-note ul { margin: 0.35rem 0 0.65rem 1.1rem; padding: 0; color: var(--muted); font-size: 0.8rem; }
+    .methodology-note li { margin: 0.2rem 0; }
+    .methodology-note .tier-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; margin: 0.5rem 0 0.65rem; }
+    .methodology-note .tier-table th, .methodology-note .tier-table td { padding: 0.25rem 0.4rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .methodology-note .tier-table th { color: var(--muted); font-weight: 600; }
+    .methodology-note strong { color: var(--text); }
   </style>
 </head>
-<body>
+<body data-generated-at="2026-07-06T07:53:44.716Z">
+  <div class="sync-banner" id="syncBanner">
+    For latest data from Cursor Cloud runs, open via
+    <strong>Open Dashboard.cmd</strong> in this folder (syncs git + rebuilds HTML).
+  </div>
   <header>
-    <h1>AI Ranking Monitor</h1>
-    <p>Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.</p>
-    <p><strong>Schedule:</strong> 06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High) · <strong>Updated:</strong> 2026-07-05 10:20:21 UTC</p>
-    <div class="model-badges"><span class="model-badge"><img src="brand/agent-cursor.png" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Composer 2.5</span></span><span class="model-badge"><img src="brand/agent-openai.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>GPT-5.5 High</span></span><span class="model-badge"><img src="brand/agent-openai.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Codex 5.3 High</span></span><span class="model-badge"><img src="brand/agent-anthropic.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Fable 5 High</span></span></div>
+    <div class="header-inner">
+      <div class="header-brand">
+        <img class="site-logo" src="brand/ranking-logo.svg" alt="AI Ranking Monitor" width="44" height="44" />
+        <div>
+          <h1>AI Ranking Monitor</h1>
+          <div class="automation-status-block">
+            <a class="automations-link" href="https://cursor.com/automations" target="_blank" rel="noopener">https://cursor.com/automations</a>
+            <div class="automation-status-row">
+      <span class="automation-status-label">Schedule</span>
+      <select class="status-select status-inactive-high-cost" id="automationScheduleStatus" data-default-status="inactive-high-cost" aria-label="Cursor automation schedule status">
+        <option value="inactive-high-cost" selected>Currently Inactive Due to High Cost</option>
+        <option value="active">Active</option>
+      </select>
+    </div>
+    <p class="automation-account-note" id="automationAccountNote">Account: <strong>et@edgephone.ai</strong> · 9 Ranking Check automations paused on et@edgephone.ai while daily Cloud Agent cost is reviewed (~$4.56/day estimated). Manual checks via run-ranking-check-now.py still available.</p>
+          </div>
+          <p>Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.</p>
+          <p><strong>Schedule:</strong> 06:00 GMT daily · 9 Cloud Automations (3 entities × 3 models: C2.5, G5.5H, F5H) · <strong>Updated:</strong> 2026-07-06 07:53:44 UTC</p>
+          <div class="model-badges"><span class="model-badge"><img src="brand/agent-cursor.png" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Composer 2.5</span></span><span class="model-badge"><img src="brand/agent-openai.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>GPT-5.5 High</span></span><span class="model-badge"><img src="brand/agent-anthropic.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Fable 5 High</span></span><span class="model-badge"><img src="brand/agent-google-web.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Google Web</span></span><span class="model-badge"><img src="brand/agent-gemini.svg" alt="" class="model-logo" onerror="this.style.display='none'" /><span>Google Gemini</span></span></div>
+        </div>
+      </div>
+      <aside class="cost-panel">
+      <h2 class="cost-panel-title">Cursor run cost</h2>
+      <p class="cost-panel-sub">Past 5 days · 9 ranking automations/day · 06:00 GMT</p>
+      <table class="cost-table"><thead><tr><th>Date</th><th>Cost</th><th>Runs</th><th>Src</th></tr></thead><tbody><tr><td>2026-07-02</td><td>$4.56</td><td>9</td><td class="cost-src">estimated</td></tr><tr><td>2026-07-03</td><td>$4.56</td><td>9</td><td class="cost-src">estimated</td></tr><tr><td>2026-07-04</td><td>$4.56</td><td>9</td><td class="cost-src">estimated</td></tr><tr><td>2026-07-05</td><td>$4.56</td><td>9</td><td class="cost-src">estimated</td></tr><tr><td>2026-07-06</td><td>$11.94</td><td>9</td><td class="cost-src">actual</td></tr></tbody></table>
+      <p class="cost-total">5-day total: <strong>$30.18</strong> <span class="cost-tag cost-tag-mixed">mixed</span></p>
+      <p class="cost-link"><a href="https://cursor.com/dashboard?tab=usage" target="_blank" rel="noopener">Cursor usage dashboard</a></p>
+    </aside>
+    </div>
   </header>
 
   <main>
+    <h2 class="section-title" id="methodology-heading">Ranking methodology</h2>
+    <section class="methodology-note" aria-labelledby="methodology-heading">
+      <p>This repo measures <strong>generic topic search ranking</strong> — not branded queries. Each probe simulates what a practitioner would see if they asked a category question with <strong>no brand names</strong> in Cursor agents, Google Web, or Google Gemini.</p>
+      <p><strong>Probe flow (this repo):</strong></p>
+      <ul>
+        <li>Load the entity ranking-check prompt from <code>prompts/entities/*-ranking-check.md</code> (shown in each column below).</li>
+        <li>Run one primary + one secondary generic query from that prompt — e.g. governance, edge AI, or green hydrogen topics from <code>config/target-repos.json</code>.</li>
+        <li>For each agent, record the top 5 competitor domains cited and where the target site would rank.</li>
+        <li>Append results to <code>meta/rankings-history.json</code> with brand, platform, model, tier, and competitors.</li>
+        <li>If tier, competitors, or losing queries changed vs <code>meta/agent-prompts-used.json</code>, update the entity prompt and rebuild this dashboard.</li>
+      </ul>
+      <p><strong>Agents assessed per entity:</strong> Composer 2.5, GPT-5.5 High, Fable 5 High, Google Web, Google Gemini. Cursor uses three Cloud Agent models (9 automations at 06:00 GMT = 3 entities × 3 models). Each model is logged separately so agent charts compare models.</p>
+      <p><strong>Tier assignment (lower = better ranking):</strong></p>
+      <table class="tier-table">
+        <thead><tr><th>Tier</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>Target site is the <strong>first</strong> source cited</td></tr>
+          <tr><td><strong>2</strong></td><td>Target site appears in the <strong>top 3</strong> sources</td></tr>
+          <tr><td><strong>3</strong></td><td>Target site is mentioned but competitors dominate</td></tr>
+          <tr><td><strong>4</strong></td><td>Target site is rarely cited (regulators, vendors, Wikipedia lead)</td></tr>
+          <tr><td><strong>5</strong></td><td>Target site does not appear in agent answers</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Decision filter (every probe):</strong> Would the target site appear in the top 3 sources when a practitioner runs this generic topic query in Cursor agents or Gemini?</p>
+      <p><strong>Chart calculation:</strong> Trend graphs plot the <strong>average tier</strong> per entity or per agent model for each day, month, or year from probe history. Entity panels show the <strong>latest tier per agent</strong>. North star: move each brand toward tier 1–2 on generic topic search over time.</p>
+      <p><strong>Excluded:</strong> Branded queries, <code>site:</code> searches, SEO rank trackers without an agent citation check, or content quality scored in isolation.</p>
+    </section>
+
     <h2 class="section-title">Entities — side by side</h2>
     <div class="entity-grid">
     <section class="entity-panel" data-entity="non-exec">
@@ -76,21 +181,40 @@
         </div>
       </header>
 
-      <div class="agent-tier-row">
-        <div class="agent-tier tier-bad">
-          <img src="brand/agent-cursor.png" alt="Cursor" class="agent-logo" onerror="this.src='brand/agent-cursor.svg'" />
-          <span class="agent-name">Cursor agents</span>
+      <h3 class="prompt-heading">Latest tier by agent model</h3>
+      <div class="agent-tier-grid cursor-models">
+        <div class="agent-tier " data-agent="composer-2.5">
+          <img src="brand/agent-cursor.png" alt="Composer 2.5" class="agent-logo" onerror="this.onerror=null;this.src='brand/agent-cursor.svg'" />
+          <span class="agent-name">Composer 2.5</span>
           <span class="tier-badge">Tier 4</span>
         </div>
-        <div class="agent-tier tier-bad">
-          <img src="brand/agent-gemini.svg" alt="Gemini" class="agent-logo" />
+
+        <div class="agent-tier " data-agent="gpt-5.5-high">
+          <img src="brand/agent-openai.svg" alt="GPT-5.5 High" class="agent-logo" />
+          <span class="agent-name">GPT-5.5 High</span>
+          <span class="tier-badge">Tier 4</span>
+        </div>
+
+        <div class="agent-tier " data-agent="claude-fable-5-thinking-high">
+          <img src="brand/agent-anthropic.svg" alt="Fable 5 High" class="agent-logo" />
+          <span class="agent-name">Fable 5 High</span>
+          <span class="tier-badge">Tier 4</span>
+        </div></div>
+      <div class="agent-tier-grid web-agents">
+        <div class="agent-tier " data-agent="google-web">
+          <img src="brand/agent-google-web.svg" alt="Google Web" class="agent-logo" />
+          <span class="agent-name">Google Web</span>
+          <span class="tier-badge">Tier 4</span>
+        </div>
+
+        <div class="agent-tier " data-agent="gemini">
+          <img src="brand/agent-gemini.svg" alt="Google Gemini" class="agent-logo" />
           <span class="agent-name">Google Gemini</span>
           <span class="tier-badge">Tier 4</span>
-        </div>
-      </div>
+        </div></div>
 
       <h3 class="prompt-heading">Agent Prompt Used to Check Ranking</h3>
-      <p class="prompt-meta">Last updated: 2026-07-05T06:00:00 · Conditions: Cursor T4, Gemini T4</p>
+      <p class="prompt-meta">Last updated: 2026-07-05T06:00:00 · Cursor T4, Google Web T4, Gemini T4</p>
       <pre class="agent-prompt-box"># non-exec.ai — Ranking Check Agent Prompt
 
 **Entity:** non-exec.ai · **Site:** https://www.non-exec.ai  
@@ -155,21 +279,40 @@ After logging results, if conditions changed vs the table above:
         </div>
       </header>
 
-      <div class="agent-tier-row">
-        <div class="agent-tier tier-mid">
-          <img src="brand/agent-cursor.png" alt="Cursor" class="agent-logo" onerror="this.src='brand/agent-cursor.svg'" />
-          <span class="agent-name">Cursor agents</span>
+      <h3 class="prompt-heading">Latest tier by agent model</h3>
+      <div class="agent-tier-grid cursor-models">
+        <div class="agent-tier " data-agent="composer-2.5">
+          <img src="brand/agent-cursor.png" alt="Composer 2.5" class="agent-logo" onerror="this.onerror=null;this.src='brand/agent-cursor.svg'" />
+          <span class="agent-name">Composer 2.5</span>
           <span class="tier-badge">Tier 3</span>
         </div>
-        <div class="agent-tier tier-bad">
-          <img src="brand/agent-gemini.svg" alt="Gemini" class="agent-logo" />
-          <span class="agent-name">Google Gemini</span>
+
+        <div class="agent-tier " data-agent="gpt-5.5-high">
+          <img src="brand/agent-openai.svg" alt="GPT-5.5 High" class="agent-logo" />
+          <span class="agent-name">GPT-5.5 High</span>
+          <span class="tier-badge">Tier 3</span>
+        </div>
+
+        <div class="agent-tier " data-agent="claude-fable-5-thinking-high">
+          <img src="brand/agent-anthropic.svg" alt="Fable 5 High" class="agent-logo" />
+          <span class="agent-name">Fable 5 High</span>
+          <span class="tier-badge">Tier 3</span>
+        </div></div>
+      <div class="agent-tier-grid web-agents">
+        <div class="agent-tier " data-agent="google-web">
+          <img src="brand/agent-google-web.svg" alt="Google Web" class="agent-logo" />
+          <span class="agent-name">Google Web</span>
           <span class="tier-badge">Tier 4</span>
         </div>
-      </div>
+
+        <div class="agent-tier " data-agent="gemini">
+          <img src="brand/agent-gemini.svg" alt="Google Gemini" class="agent-logo" />
+          <span class="agent-name">Google Gemini</span>
+          <span class="tier-badge">Tier 4</span>
+        </div></div>
 
       <h3 class="prompt-heading">Agent Prompt Used to Check Ranking</h3>
-      <p class="prompt-meta">Last updated: 2026-07-05T06:00:00 · Conditions: Cursor T3, Gemini T4</p>
+      <p class="prompt-meta">Last updated: 2026-07-05T06:00:00 · Cursor T3, Google Web T4, Gemini T4</p>
       <pre class="agent-prompt-box"># edgephone.ai — Ranking Check Agent Prompt
 
 **Entity:** edgephone.ai · **Site:** https://edgephone.ai  
@@ -229,21 +372,40 @@ When conditions change, update this file, `meta/agent-prompts-used.json`, and re
         </div>
       </header>
 
-      <div class="agent-tier-row">
-        <div class="agent-tier tier-bad">
-          <img src="brand/agent-cursor.png" alt="Cursor" class="agent-logo" onerror="this.src='brand/agent-cursor.svg'" />
-          <span class="agent-name">Cursor agents</span>
+      <h3 class="prompt-heading">Latest tier by agent model</h3>
+      <div class="agent-tier-grid cursor-models">
+        <div class="agent-tier " data-agent="composer-2.5">
+          <img src="brand/agent-cursor.png" alt="Composer 2.5" class="agent-logo" onerror="this.onerror=null;this.src='brand/agent-cursor.svg'" />
+          <span class="agent-name">Composer 2.5</span>
           <span class="tier-badge">Tier 4</span>
         </div>
-        <div class="agent-tier tier-bad">
-          <img src="brand/agent-gemini.svg" alt="Gemini" class="agent-logo" />
+
+        <div class="agent-tier " data-agent="gpt-5.5-high">
+          <img src="brand/agent-openai.svg" alt="GPT-5.5 High" class="agent-logo" />
+          <span class="agent-name">GPT-5.5 High</span>
+          <span class="tier-badge">Tier 4</span>
+        </div>
+
+        <div class="agent-tier " data-agent="claude-fable-5-thinking-high">
+          <img src="brand/agent-anthropic.svg" alt="Fable 5 High" class="agent-logo" />
+          <span class="agent-name">Fable 5 High</span>
+          <span class="tier-badge">Tier 4</span>
+        </div></div>
+      <div class="agent-tier-grid web-agents">
+        <div class="agent-tier " data-agent="google-web">
+          <img src="brand/agent-google-web.svg" alt="Google Web" class="agent-logo" />
+          <span class="agent-name">Google Web</span>
+          <span class="tier-badge">Tier 4</span>
+        </div>
+
+        <div class="agent-tier " data-agent="gemini">
+          <img src="brand/agent-gemini.svg" alt="Google Gemini" class="agent-logo" />
           <span class="agent-name">Google Gemini</span>
           <span class="tier-badge">Tier 4</span>
-        </div>
-      </div>
+        </div></div>
 
       <h3 class="prompt-heading">Agent Prompt Used to Check Ranking</h3>
-      <p class="prompt-meta">Last updated: 2026-07-05T06:00:00 · Conditions: Cursor T4, Gemini T4</p>
+      <p class="prompt-meta">Last updated: 2026-07-05T06:00:00 · Cursor T4, Google Web T4, Gemini T4</p>
       <pre class="agent-prompt-box"># greenh2s.ai — Ranking Check Agent Prompt
 
 **Entity:** greenh2s.ai · **Site:** https://www.greenh2s.ai  
@@ -294,31 +456,62 @@ When conditions change, update this file, `meta/agent-prompts-used.json`, and re
 </pre>
     </section></div>
 
-    <h2 class="section-title">Ranking trends — daily (lower tier = better)</h2>
+    <h2 class="section-title">Ranking by agent model (lower tier = better)</h2>
+    <div class="chart-legend"><span class="legend-item"><img src="brand/agent-cursor.png" alt="" class="legend-logo" onerror="this.style.opacity='0.3'" /><span class="legend-swatch" style="background:#3b82f6"></span><span>Composer 2.5</span></span><span class="legend-item"><img src="brand/agent-openai.svg" alt="" class="legend-logo" onerror="this.style.opacity='0.3'" /><span class="legend-swatch" style="background:#10a37f"></span><span>GPT-5.5 High</span></span><span class="legend-item"><img src="brand/agent-anthropic.svg" alt="" class="legend-logo" onerror="this.style.opacity='0.3'" /><span class="legend-swatch" style="background:#d97706"></span><span>Fable 5 High</span></span><span class="legend-item"><img src="brand/agent-google-web.svg" alt="" class="legend-logo" onerror="this.style.opacity='0.3'" /><span class="legend-swatch" style="background:#ea4335"></span><span>Google Web</span></span><span class="legend-item"><img src="brand/agent-gemini.svg" alt="" class="legend-logo" onerror="this.style.opacity='0.3'" /><span class="legend-swatch" style="background:#34a853"></span><span>Google Gemini</span></span></div>
+
     <section class="chart-section">
-      <div class="chart-wrap"><canvas id="chartDaily"></canvas></div>
-      <p class="chart-note">Average tier per entity per day across Cursor + Gemini checks. Tier 1 = first cited.</p>
+      <h3 class="chart-subtitle">Daily</h3>
+      <div class="chart-wrap"><canvas id="chartAgentDaily"></canvas></div>
+      <p class="chart-note">Average tier per agent across all entities — Composer 2.5, GPT-5.5 High, Fable 5 High, Google Web, Google Gemini.</p>
     </section>
 
-    <h2 class="section-title">Ranking trends — monthly</h2>
+    <section class="chart-section">
+      <h3 class="chart-subtitle">Monthly</h3>
+      <div class="chart-wrap tall"><canvas id="chartAgentMonthly"></canvas></div>
+    </section>
+
+    <section class="chart-section">
+      <h3 class="chart-subtitle">Yearly</h3>
+      <div class="chart-wrap tall"><canvas id="chartAgentYearly"></canvas></div>
+    </section>
+
+    <h2 class="section-title">Ranking by entity — daily (all agents combined)</h2>
+    <section class="chart-section">
+      <div class="chart-wrap"><canvas id="chartDaily"></canvas></div>
+      <p class="chart-note">Average tier per entity per day across all agent checks. Tier 1 = first cited.</p>
+    </section>
+
+    <h2 class="section-title">Ranking by entity — monthly</h2>
     <section class="chart-section">
       <div class="chart-wrap tall"><canvas id="chartMonthly"></canvas></div>
     </section>
 
-    <h2 class="section-title">Ranking trends — yearly</h2>
+    <h2 class="section-title">Ranking by entity — yearly</h2>
     <section class="chart-section">
       <div class="chart-wrap tall"><canvas id="chartYearly"></canvas></div>
     </section>
+
+    <h2 class="section-title">Cursor automation cost — monthly (USD)</h2>
+    <section class="chart-section">
+      <div class="chart-wrap tall"><canvas id="chartCostMonthly"></canvas></div>
+      <p class="chart-note">Sum of Ranking Check Cloud Agent runs per month · 9 automations at 06:00 GMT · actual billing when synced from Cursor.</p>
+    </section>
+
+    <h2 class="section-title">Cursor automation cost — yearly (USD)</h2>
+    <section class="chart-section">
+      <div class="chart-wrap tall"><canvas id="chartCostYearly"></canvas></div>
+    </section>
   </main>
 
-  <footer>rankingcheckaimodels · Generic topic search · Cursor agents + Google Gemini</footer>
+  <footer>rankingcheckaimodels · Generic topic search · Cursor agents · Google Web · Google Gemini</footer>
 
   <script>
-    const chartData = {"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05"],"datasets":[{"label":"non-exec.ai","data":[4,4,4,4,4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5,3.5,3.5,3.5,3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4,4,4,4,4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.5],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]}};
+    const chartData = {"byEntity":{"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05"],"datasets":[{"label":"non-exec.ai","data":[4,4,4,4,4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.7,3.7,3.7,3.7,3.7],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4,4,4,4,4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.7],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"label":"non-exec.ai","data":[4],"borderColor":"#6366f1","backgroundColor":"#6366f133","tension":0.25,"spanGaps":true},{"label":"edgephone.ai","data":[3.7],"borderColor":"#8b5cf6","backgroundColor":"#8b5cf633","tension":0.25,"spanGaps":true},{"label":"greenh2s.ai","data":[4],"borderColor":"#10b981","backgroundColor":"#10b98133","tension":0.25,"spanGaps":true}]}},"byAgent":{"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[3.7,null,null,null,3.7],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[null,3.7,null,null,null],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[null,null,null,3.7,null],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4,4,4,4,4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4,4,4,4,4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[3.7],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[3.7],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[3.7],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[3.7],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[3.7],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[3.7],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]}},"byAgentPerEntity":{"non-exec":{"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[4,null,null,null,4],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[null,4,null,null,null],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[null,null,null,4,null],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4,4,4,4,4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4,4,4,4,4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[4],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[4],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[4],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[4],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[4],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[4],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]}},"edgephone":{"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[3,null,null,null,3],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[null,3,null,null,null],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[null,null,null,3,null],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4,4,4,4,4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4,4,4,4,4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[3],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[3],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[3],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[3],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[3],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[3],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]}},"greenh2s":{"daily":{"labels":["2026-07-01","2026-07-02","2026-07-03","2026-07-04","2026-07-05"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[4,null,null,null,4],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[null,4,null,null,null],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[null,null,null,4,null],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4,4,4,4,4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4,4,4,4,4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"monthly":{"labels":["2026-07"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[4],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[4],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[4],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]},"yearly":{"labels":["2026"],"datasets":[{"id":"composer-2.5","label":"Composer 2.5","logo":"brand/agent-cursor.png","logoFallback":"brand/agent-cursor.svg","data":[4],"borderColor":"#3b82f6","backgroundColor":"#3b82f633","tension":0.25,"spanGaps":true},{"id":"gpt-5.5-high","label":"GPT-5.5 High","logo":"brand/agent-openai.svg","data":[4],"borderColor":"#10a37f","backgroundColor":"#10a37f33","tension":0.25,"spanGaps":true},{"id":"claude-fable-5-thinking-high","label":"Fable 5 High","logo":"brand/agent-anthropic.svg","data":[4],"borderColor":"#d97706","backgroundColor":"#d9770633","tension":0.25,"spanGaps":true},{"id":"google-web","label":"Google Web","logo":"brand/agent-google-web.svg","data":[4],"borderColor":"#ea4335","backgroundColor":"#ea433533","tension":0.25,"spanGaps":true},{"id":"gemini","label":"Google Gemini","logo":"brand/agent-gemini.svg","data":[4],"borderColor":"#34a853","backgroundColor":"#34a85333","tension":0.25,"spanGaps":true}]}}}};
+    const costChartData = {"monthly":{"labels":["2026-07"],"datasets":[{"label":"Ranking automation cost (USD)","data":[30.18],"borderColor":"#f59e0b","backgroundColor":"#f59e0b33","tension":0.2,"fill":true}]},"yearly":{"labels":["2026"],"datasets":[{"label":"Ranking automation cost (USD)","data":[30.18],"borderColor":"#f59e0b","backgroundColor":"#f59e0b33","tension":0.2,"fill":true}]}};
     const chartOpts = (title) => ({
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+      plugins: { legend: { display: false } },
       scales: {
         y: {
           reverse: true,
@@ -330,9 +523,113 @@ When conditions change, update this file, `meta/agent-prompts-used.json`, and re
         x: { ticks: { maxRotation: 45, font: { size: 10 } } }
       }
     });
-    new Chart(document.getElementById('chartDaily'), { type: 'line', data: chartData.daily, options: chartOpts('Daily') });
-    new Chart(document.getElementById('chartMonthly'), { type: 'line', data: chartData.monthly, options: chartOpts('Monthly') });
-    new Chart(document.getElementById('chartYearly'), { type: 'line', data: chartData.yearly, options: chartOpts('Yearly') });
+    const charts = {
+      agentDaily: new Chart(document.getElementById('chartAgentDaily'), { type: 'line', data: chartData.byAgent.daily, options: chartOpts('Agent Daily') }),
+      agentMonthly: new Chart(document.getElementById('chartAgentMonthly'), { type: 'line', data: chartData.byAgent.monthly, options: chartOpts('Agent Monthly') }),
+      agentYearly: new Chart(document.getElementById('chartAgentYearly'), { type: 'line', data: chartData.byAgent.yearly, options: chartOpts('Agent Yearly') }),
+      daily: new Chart(document.getElementById('chartDaily'), { type: 'line', data: chartData.byEntity.daily, options: { ...chartOpts('Daily'), plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } } }),
+      monthly: new Chart(document.getElementById('chartMonthly'), { type: 'line', data: chartData.byEntity.monthly, options: { ...chartOpts('Monthly'), plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } } }),
+      yearly: new Chart(document.getElementById('chartYearly'), { type: 'line', data: chartData.byEntity.yearly, options: { ...chartOpts('Yearly'), plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } } })
+    };
+
+    const costChartOpts = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: (v) => '$' + v.toFixed(2) },
+          title: { display: true, text: 'USD' }
+        },
+        x: { ticks: { maxRotation: 45, font: { size: 10 } } }
+      }
+    };
+    if (costChartData?.monthly?.labels?.length) {
+      new Chart(document.getElementById('chartCostMonthly'), { type: 'bar', data: costChartData.monthly, options: costChartOpts });
+    }
+    if (costChartData?.yearly?.labels?.length) {
+      new Chart(document.getElementById('chartCostYearly'), { type: 'bar', data: costChartData.yearly, options: costChartOpts });
+    }
+
+    (function initAutomationStatus() {
+      const sel = document.getElementById('automationScheduleStatus');
+      if (!sel) return;
+
+      function applyStatusStyle() {
+        sel.classList.remove('status-active', 'status-inactive-high-cost');
+        sel.classList.add('status-' + sel.value);
+      }
+
+      function setStatus(value) {
+        if (value !== 'active' && value !== 'inactive-high-cost') return;
+        sel.value = value;
+        applyStatusStyle();
+      }
+
+      async function loadStatus() {
+        const isLocalServer = location.hostname === '127.0.0.1' && location.port === '8787';
+        if (isLocalServer) {
+          try {
+            const r = await fetch('/api/automation-status', { cache: 'no-store' });
+            if (r.ok) {
+              const data = await r.json();
+              if (data.status) {
+                setStatus(data.status);
+                localStorage.setItem('rankingAutomationStatus', data.status);
+                return;
+              }
+            }
+          } catch (_) {}
+        }
+        const stored = localStorage.getItem('rankingAutomationStatus');
+        setStatus(stored || sel.dataset.defaultStatus || 'inactive-high-cost');
+      }
+
+      sel.addEventListener('change', async () => {
+        localStorage.setItem('rankingAutomationStatus', sel.value);
+        applyStatusStyle();
+        const isLocalServer = location.hostname === '127.0.0.1' && location.port === '8787';
+        if (isLocalServer) {
+          try {
+            await fetch('/api/automation-status', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ status: sel.value }),
+            });
+          } catch (_) {}
+        }
+      });
+
+      loadStatus();
+    })();
+
+    (async function syncOnOpen() {
+      const builtAt = document.body.dataset.generatedAt || '';
+      const isLocalServer = location.hostname === '127.0.0.1' && location.port === '8787';
+
+      if (location.protocol === 'file:') {
+        try {
+          const health = await fetch('http://127.0.0.1:8787/health', { cache: 'no-store' });
+          if (health.ok) {
+            location.replace('http://127.0.0.1:8787/rankings.html');
+            return;
+          }
+        } catch (_) {}
+        document.body.classList.add('show-sync-banner');
+        return;
+      }
+
+      if (!isLocalServer) return;
+
+      try {
+        const sync = await fetch('/api/sync', { cache: 'no-store' });
+        const payload = sync.ok ? await sync.json() : null;
+        if (payload?.generatedAt && builtAt && payload.generatedAt !== builtAt) {
+          location.reload();
+        }
+      } catch (_) {}
+    })();
   </script>
 </body>
 </html>

@@ -1,95 +1,1075 @@
 {
-  "generatedAt": "2026-07-05T10:20:21.818Z",
-  "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
+  "generatedAt": "2026-07-06T07:53:44.716Z",
+  "schedule": "06:00 GMT daily · 9 Cloud Automations (3 entities × 3 models: C2.5, G5.5H, F5H)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
-    "daily": {
-      "labels": [
-        "2026-07-01",
-        "2026-07-02",
-        "2026-07-03",
-        "2026-07-04",
-        "2026-07-05"
-      ],
-      "datasets": [
-        {
-          "label": "non-exec.ai",
-          "data": [
-            4,
-            4,
-            4,
-            4,
-            4
-          ],
-          "borderColor": "#6366f1",
-          "backgroundColor": "#6366f133",
-          "tension": 0.25,
-          "spanGaps": true
-        },
-        {
-          "label": "edgephone.ai",
-          "data": [
-            3.5,
-            3.5,
-            3.5,
-            3.5,
-            3.5
-          ],
-          "borderColor": "#8b5cf6",
-          "backgroundColor": "#8b5cf633",
-          "tension": 0.25,
-          "spanGaps": true
-        },
-        {
-          "label": "greenh2s.ai",
-          "data": [
-            4,
-            4,
-            4,
-            4,
-            4
-          ],
-          "borderColor": "#10b981",
-          "backgroundColor": "#10b98133",
-          "tension": 0.25,
-          "spanGaps": true
-        }
-      ]
+    "byEntity": {
+      "daily": {
+        "labels": [
+          "2026-07-01",
+          "2026-07-02",
+          "2026-07-03",
+          "2026-07-04",
+          "2026-07-05"
+        ],
+        "datasets": [
+          {
+            "label": "non-exec.ai",
+            "data": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "borderColor": "#6366f1",
+            "backgroundColor": "#6366f133",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "label": "edgephone.ai",
+            "data": [
+              3.7,
+              3.7,
+              3.7,
+              3.7,
+              3.7
+            ],
+            "borderColor": "#8b5cf6",
+            "backgroundColor": "#8b5cf633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "label": "greenh2s.ai",
+            "data": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "borderColor": "#10b981",
+            "backgroundColor": "#10b98133",
+            "tension": 0.25,
+            "spanGaps": true
+          }
+        ]
+      },
+      "monthly": {
+        "labels": [
+          "2026-07"
+        ],
+        "datasets": [
+          {
+            "label": "non-exec.ai",
+            "data": [
+              4
+            ],
+            "borderColor": "#6366f1",
+            "backgroundColor": "#6366f133",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "label": "edgephone.ai",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#8b5cf6",
+            "backgroundColor": "#8b5cf633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "label": "greenh2s.ai",
+            "data": [
+              4
+            ],
+            "borderColor": "#10b981",
+            "backgroundColor": "#10b98133",
+            "tension": 0.25,
+            "spanGaps": true
+          }
+        ]
+      },
+      "yearly": {
+        "labels": [
+          "2026"
+        ],
+        "datasets": [
+          {
+            "label": "non-exec.ai",
+            "data": [
+              4
+            ],
+            "borderColor": "#6366f1",
+            "backgroundColor": "#6366f133",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "label": "edgephone.ai",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#8b5cf6",
+            "backgroundColor": "#8b5cf633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "label": "greenh2s.ai",
+            "data": [
+              4
+            ],
+            "borderColor": "#10b981",
+            "backgroundColor": "#10b98133",
+            "tension": 0.25,
+            "spanGaps": true
+          }
+        ]
+      }
     },
+    "byAgent": {
+      "daily": {
+        "labels": [
+          "2026-07-01",
+          "2026-07-02",
+          "2026-07-03",
+          "2026-07-04",
+          "2026-07-05"
+        ],
+        "datasets": [
+          {
+            "id": "composer-2.5",
+            "label": "Composer 2.5",
+            "logo": "brand/agent-cursor.png",
+            "logoFallback": "brand/agent-cursor.svg",
+            "data": [
+              3.7,
+              null,
+              null,
+              null,
+              3.7
+            ],
+            "borderColor": "#3b82f6",
+            "backgroundColor": "#3b82f633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "gpt-5.5-high",
+            "label": "GPT-5.5 High",
+            "logo": "brand/agent-openai.svg",
+            "data": [
+              null,
+              3.7,
+              null,
+              null,
+              null
+            ],
+            "borderColor": "#10a37f",
+            "backgroundColor": "#10a37f33",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "claude-fable-5-thinking-high",
+            "label": "Fable 5 High",
+            "logo": "brand/agent-anthropic.svg",
+            "data": [
+              null,
+              null,
+              null,
+              3.7,
+              null
+            ],
+            "borderColor": "#d97706",
+            "backgroundColor": "#d9770633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "google-web",
+            "label": "Google Web",
+            "logo": "brand/agent-google-web.svg",
+            "data": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "borderColor": "#ea4335",
+            "backgroundColor": "#ea433533",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "gemini",
+            "label": "Google Gemini",
+            "logo": "brand/agent-gemini.svg",
+            "data": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "borderColor": "#34a853",
+            "backgroundColor": "#34a85333",
+            "tension": 0.25,
+            "spanGaps": true
+          }
+        ]
+      },
+      "monthly": {
+        "labels": [
+          "2026-07"
+        ],
+        "datasets": [
+          {
+            "id": "composer-2.5",
+            "label": "Composer 2.5",
+            "logo": "brand/agent-cursor.png",
+            "logoFallback": "brand/agent-cursor.svg",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#3b82f6",
+            "backgroundColor": "#3b82f633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "gpt-5.5-high",
+            "label": "GPT-5.5 High",
+            "logo": "brand/agent-openai.svg",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#10a37f",
+            "backgroundColor": "#10a37f33",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "claude-fable-5-thinking-high",
+            "label": "Fable 5 High",
+            "logo": "brand/agent-anthropic.svg",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#d97706",
+            "backgroundColor": "#d9770633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "google-web",
+            "label": "Google Web",
+            "logo": "brand/agent-google-web.svg",
+            "data": [
+              4
+            ],
+            "borderColor": "#ea4335",
+            "backgroundColor": "#ea433533",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "gemini",
+            "label": "Google Gemini",
+            "logo": "brand/agent-gemini.svg",
+            "data": [
+              4
+            ],
+            "borderColor": "#34a853",
+            "backgroundColor": "#34a85333",
+            "tension": 0.25,
+            "spanGaps": true
+          }
+        ]
+      },
+      "yearly": {
+        "labels": [
+          "2026"
+        ],
+        "datasets": [
+          {
+            "id": "composer-2.5",
+            "label": "Composer 2.5",
+            "logo": "brand/agent-cursor.png",
+            "logoFallback": "brand/agent-cursor.svg",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#3b82f6",
+            "backgroundColor": "#3b82f633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "gpt-5.5-high",
+            "label": "GPT-5.5 High",
+            "logo": "brand/agent-openai.svg",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#10a37f",
+            "backgroundColor": "#10a37f33",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "claude-fable-5-thinking-high",
+            "label": "Fable 5 High",
+            "logo": "brand/agent-anthropic.svg",
+            "data": [
+              3.7
+            ],
+            "borderColor": "#d97706",
+            "backgroundColor": "#d9770633",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "google-web",
+            "label": "Google Web",
+            "logo": "brand/agent-google-web.svg",
+            "data": [
+              4
+            ],
+            "borderColor": "#ea4335",
+            "backgroundColor": "#ea433533",
+            "tension": 0.25,
+            "spanGaps": true
+          },
+          {
+            "id": "gemini",
+            "label": "Google Gemini",
+            "logo": "brand/agent-gemini.svg",
+            "data": [
+              4
+            ],
+            "borderColor": "#34a853",
+            "backgroundColor": "#34a85333",
+            "tension": 0.25,
+            "spanGaps": true
+          }
+        ]
+      }
+    },
+    "byAgentPerEntity": {
+      "non-exec": {
+        "daily": {
+          "labels": [
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-04",
+            "2026-07-05"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                4,
+                null,
+                null,
+                null,
+                4
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                null,
+                4,
+                null,
+                null,
+                null
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                null,
+                null,
+                null,
+                4,
+                null
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        },
+        "monthly": {
+          "labels": [
+            "2026-07"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        },
+        "yearly": {
+          "labels": [
+            "2026"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        }
+      },
+      "edgephone": {
+        "daily": {
+          "labels": [
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-04",
+            "2026-07-05"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                3,
+                null,
+                null,
+                null,
+                3
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                null,
+                3,
+                null,
+                null,
+                null
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                null,
+                null,
+                null,
+                3,
+                null
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        },
+        "monthly": {
+          "labels": [
+            "2026-07"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                3
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                3
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                3
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        },
+        "yearly": {
+          "labels": [
+            "2026"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                3
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                3
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                3
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        }
+      },
+      "greenh2s": {
+        "daily": {
+          "labels": [
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-04",
+            "2026-07-05"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                4,
+                null,
+                null,
+                null,
+                4
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                null,
+                4,
+                null,
+                null,
+                null
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                null,
+                null,
+                null,
+                4,
+                null
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        },
+        "monthly": {
+          "labels": [
+            "2026-07"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        },
+        "yearly": {
+          "labels": [
+            "2026"
+          ],
+          "datasets": [
+            {
+              "id": "composer-2.5",
+              "label": "Composer 2.5",
+              "logo": "brand/agent-cursor.png",
+              "logoFallback": "brand/agent-cursor.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#3b82f6",
+              "backgroundColor": "#3b82f633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gpt-5.5-high",
+              "label": "GPT-5.5 High",
+              "logo": "brand/agent-openai.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#10a37f",
+              "backgroundColor": "#10a37f33",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "claude-fable-5-thinking-high",
+              "label": "Fable 5 High",
+              "logo": "brand/agent-anthropic.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#d97706",
+              "backgroundColor": "#d9770633",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "google-web",
+              "label": "Google Web",
+              "logo": "brand/agent-google-web.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#ea4335",
+              "backgroundColor": "#ea433533",
+              "tension": 0.25,
+              "spanGaps": true
+            },
+            {
+              "id": "gemini",
+              "label": "Google Gemini",
+              "logo": "brand/agent-gemini.svg",
+              "data": [
+                4
+              ],
+              "borderColor": "#34a853",
+              "backgroundColor": "#34a85333",
+              "tension": 0.25,
+              "spanGaps": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "costCharts": {
     "monthly": {
       "labels": [
         "2026-07"
       ],
       "datasets": [
         {
-          "label": "non-exec.ai",
+          "label": "Ranking automation cost (USD)",
           "data": [
-            4
+            30.18
           ],
-          "borderColor": "#6366f1",
-          "backgroundColor": "#6366f133",
-          "tension": 0.25,
-          "spanGaps": true
-        },
-        {
-          "label": "edgephone.ai",
-          "data": [
-            3.5
-          ],
-          "borderColor": "#8b5cf6",
-          "backgroundColor": "#8b5cf633",
-          "tension": 0.25,
-          "spanGaps": true
-        },
-        {
-          "label": "greenh2s.ai",
-          "data": [
-            4
-          ],
-          "borderColor": "#10b981",
-          "backgroundColor": "#10b98133",
-          "tension": 0.25,
-          "spanGaps": true
+          "borderColor": "#f59e0b",
+          "backgroundColor": "#f59e0b33",
+          "tension": 0.2,
+          "fill": true
         }
       ]
     },
@@ -99,38 +1079,106 @@
       ],
       "datasets": [
         {
-          "label": "non-exec.ai",
+          "label": "Ranking automation cost (USD)",
           "data": [
-            4
+            30.18
           ],
-          "borderColor": "#6366f1",
-          "backgroundColor": "#6366f133",
-          "tension": 0.25,
-          "spanGaps": true
-        },
-        {
-          "label": "edgephone.ai",
-          "data": [
-            3.5
-          ],
-          "borderColor": "#8b5cf6",
-          "backgroundColor": "#8b5cf633",
-          "tension": 0.25,
-          "spanGaps": true
-        },
-        {
-          "label": "greenh2s.ai",
-          "data": [
-            4
-          ],
-          "borderColor": "#10b981",
-          "backgroundColor": "#10b98133",
-          "tension": 0.25,
-          "spanGaps": true
+          "borderColor": "#f59e0b",
+          "backgroundColor": "#f59e0b33",
+          "tension": 0.2,
+          "fill": true
         }
       ]
     }
   },
+  "automationCosts": {
+    "costSource": "mixed",
+    "last5Days": [
+      {
+        "date": "2026-07-02",
+        "totalUsd": 4.56,
+        "runCount": 9,
+        "actualUsd": 0,
+        "estimatedUsd": 4.56,
+        "source": "estimated"
+      },
+      {
+        "date": "2026-07-03",
+        "totalUsd": 4.56,
+        "runCount": 9,
+        "actualUsd": 0,
+        "estimatedUsd": 4.56,
+        "source": "estimated"
+      },
+      {
+        "date": "2026-07-04",
+        "totalUsd": 4.56,
+        "runCount": 9,
+        "actualUsd": 0,
+        "estimatedUsd": 4.56,
+        "source": "estimated"
+      },
+      {
+        "date": "2026-07-05",
+        "totalUsd": 4.56,
+        "runCount": 9,
+        "actualUsd": 0,
+        "estimatedUsd": 4.56,
+        "source": "estimated"
+      },
+      {
+        "date": "2026-07-06",
+        "totalUsd": 11.94,
+        "runCount": 9,
+        "actualUsd": 11.94,
+        "estimatedUsd": 0,
+        "source": "actual"
+      }
+    ],
+    "totals": {
+      "last5DaysUsd": 30.18,
+      "allTimeUsd": 30.18
+    },
+    "syncedAt": "2026-07-06T07:53:44Z"
+  },
+  "agentSeries": [
+    {
+      "id": "composer-2.5",
+      "label": "Composer 2.5",
+      "logo": "brand/agent-cursor.png",
+      "logoFallback": "brand/agent-cursor.svg",
+      "color": "#3b82f6",
+      "platform": "cursor"
+    },
+    {
+      "id": "gpt-5.5-high",
+      "label": "GPT-5.5 High",
+      "logo": "brand/agent-openai.svg",
+      "color": "#10a37f",
+      "platform": "cursor"
+    },
+    {
+      "id": "claude-fable-5-thinking-high",
+      "label": "Fable 5 High",
+      "logo": "brand/agent-anthropic.svg",
+      "color": "#d97706",
+      "platform": "cursor"
+    },
+    {
+      "id": "google-web",
+      "label": "Google Web",
+      "logo": "brand/agent-google-web.svg",
+      "color": "#ea4335",
+      "platform": "google-web"
+    },
+    {
+      "id": "gemini",
+      "label": "Google Gemini",
+      "logo": "brand/agent-gemini.svg",
+      "color": "#34a853",
+      "platform": "gemini"
+    }
+  ],
   "entities": [
     "non-exec",
     "edgephone",
@@ -623,6 +1671,657 @@
         "irena.org",
         "hydrogen.europa.eu"
       ]
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "iso.org",
+        "sec.gov",
+        "deloitte.com"
+      ],
+      "gapNotes": "NIST AI RMF, ISO 42001, and SEC guidance dominate; non-exec.ai not in top generic results.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai",
+        "iso.org",
+        "mckinsey.com"
+      ],
+      "gapNotes": "Regulators and consultancies lead; non-exec.ai absent from typical Gemini source lists.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "ai.google.dev",
+        "developer.nvidia.com",
+        "huggingface.co"
+      ],
+      "gapNotes": "chip.computer and vendor docs rank above edgephone.ai for catalog-style queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com",
+        "apple.com",
+        "ai.google.dev"
+      ],
+      "gapNotes": "OEM and chip vendor pages dominate; edgephone.ai not cited on generic comparison queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale RFNBO",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu",
+        "hydrogencouncil.com"
+      ],
+      "gapNotes": "IEA/IRENA/EU hydrogen portals lead; greenh2s.ai not in top generic industrial queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale RFNBO",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu",
+        "worldbank.org"
+      ],
+      "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "iso.org",
+        "sec.gov",
+        "deloitte.com"
+      ],
+      "gapNotes": "NIST AI RMF, ISO 42001, and SEC guidance dominate; non-exec.ai not in top generic results.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai",
+        "iso.org",
+        "mckinsey.com"
+      ],
+      "gapNotes": "Regulators and consultancies lead; non-exec.ai absent from typical Gemini source lists.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "ai.google.dev",
+        "developer.nvidia.com",
+        "huggingface.co"
+      ],
+      "gapNotes": "chip.computer and vendor docs rank above edgephone.ai for catalog-style queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com",
+        "apple.com",
+        "ai.google.dev"
+      ],
+      "gapNotes": "OEM and chip vendor pages dominate; edgephone.ai not cited on generic comparison queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale RFNBO",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu",
+        "hydrogencouncil.com"
+      ],
+      "gapNotes": "IEA/IRENA/EU hydrogen portals lead; greenh2s.ai not in top generic industrial queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "live-check-now",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale RFNBO",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu",
+        "worldbank.org"
+      ],
+      "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "non-exec",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "edgephone",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "edge AI models agents reference",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-01T06:00:00Z",
+      "date": "2026-07-01",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "greenh2s",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer industrial",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "hydrogen.europa.eu"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "non-exec",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "EU AI Act board responsibilities",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "eu.ai",
+        "iso.org"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "edgephone",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "on-device AI manufacturing",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ai.google.dev",
+        "apple.com"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-02T06:00:00Z",
+      "date": "2026-07-02",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "greenh2s",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "RFNBO green hydrogen",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "non-exec",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "enterprise AI agent registry governance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "iso.org"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "edgephone",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "SLMs ARM edge deployment",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "qualcomm.com",
+        "arm.com"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-03T06:00:00Z",
+      "date": "2026-07-03",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "greenh2s",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "hydrogen.europa.eu",
+        "iea.org"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "non-exec",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "boards oversee AI agents",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "eu.ai",
+        "nist.gov"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "edgephone",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "edge AI commerce compliance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ai.google.dev",
+        "chip.computer"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-04T06:00:00Z",
+      "date": "2026-07-04",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "greenh2s",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "green hydrogen offtake compliance",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "hydrogen.europa.eu",
+        "iea.org"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "non-exec",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai",
+        "iso.org"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "edgephone",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com",
+        "apple.com"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-05T06:00:00Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "greenh2s",
+      "platform": "google-web",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu"
+      ],
+      "platformLabel": "Google Web",
+      "gapNotes": "Organic Google Search ranking for generic query."
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "non-exec",
+      "platform": "google-web",
+      "platformLabel": "Google Web",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai",
+        "iso.org",
+        "mckinsey.com"
+      ],
+      "gapNotes": "Regulators and consultancies lead; non-exec.ai absent from typical Google Web source lists.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "edgephone",
+      "platform": "google-web",
+      "platformLabel": "Google Web",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com",
+        "apple.com",
+        "ai.google.dev"
+      ],
+      "gapNotes": "OEM and chip vendor pages dominate; edgephone.ai not cited on generic comparison queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:40:09Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "greenh2s",
+      "platform": "google-web",
+      "platformLabel": "Google Web",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale RFNBO",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu",
+        "worldbank.org"
+      ],
+      "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "non-exec",
+      "platform": "google-web",
+      "platformLabel": "Google Web",
+      "queryType": "generic-topic",
+      "query": "AI corporate governance board oversight best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "nist.gov",
+        "eu.ai",
+        "iso.org",
+        "mckinsey.com"
+      ],
+      "gapNotes": "Regulators and consultancies lead; non-exec.ai absent from typical Google Web source lists.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "edgephone",
+      "platform": "google-web",
+      "platformLabel": "Google Web",
+      "queryType": "generic-topic",
+      "query": "edge AI models and agents reference comparison",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "chip.computer",
+        "qualcomm.com",
+        "apple.com",
+        "ai.google.dev"
+      ],
+      "gapNotes": "OEM and chip vendor pages dominate; edgephone.ai not cited on generic comparison queries.",
+      "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-05T10:41:23Z",
+      "date": "2026-07-05",
+      "slot": "daily-check",
+      "model": "google-web",
+      "brand": "greenh2s",
+      "platform": "google-web",
+      "platformLabel": "Google Web",
+      "queryType": "generic-topic",
+      "query": "green hydrogen electrolyzer selection industrial scale RFNBO",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu",
+        "worldbank.org"
+      ],
+      "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
+      "source": "scripts/run-ranking-check-now.py"
     }
   ],
   "agentPromptsUsed": {
@@ -636,6 +2335,7 @@
         "lastPromptUpdate": "2026-07-05T06:00:00Z",
         "conditionsAtLastPrompt": {
           "cursorTier": 4,
+          "googleWebTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
             "nist.gov",
@@ -659,6 +2359,7 @@
         "lastPromptUpdate": "2026-07-05T06:00:00Z",
         "conditionsAtLastPrompt": {
           "cursorTier": 3,
+          "googleWebTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
             "chip.computer",
@@ -682,6 +2383,7 @@
         "lastPromptUpdate": "2026-07-05T06:00:00Z",
         "conditionsAtLastPrompt": {
           "cursorTier": 4,
+          "googleWebTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
             "iea.org",
@@ -704,31 +2406,97 @@
     "non-exec": {
       "cursor": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "nist.gov",
+          "iso.org",
+          "sec.gov",
+          "deloitte.com"
+        ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "nist.gov",
+          "eu.ai",
+          "iso.org",
+          "mckinsey.com"
+        ]
+      },
+      "google-web": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "nist.gov",
+          "eu.ai",
+          "iso.org",
+          "mckinsey.com"
+        ]
       }
     },
     "edgephone": {
       "cursor": {
         "tier": 3,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "chip.computer",
+          "ai.google.dev",
+          "developer.nvidia.com",
+          "huggingface.co"
+        ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "chip.computer",
+          "qualcomm.com",
+          "apple.com",
+          "ai.google.dev"
+        ]
+      },
+      "google-web": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "chip.computer",
+          "qualcomm.com",
+          "apple.com",
+          "ai.google.dev"
+        ]
       }
     },
     "greenh2s": {
       "cursor": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "iea.org",
+          "irena.org",
+          "hydrogen.europa.eu",
+          "hydrogencouncil.com"
+        ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "iea.org",
+          "irena.org",
+          "hydrogen.europa.eu",
+          "worldbank.org"
+        ]
+      },
+      "google-web": {
+        "tier": 4,
+        "updatedAt": "2026-07-05T10:41:23Z",
+        "topCompetitors": [
+          "iea.org",
+          "irena.org",
+          "hydrogen.europa.eu",
+          "worldbank.org"
+        ]
       }
     }
   }

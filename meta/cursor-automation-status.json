@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "account": "et@edgephone.ai",
+  "automationsUrl": "https://cursor.com/automations",
+  "status": "inactive-high-cost",
+  "statusOptions": {
+    "active": "Active",
+    "inactive-high-cost": "Currently Inactive Due to High Cost"
+  },
+  "statusNote": "9 Ranking Check automations paused on et@edgephone.ai while daily Cloud Agent cost is reviewed (~$4.56/day estimated). Manual checks via run-ranking-check-now.py still available.",
+  "updatedAt": "2026-07-06"
+}

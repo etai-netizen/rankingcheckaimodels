@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "cursorAccount": "et@edgephone.ai",
+  "costSource": "Record actual per-run cost from Cursor Automations → Runs. Estimates below are fallback only.",
+  "dashboardUsageUrl": "https://cursor.com/dashboard?tab=usage",
+  "runsPerDay": 9,
+  "defaultEstimatedRunCostUsd": 0.48,
+  "models": {
+    "composer-2.5": {
+      "label": "Composer 2.5",
+      "estimatedRunCostUsd": 0.42
+    },
+    "gpt-5.5-high": {
+      "label": "GPT-5.5 High",
+      "estimatedRunCostUsd": 0.52
+    },
+    "claude-fable-5-thinking-high": {
+      "label": "Fable 5 High",
+      "estimatedRunCostUsd": 0.58
+    }
+  },
+  "notes": "9 automations at 06:00 GMT · one entity per automation · estimates until actual billing sync runs"
+}

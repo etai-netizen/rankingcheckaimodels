@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "costSource": "mixed",
+  "syncedAt": "2026-07-06T07:53:44Z",
+  "accountEmail": "et@edgephone.ai",
+  "runsPerDay": 9,
+  "scheduleNote": "9 Ranking Check automations \u00b7 06:00 GMT daily",
+  "dashboardUsage": "https://cursor.com/dashboard?tab=usage",
+  "sessions": [
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:00:09Z",
+      "automationName": "Ranking Check - NonExecAI - F5H",
+      "cursorAutomationId": "72bfd733-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 3.0342,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:00:37Z",
+      "automationName": "Ranking Check - NonExecAI - G5.5H",
+      "cursorAutomationId": "0f4050a9-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.9909,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:01:13Z",
+      "automationName": "Ranking Check - greenh2sAI - F5H",
+      "cursorAutomationId": "ebbc003d-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 2.7877,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:01:29Z",
+      "automationName": "Ranking Check - greenh2sAI - C2.5",
+      "cursorAutomationId": "ccecb2c7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.1659,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:01:31Z",
+      "automationName": "Ranking Check - EdgephoneAI - G5.5H",
+      "cursorAutomationId": "b318c0a7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.937,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:01:56Z",
+      "automationName": "Ranking Check - greenh2sAI - G5.5H",
+      "cursorAutomationId": "dd6c206e-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 1.0773,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:01:59Z",
+      "automationName": "Ranking Check - EdgephoneAI - C2.5",
+      "cursorAutomationId": "98ee0212-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.1654,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:02:21Z",
+      "automationName": "Ranking Check - EdgephoneAI - F5H",
+      "cursorAutomationId": "bf8deea5-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 2.6705,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T06:02:40Z",
+      "automationName": "Ranking Check - NonExecAI - C2.5",
+      "cursorAutomationId": "6623f5a9-785b-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.1108,
+      "costSource": "actual",
+      "eventCount": 1
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - C2.5",
+      "cursorAutomationId": "ccecb2c7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - G5.5H",
+      "cursorAutomationId": "dd6c206e-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - F5H",
+      "cursorAutomationId": "ebbc003d-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - C2.5",
+      "cursorAutomationId": "98ee0212-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - G5.5H",
+      "cursorAutomationId": "b318c0a7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - F5H",
+      "cursorAutomationId": "bf8deea5-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - C2.5",
+      "cursorAutomationId": "6623f5a9-785b-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - G5.5H",
+      "cursorAutomationId": "0f4050a9-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - F5H",
+      "cursorAutomationId": "72bfd733-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - C2.5",
+      "cursorAutomationId": "ccecb2c7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - G5.5H",
+      "cursorAutomationId": "dd6c206e-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - F5H",
+      "cursorAutomationId": "ebbc003d-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - C2.5",
+      "cursorAutomationId": "98ee0212-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - G5.5H",
+      "cursorAutomationId": "b318c0a7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - F5H",
+      "cursorAutomationId": "bf8deea5-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - C2.5",
+      "cursorAutomationId": "6623f5a9-785b-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - G5.5H",
+      "cursorAutomationId": "0f4050a9-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - F5H",
+      "cursorAutomationId": "72bfd733-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - C2.5",
+      "cursorAutomationId": "ccecb2c7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - G5.5H",
+      "cursorAutomationId": "dd6c206e-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - F5H",
+      "cursorAutomationId": "ebbc003d-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - C2.5",
+      "cursorAutomationId": "98ee0212-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - G5.5H",
+      "cursorAutomationId": "b318c0a7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - F5H",
+      "cursorAutomationId": "bf8deea5-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - C2.5",
+      "cursorAutomationId": "6623f5a9-785b-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - G5.5H",
+      "cursorAutomationId": "0f4050a9-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - F5H",
+      "cursorAutomationId": "72bfd733-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - C2.5",
+      "cursorAutomationId": "ccecb2c7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - G5.5H",
+      "cursorAutomationId": "dd6c206e-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - greenh2sAI - F5H",
+      "cursorAutomationId": "ebbc003d-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "greenh2s",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - C2.5",
+      "cursorAutomationId": "98ee0212-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - G5.5H",
+      "cursorAutomationId": "b318c0a7-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - EdgephoneAI - F5H",
+      "cursorAutomationId": "bf8deea5-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "edgephone",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - C2.5",
+      "cursorAutomationId": "6623f5a9-785b-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "C2.5",
+      "modelSlug": "composer-2.5",
+      "modelLabel": "Composer 2.5",
+      "costUsd": 0.42,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - G5.5H",
+      "cursorAutomationId": "0f4050a9-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "G5.5H",
+      "modelSlug": "gpt-5.5-high",
+      "modelLabel": "GPT-5.5 High",
+      "costUsd": 0.52,
+      "costSource": "estimated",
+      "eventCount": 0
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:00:00Z",
+      "automationName": "Ranking Check - NonExecAI - F5H",
+      "cursorAutomationId": "72bfd733-785c-11f1-ba66-0e7d0216e441",
+      "entityId": "non-exec",
+      "modelSuffix": "F5H",
+      "modelSlug": "claude-fable-5-thinking-high",
+      "modelLabel": "Fable 5 High",
+      "costUsd": 0.58,
+      "costSource": "estimated",
+      "eventCount": 0
+    }
+  ],
+  "daily": [
+    {
+      "date": "2026-07-02",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-03",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-04",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-05",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-06",
+      "totalUsd": 11.94,
+      "runCount": 9,
+      "actualUsd": 11.94,
+      "estimatedUsd": 0.0,
+      "source": "actual"
+    }
+  ],
+  "last5Days": [
+    {
+      "date": "2026-07-02",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-03",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-04",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-05",
+      "totalUsd": 4.56,
+      "runCount": 9,
+      "actualUsd": 0.0,
+      "estimatedUsd": 4.56,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-07-06",
+      "totalUsd": 11.94,
+      "runCount": 9,
+      "actualUsd": 11.94,
+      "estimatedUsd": 0.0,
+      "source": "actual"
+    }
+  ],
+  "charts": {
+    "monthly": {
+      "labels": [
+        "2026-07"
+      ],
+      "datasets": [
+        {
+          "label": "Ranking automation cost (USD)",
+          "data": [
+            30.18
+          ],
+          "borderColor": "#f59e0b",
+          "backgroundColor": "#f59e0b33",
+          "tension": 0.2,
+          "fill": true
+        }
+      ]
+    },
+    "yearly": {
+      "labels": [
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Ranking automation cost (USD)",
+          "data": [
+            30.18
+          ],
+          "borderColor": "#f59e0b",
+          "backgroundColor": "#f59e0b33",
+          "tension": 0.2,
+          "fill": true
+        }
+      ]
+    }
+  },
+  "totals": {
+    "last5DaysUsd": 30.18,
+    "allTimeUsd": 30.18
+  }
+}

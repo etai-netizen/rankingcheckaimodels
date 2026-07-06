@@ -11,7 +11,7 @@
     "queryType": "generic-topic",
     "excludes": ["branded queries", "site: searches", "SEO rank trackers without agent citation check"]
   },
-  "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
+  "schedule": "06:00 GMT daily · 9 Cloud Automations (3 entities × 3 models: C2.5, G5.5H, F5H)",
   "gitRepo": "etai-netizen/rankingcheckaimodels",
   "gitBranch": "main",
   "siblingPrograms": [

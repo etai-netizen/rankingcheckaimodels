@@ -6,30 +6,42 @@ Daily **06:00 GMT** checks for **non-exec.ai**, **edgephone.ai**, and **greenh2s
 
 ## Dashboard (side by side)
 
+**Automatic on Cursor login:** opening this project runs `.cursor/hooks.json` → `sessionStart`, which pulls overnight Cloud Agent commits and rebuilds HTML.
+
+**Automatic when opening the dashboard:** use `Ranking Dashboard/Open Dashboard.cmd` (recommended) — syncs from git, rebuilds HTML, opens `http://127.0.0.1:8787/rankings.html`. The page calls `/api/sync` on load and reloads if new Cursor data arrived.
+
 ```powershell
 cd "C:\Users\etako\Documents\DO NOT DELETE - APPS\rankingcheckaimodels"
-node scripts/generate-prefills.mjs
-node scripts/build-rankings-html.mjs
 powershell -File scripts/Open-RankingsDashboard.ps1
 ```
+
+Or double-click **`Ranking Dashboard/Open Dashboard.cmd`**.
+
+If you open `rankings.html` directly (file://), a banner prompts you to use `Open Dashboard.cmd` for a live sync.
 
 `Ranking Dashboard/rankings.html` shows:
 
 - **Three entity columns** — objective, Cursor/Gemini tiers with logos, **Agent Prompt Used to Check Ranking**
 - **Daily / monthly / yearly** ranking trend charts (tier 1 = best)
 
-## Schedule — 06:00 GMT daily (4 Cursor automations)
+## Schedule — 06:00 GMT daily (9 Cursor automations)
 
-| Automation | Model |
-|------------|-------|
-| Ranking Check — Composer 2.5 | `composer-2.5-fast` |
-| Ranking Check — GPT-5.5 High | `gpt-5.5-high` |
-| Ranking Check — Codex 5.3 High | `gpt-5.3-codex` |
-| Ranking Check — Fable 5 High | `claude-fable-5-thinking-high` |
+**3 models per entity** (Codex removed — 3 runs each, not 4):
 
-Each run checks **all three entities** on **Cursor** (that model) + **Google Gemini**.
+| Entity | C2.5 | G5.5H | F5H |
+|--------|------|-------|-----|
+| greenh2s.ai | Composer 2.5 | GPT-5.5 High | Fable 5 High |
+| edgephone.ai | Composer 2.5 | GPT-5.5 High | Fable 5 High |
+| non-exec.ai | Composer 2.5 | GPT-5.5 High | Fable 5 High |
 
-Cron: `0 6 * * *`
+Cursor automation names: `Ranking Check - {Entity} - {suffix}` (e.g. `Ranking Check - NonExecAI - C2.5`)
+
+Sync prompts to Cursor (signed in as **et@edgephone.ai**):
+
+```powershell
+node scripts/generate-prefills.mjs
+python scripts/sync_cursor_automation_prompts.py
+```
 
 ## Entity ranking-check prompts
 

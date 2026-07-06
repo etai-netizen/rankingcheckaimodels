@@ -81,6 +81,12 @@
       "label": "Google Gemini",
       "slug": "google-gemini",
       "method": "Run each genericTopicQuery in Google Gemini (app or grounding). Record domains in the answer and source list. Measure ranking on generic topic search only — no brand names in the query."
+    },
+    {
+      "id": "google-web",
+      "label": "Google Web",
+      "slug": "google-web",
+      "method": "Run each genericTopicQuery as a normal Google Search (organic web results, no AI mode). Record which domains appear in the top 10 blue-link results. No brand names in the query."
     }
   ]
 }

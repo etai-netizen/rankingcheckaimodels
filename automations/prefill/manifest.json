@@ -1,36 +1,80 @@
 {
-  "generatedAt": "2026-07-05T10:21:35.044Z",
+  "generatedAt": "2026-07-05T10:37:25.409Z",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
-  "schedule": "06:00 GMT daily (4 models)",
+  "schedule": "06:00 GMT daily — 9 automations (3 entities × 3 models)",
   "gitRepo": "etai-netizen/rankingcheckaimodels",
   "automations": [
     {
-      "file": "automations/prefill/daily-composer-0600.json",
-      "name": "Ranking Check — Composer 2.5 (06:00 GMT)",
-      "schedule": "06:00 GMT daily",
-      "model": "composer-2.5-fast",
-      "cursorAutomationId": null
+      "file": "automations/prefill/greenh2sAI-c25.json",
+      "name": "Ranking Check - greenh2sAI - C2.5",
+      "entityId": "greenh2s",
+      "model": "composer-2.5",
+      "modelSuffix": "C2.5",
+      "cursorAutomationId": "ccecb2c7-785c-11f1-ba66-0e7d0216e441"
     },
     {
-      "file": "automations/prefill/daily-gpt55-0600.json",
-      "name": "Ranking Check — GPT-5.5 High (06:00 GMT)",
-      "schedule": "06:00 GMT daily",
+      "file": "automations/prefill/greenh2sAI-g55h.json",
+      "name": "Ranking Check - greenh2sAI - G5.5H",
+      "entityId": "greenh2s",
       "model": "gpt-5.5-high",
-      "cursorAutomationId": null
+      "modelSuffix": "G5.5H",
+      "cursorAutomationId": "dd6c206e-785c-11f1-ba66-0e7d0216e441"
     },
     {
-      "file": "automations/prefill/daily-codex-0600.json",
-      "name": "Ranking Check — Codex 5.3 High (06:00 GMT)",
-      "schedule": "06:00 GMT daily",
-      "model": "gpt-5.3-codex",
-      "cursorAutomationId": null
-    },
-    {
-      "file": "automations/prefill/daily-fable-0600.json",
-      "name": "Ranking Check — Fable 5 High (06:00 GMT)",
-      "schedule": "06:00 GMT daily",
+      "file": "automations/prefill/greenh2sAI-f5h.json",
+      "name": "Ranking Check - greenh2sAI - F5H",
+      "entityId": "greenh2s",
       "model": "claude-fable-5-thinking-high",
-      "cursorAutomationId": null
+      "modelSuffix": "F5H",
+      "cursorAutomationId": "ebbc003d-785c-11f1-ba66-0e7d0216e441"
+    },
+    {
+      "file": "automations/prefill/edgephoneAI-c25.json",
+      "name": "Ranking Check - EdgephoneAI - C2.5",
+      "entityId": "edgephone",
+      "model": "composer-2.5",
+      "modelSuffix": "C2.5",
+      "cursorAutomationId": "98ee0212-785c-11f1-ba66-0e7d0216e441"
+    },
+    {
+      "file": "automations/prefill/edgephoneAI-g55h.json",
+      "name": "Ranking Check - EdgephoneAI - G5.5H",
+      "entityId": "edgephone",
+      "model": "gpt-5.5-high",
+      "modelSuffix": "G5.5H",
+      "cursorAutomationId": "b318c0a7-785c-11f1-ba66-0e7d0216e441"
+    },
+    {
+      "file": "automations/prefill/edgephoneAI-f5h.json",
+      "name": "Ranking Check - EdgephoneAI - F5H",
+      "entityId": "edgephone",
+      "model": "claude-fable-5-thinking-high",
+      "modelSuffix": "F5H",
+      "cursorAutomationId": "bf8deea5-785c-11f1-ba66-0e7d0216e441"
+    },
+    {
+      "file": "automations/prefill/nonExecAI-c25.json",
+      "name": "Ranking Check - NonExecAI - C2.5",
+      "entityId": "non-exec",
+      "model": "composer-2.5",
+      "modelSuffix": "C2.5",
+      "cursorAutomationId": "6623f5a9-785b-11f1-ba66-0e7d0216e441"
+    },
+    {
+      "file": "automations/prefill/nonExecAI-g55h.json",
+      "name": "Ranking Check - NonExecAI - G5.5H",
+      "entityId": "non-exec",
+      "model": "gpt-5.5-high",
+      "modelSuffix": "G5.5H",
+      "cursorAutomationId": "0f4050a9-785c-11f1-ba66-0e7d0216e441"
+    },
+    {
+      "file": "automations/prefill/nonExecAI-f5h.json",
+      "name": "Ranking Check - NonExecAI - F5H",
+      "entityId": "non-exec",
+      "model": "claude-fable-5-thinking-high",
+      "modelSuffix": "F5H",
+      "cursorAutomationId": "72bfd733-785c-11f1-ba66-0e7d0216e441"
     }
   ]
 }

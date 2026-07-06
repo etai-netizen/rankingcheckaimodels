@@ -4,71 +4,98 @@
   "cursorAccount": "et@edgephone.ai",
   "gitRepo": "etai-netizen/rankingcheckaimodels",
   "gitBranch": "main",
+  "layout": "3 entities × 3 Cursor models = 9 automations",
   "models": [
     {
-      "id": "composer-2.5-fast",
+      "suffix": "C2.5",
+      "id": "composer-2.5",
+      "repoSlug": "composer-2.5-fast",
       "label": "Composer 2.5",
       "provider": "cursor",
       "logo": "brand/agent-cursor.png",
       "strength": "Fast structured generic-topic ranking probes"
     },
     {
+      "suffix": "G5.5H",
       "id": "gpt-5.5-high",
+      "repoSlug": "gpt-5.5-high",
       "label": "GPT-5.5 High",
       "provider": "openai",
       "logo": "brand/agent-openai.svg",
       "strength": "Cross-platform ranking comparison and prompt refinement"
     },
     {
-      "id": "gpt-5.3-codex",
-      "label": "Codex 5.3 High",
-      "provider": "openai",
-      "logo": "brand/agent-openai.svg",
-      "strength": "Deep competitor gap analysis on generic topic queries"
-    },
-    {
+      "suffix": "F5H",
       "id": "claude-fable-5-thinking-high",
+      "repoSlug": "claude-fable-5-thinking-high",
       "label": "Fable 5 High",
       "provider": "anthropic",
       "logo": "brand/agent-anthropic.svg",
       "strength": "Long-form ranking reports and entity prompt tuning"
     }
   ],
-  "assessedAgents": [
-    {
-      "id": "cursor",
-      "label": "Cursor AI agents",
-      "logo": "brand/agent-cursor.png",
-      "platform": "cursor"
-    },
-    {
-      "id": "gemini",
-      "label": "Google Gemini",
-      "logo": "brand/agent-gemini.svg",
-      "platform": "gemini"
-    }
-  ],
   "entities": [
     {
-      "id": "non-exec",
-      "label": "non-exec.ai",
-      "site": "https://www.non-exec.ai",
-      "logo": "brand/entity-non-exec.png",
-      "promptFile": "prompts/entities/non-exec-ranking-check.md"
+      "id": "greenh2s",
+      "cursorName": "greenh2sAI",
+      "label": "greenh2s.ai",
+      "site": "https://www.greenh2s.ai",
+      "logo": "brand/entity-greenh2s.svg",
+      "promptFile": "prompts/entities/greenh2s-ranking-check.md"
     },
     {
       "id": "edgephone",
+      "cursorName": "EdgephoneAI",
       "label": "edgephone.ai",
       "site": "https://edgephone.ai",
       "logo": "brand/entity-edgephone.png",
       "promptFile": "prompts/entities/edgephone-ranking-check.md"
     },
     {
-      "id": "greenh2s",
-      "label": "greenh2s.ai",
-      "site": "https://www.greenh2s.ai",
-      "logo": "brand/entity-greenh2s.svg",
-      "promptFile": "prompts/entities/greenh2s-ranking-check.md"
+      "id": "non-exec",
+      "cursorName": "NonExecAI",
+      "label": "non-exec.ai",
+      "site": "https://www.non-exec.ai",
+      "logo": "brand/entity-non-exec.png",
+      "promptFile": "prompts/entities/non-exec-ranking-check.md"
+    }
+  ],
+  "assessedAgents": [
+    {
+      "id": "composer-2.5",
+      "label": "Composer 2.5",
+      "platform": "cursor",
+      "logo": "brand/agent-cursor.png",
+      "logoFallback": "brand/agent-cursor.svg",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "gpt-5.5-high",
+      "label": "GPT-5.5 High",
+      "platform": "cursor",
+      "logo": "brand/agent-openai.svg",
+      "color": "#10a37f"
+    },
+    {
+      "id": "claude-fable-5-thinking-high",
+      "label": "Fable 5 High",
+      "platform": "cursor",
+      "logo": "brand/agent-anthropic.svg",
+      "color": "#d97706"
+    },
+    {
+      "id": "google-web",
+      "label": "Google Web",
+      "platform": "google-web",
+      "logo": "brand/agent-google-web.svg",
+      "color": "#ea4335"
+    },
+    {
+      "id": "gemini",
+      "label": "Google Gemini",
+      "platform": "gemini",
+      "logo": "brand/agent-gemini.svg",
+      "color": "#34a853"
     }
   ],
   "cronDaily": "0 6 * * *",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generates 4 daily 06:00 GMT Cursor Automation prefills (one per model).
+ * Generates 9 daily 06:00 GMT Cursor Automation prefills (3 entities × 3 models).
  */
 import fs from "fs";
 import path from "path";
@@ -13,17 +13,14 @@ const root = path.resolve(__dirname, "..");
 const objectives = JSON.parse(fs.readFileSync(path.join(root, "automations", "objectives.json"), "utf8"));
 const modelRotation = JSON.parse(fs.readFileSync(path.join(root, "automations", "model-rotation.json"), "utf8"));
 const agentsData = JSON.parse(fs.readFileSync(path.join(root, "automations", "cursor-agents.json"), "utf8"));
+const orchestrator = fs.readFileSync(path.join(root, "automations", "PROMPT.md"), "utf8");
 
-const GIT_REPO = agentsData.gitRepo ?? "rankingcheckaimodels";
+const GIT_REPO = agentsData.gitRepo ?? "etai-netizen/rankingcheckaimodels";
 const GIT_BRANCH = agentsData.gitBranch ?? "main";
-const CURSOR_ACCOUNT = agentsData.cursorAccount ?? "et@edgephone.ai";
 const MISSION = objectives.mission;
-const promptBase = fs.readFileSync(path.join(root, "automations", "PROMPT.md"), "utf8");
 
-const entityPrompts = modelRotation.entities.map((e) => {
-  const text = fs.readFileSync(path.join(root, e.promptFile), "utf8");
-  return `### ${e.label}\n\n${text}`;
-}).join("\n\n---\n\n");
+const entityById = Object.fromEntries((modelRotation.entities || []).map((e) => [e.id, e]));
+const modelBySuffix = Object.fromEntries((modelRotation.models || []).map((m) => [m.suffix, m]));
 
 const outDir = path.join(root, "automations", "prefill");
 const workflowsDir = path.join(root, "automations", "workflows");
@@ -38,47 +35,70 @@ for (const dir of [outDir, workflowsDir, promptsMdDir]) {
   }
 }
 
-function modelMeta(modelId) {
-  return modelRotation.models?.find((m) => m.id === modelId) ?? { label: modelId, strength: "Ranking assessment" };
+function loadEntityPrompt(entityId) {
+  const entity = entityById[entityId];
+  if (!entity) throw new Error(`Unknown entity: ${entityId}`);
+  return fs.readFileSync(path.join(root, entity.promptFile), "utf8");
 }
 
-function buildPrompt(agent, modelId) {
-  const meta = modelMeta(modelId);
-  return `${promptBase}
+function buildPrompt(agent) {
+  const entity = entityById[agent.entityId];
+  const model = modelBySuffix[agent.modelSuffix] ?? { label: agent.modelDisplayName, strength: "Ranking assessment" };
+  const entityPrompt = loadEntityPrompt(agent.entityId);
+
+  return `${orchestrator}
 
 ---
 
-## Configured model (this automation)
+## This automation (single entity — replaces placeholder)
 
-- **Model:** ${modelId} (${meta.label})
-- **Strength:** ${meta.strength}
-- **Schedule:** 06:00 GMT daily
-- **Entities:** non-exec.ai, edgephone.ai, greenh2s.ai
-- **Platforms:** Cursor (this model) + Google Gemini
+| Field | Value |
+|-------|-------|
+| **Automation** | ${agent.name} |
+| **Entity** | ${entity.label} (${entity.site}) |
+| **Cursor model** | ${agent.model} (${model.label}) |
+| **Schedule** | 06:00 GMT daily |
+| **Platforms** | Cursor (this model) + Google Gemini |
+| **Brand id** | \`${agent.entityId}\` |
+
+**Scope:** Check **${entity.label} only** — do not probe the other entities in this run.
 
 ---
 
-## Entity ranking-check prompts (execute all three)
+## Agent prompt used to check ranking (${entity.label})
 
-${entityPrompts}
+${entityPrompt}
+
+---
+
+## Model directive
+
+- **Configured model:** ${agent.model}
+- **Listed strength:** ${model.strength}
+- Use this model's perspective for the Cursor-side assessment of generic topic queries.
 
 ---
 
 ## Acceptance test
 
-Run fails unless: (1) meta/rankings-history.json has new entries for all 3 entities × 2 platforms, (2) entity prompts updated if conditions changed, (3) node scripts/build-rankings-html.mjs executed, (4) git commit on this repo.
+Run fails unless:
+1. \`meta/rankings-history.json\` has new entries for **${agent.entityId}** on **cursor** and **gemini**
+2. \`prompts/entities/${path.basename(entity.promptFile)}\` and \`meta/agent-prompts-used.json\` updated if conditions changed
+3. \`node scripts/build-rankings-html.mjs\` executed
+4. Git commit: \`ranking: ${agent.cursorName} ${agent.modelSuffix} — summary\`
 `;
 }
 
-function buildWorkflow(agent, modelId) {
+function buildWorkflow(agent) {
+  const entity = entityById[agent.entityId];
   return {
     name: agent.name,
-    description: `${MISSION} — Daily 06:00 GMT. Model: ${modelId}. All entities + Gemini.`,
+    description: `${MISSION} — ${entity.label} · ${agent.modelDisplayName} · 06:00 GMT daily`,
     workflow: {
       triggers: [{ cron: { cron: agent.cron || "0 6 * * *" } }],
       actions: [],
-      prompts: [buildPrompt(agent, modelId)],
-      model: modelId,
+      prompts: [buildPrompt(agent)],
+      model: agent.model,
       gitConfig: { repo: GIT_REPO, branch: GIT_BRANCH },
       agentOptions: { skipInstall: false },
       memoryEnabled: true,
@@ -88,8 +108,7 @@ function buildWorkflow(agent, modelId) {
 
 const manifest = [];
 for (const agent of listCursorAutomations(root)) {
-  const modelId = agent.modelSlug;
-  const payload = buildWorkflow(agent, modelId);
+  const payload = buildWorkflow(agent);
   const filename = path.basename(agent.prefillFile.replace(/\//g, path.sep));
 
   fs.writeFileSync(path.join(outDir, filename), JSON.stringify(payload, null, 2) + "\n");
@@ -98,14 +117,15 @@ for (const agent of listCursorAutomations(root)) {
   const base = path.basename(filename, ".json");
   fs.writeFileSync(
     path.join(promptsMdDir, `${base}.md`),
-    `# ${payload.name}\n\n**Model:** ${modelId}\n**Cron:** ${agent.cron}\n\n---\n\n${payload.workflow.prompts[0].slice(0, 8000)}…`
+    `# ${payload.name}\n\n**Entity:** ${agent.entityId} · **Model:** ${agent.model}\n\n---\n\n${payload.workflow.prompts[0].slice(0, 6000)}…`
   );
 
   manifest.push({
     file: `automations/prefill/${filename}`,
-    name: payload.name,
-    schedule: "06:00 GMT daily",
-    model: modelId,
+    name: agent.name,
+    entityId: agent.entityId,
+    model: agent.model,
+    modelSuffix: agent.modelSuffix,
     cursorAutomationId: agent.cursorAutomationId,
   });
 }
@@ -116,7 +136,7 @@ fs.writeFileSync(
     {
       generatedAt: new Date().toISOString(),
       mission: MISSION,
-      schedule: "06:00 GMT daily (4 models)",
+      schedule: "06:00 GMT daily — 9 automations (3 entities × 3 models)",
       gitRepo: GIT_REPO,
       automations: manifest,
     },
@@ -125,5 +145,5 @@ fs.writeFileSync(
   ) + "\n"
 );
 
-console.log(`Generated ${manifest.length} daily ranking-check prefills (06:00 GMT)`);
+console.log(`Generated ${manifest.length} entity ranking-check prefills`);
 manifest.forEach((m) => console.log(`  - ${m.name} → ${m.model}`));

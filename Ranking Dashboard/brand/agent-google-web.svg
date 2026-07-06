@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Google Web">
+  <title>Google Web</title>
+  <circle cx="12" cy="12" r="10" fill="#fff"/>
+  <path fill="#4285F4" d="M12 2a10 10 0 0 1 7.07 17.07l-1.41-1.41A8 8 0 1 0 12 20V2z"/>
+  <path fill="#EA4335" d="M12 2v4.5h5.5A8.04 8.04 0 0 0 12 2z"/>
+  <path fill="#FBBC05" d="M12 6.5V12h5.5a8.04 8.04 0 0 0-5.5-5.5z"/>
+  <path fill="#34A853" d="M12 12h5.5A8.04 8.04 0 0 1 12 20v-8z"/>
+  <circle cx="12" cy="12" r="3.2" fill="#4285F4" opacity="0.15"/>
+  <path fill="none" stroke="#4285F4" stroke-width="1.2" d="M8 16h8M9 13h6"/>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "scheduleUtc": "06:00 GMT daily",
+  "cron": "0 6 * * *",
+  "cursorAccount": "et@edgephone.ai",
+  "gitRepo": "etai-netizen/rankingcheckaimodels",
+  "gitBranch": "main",
+  "layout": "9 automations (3 entities \u00d7 3 models: C2.5, G5.5H, F5H)",
+  "manualCheckScript": "python scripts/run-ranking-check-now.py",
+  "dashboardScript": "node scripts/build-rankings-html.mjs",
+  "verifiedAt": "2026-07-05T10:41:23Z",
+  "automationsOnCursor": 9,
+  "notes": "Cloud Agent runs at 06:00 GMT; run manual check anytime via Run-RankingCheckNow.ps1",
+  "lastLiveCheck": "2026-07-05T10:41:23Z",
+  "loginSync": {
+    "enabled": true,
+    "hook": ".cursor/hooks.json sessionStart",
+    "script": "scripts/Sync-RankingsOnLogin.ps1",
+    "launcher": "Ranking Dashboard/Open Dashboard.cmd",
+    "server": "http://127.0.0.1:8787/rankings.html",
+    "behavior": "Open Dashboard.cmd syncs git + rebuilds HTML; page calls /api/sync on load and reloads if Cursor data changed"
+  }
+}
