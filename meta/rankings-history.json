@@ -36,11 +36,29 @@
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "cursor", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 3, "inTop3": false, "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "gemini", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 4, "inTop3": false, "topCompetitors": ["chip.computer", "qualcomm.com", "apple.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "cursor", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
-    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] }
+    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
+
+    { "runId": "2026-07-06T06:00:00Z", "date": "2026-07-06", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "non-exec", "platform": "cursor", "queryType": "generic-topic", "query": "enterprise AI agent registry governance reference", "tier": 4, "inTop3": false, "topCompetitors": ["docs.cloud.google.com", "prefactor.tech", "kosmoy.com"], "gapNotes": "non-exec.ai absent; vendor registries and governance blogs dominate agent-registry topic" },
+    { "runId": "2026-07-06T06:00:00Z", "date": "2026-07-06", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "non-exec", "platform": "gemini", "queryType": "generic-topic", "query": "enterprise AI agent registry governance reference", "tier": 4, "inTop3": false, "topCompetitors": ["docs.cloud.google.com", "kosmoy.com", "exploreagentic.ai"], "gapNotes": "Gemini surfaces Google Cloud agent registry and vendor field guides; no structured registry reference from non-exec.ai" },
+    { "runId": "2026-07-06T06:00:00Z", "date": "2026-07-06", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "non-exec", "platform": "cursor", "queryType": "generic-topic", "query": "EU AI Act board responsibilities explained", "tier": 4, "inTop3": false, "topCompetitors": ["thinking.inc", "yrproject.nl", "eu.ai"], "gapNotes": "Director-liability explainers and EU portals cited; non-exec.ai lacks EU AI Act board-duty reference pages" },
+    { "runId": "2026-07-06T06:00:00Z", "date": "2026-07-06", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "non-exec", "platform": "gemini", "queryType": "generic-topic", "query": "EU AI Act board responsibilities explained", "tier": 4, "inTop3": false, "topCompetitors": ["thinking.inc", "bm.consulting", "compelframework.org"], "gapNotes": "Gemini cites law-firm and framework explainers; eu.ai indirect; non-exec.ai not in source list" }
   ],
   "latestByBrand": {
-    "non-exec": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
+    "non-exec": { "cursor": { "tier": 4, "updatedAt": "2026-07-06T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-06T06:00:00Z" } },
     "edgephone": { "cursor": { "tier": 3, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
     "greenh2s": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } }
+  },
+  "dailySnapshots": {
+    "2026-07-06": {
+      "non-exec": {
+        "model": "composer-2.5-fast",
+        "queries": [
+          "enterprise AI agent registry governance reference",
+          "EU AI Act board responsibilities explained"
+        ],
+        "cursor": { "tier": 4, "inTop3": false },
+        "gemini": { "tier": 4, "inTop3": false }
+      }
+    }
   }
 }
