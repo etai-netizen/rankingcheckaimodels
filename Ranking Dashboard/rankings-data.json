@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T10:20:21.818Z",
+  "generatedAt": "2026-07-06T06:06:01.409Z",
   "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -9,7 +9,8 @@
         "2026-07-02",
         "2026-07-03",
         "2026-07-04",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-06"
       ],
       "datasets": [
         {
@@ -19,7 +20,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#6366f1",
           "backgroundColor": "#6366f133",
@@ -33,7 +35,8 @@
             3.5,
             3.5,
             3.5,
-            3.5
+            3.5,
+            4
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -47,7 +50,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#10b981",
           "backgroundColor": "#10b98133",
@@ -74,7 +78,7 @@
         {
           "label": "edgephone.ai",
           "data": [
-            3.5
+            3.6
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -111,7 +115,7 @@
         {
           "label": "edgephone.ai",
           "data": [
-            3.5
+            3.6
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -623,11 +627,83 @@
         "irena.org",
         "hydrogen.europa.eu"
       ]
+    },
+    {
+      "runId": "2026-07-06T06:02:20Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ambiq.com",
+        "analog.com",
+        "iaeme.com"
+      ],
+      "gapNotes": "edgephone.ai absent from all cited sources; chip vendors (Ambiq Atomiq/SPOT, Analog Devices MAX78002) and academic VLSI papers dominate. No edgephone content targets manufacturing low-power inference."
+    },
+    {
+      "runId": "2026-07-06T06:02:20Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.arm.com",
+        "learn.arm.com",
+        "premai.io"
+      ],
+      "gapNotes": "Arm's own developer/learning portals plus llama.cpp quantization guides (4geeks, premai) own this query; edgephone.ai not cited. A GGUF/llama.cpp-on-ARM deployment guide is the missing asset."
+    },
+    {
+      "runId": "2026-07-06T06:02:20Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ambiq.com",
+        "kynix.com",
+        "iterathon.tech"
+      ],
+      "gapNotes": "Gemini-style grounded answer sourced 2026 hardware roundups (kynix, iterathon, dev.to) and vendor pages; edgephone.ai not in source list for this query today."
+    },
+    {
+      "runId": "2026-07-06T06:02:20Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.arm.com",
+        "blog.4geeks.io",
+        "ar5iv.labs.arxiv.org"
+      ],
+      "gapNotes": "Gemini sources favor Arm official docs and hands-on quantization tutorials; edgephone.ai absent. Comparison tables alone are not winning how-to deployment queries."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-06T06:02:20Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
@@ -656,21 +732,23 @@
         "label": "edgephone.ai",
         "site": "https://edgephone.ai",
         "promptFile": "prompts/entities/edgephone-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-06T06:02:20Z",
         "conditionsAtLastPrompt": {
-          "cursorTier": 3,
+          "cursorTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
-            "chip.computer",
-            "ai.google.dev",
-            "developer.nvidia.com"
+            "ambiq.com",
+            "developer.arm.com",
+            "analog.com"
           ],
           "losingQueries": [
-            "edge AI models and agents reference comparison"
+            "on-device AI inference manufacturing low power",
+            "small language models ARM edge deployment guide"
           ],
           "promptLevers": [
-            "Public reference catalog",
-            "Chip/model comparison tables",
+            "Hands-on SLM/llama.cpp-on-ARM deployment guides (GGUF, Q4_K_M)",
+            "Energy-per-inference benchmark tables",
+            "Manufacturing low-power case studies",
             "llms.txt"
           ]
         }
@@ -713,12 +791,12 @@
     },
     "edgephone": {
       "cursor": {
-        "tier": 3,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "tier": 4,
+        "updatedAt": "2026-07-06T06:02:20Z"
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-06T06:02:20Z"
       }
     },
     "greenh2s": {
