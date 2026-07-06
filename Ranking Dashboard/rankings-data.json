@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T10:20:21.818Z",
+  "generatedAt": "2026-07-06T06:02:44.569Z",
   "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -9,7 +9,8 @@
         "2026-07-02",
         "2026-07-03",
         "2026-07-04",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-06"
       ],
       "datasets": [
         {
@@ -19,7 +20,8 @@
             4,
             4,
             4,
-            4
+            4,
+            5
           ],
           "borderColor": "#6366f1",
           "backgroundColor": "#6366f133",
@@ -33,7 +35,8 @@
             3.5,
             3.5,
             3.5,
-            3.5
+            3.5,
+            null
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -47,7 +50,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#10b981",
           "backgroundColor": "#10b98133",
@@ -64,7 +68,7 @@
         {
           "label": "non-exec.ai",
           "data": [
-            4
+            4.3
           ],
           "borderColor": "#6366f1",
           "backgroundColor": "#6366f133",
@@ -101,7 +105,7 @@
         {
           "label": "non-exec.ai",
           "data": [
-            4
+            4.3
           ],
           "borderColor": "#6366f1",
           "backgroundColor": "#6366f133",
@@ -623,32 +627,113 @@
         "irena.org",
         "hydrogen.europa.eu"
       ]
+    },
+    {
+      "runId": "2026-07-06T06:00:36.771Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "enterprise AI agent registry governance reference",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "aipatternbook.com",
+        "collibra.com",
+        "kosmoy.com",
+        "prefactor.tech",
+        "agent-axiom.github.io"
+      ],
+      "gapNotes": "non-exec.ai was not cited; Cursor-style retrieval favored concrete agent registry references with schemas, lifecycle controls, ownership metadata, and audit evidence."
+    },
+    {
+      "runId": "2026-07-06T06:00:36.771Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "enterprise AI agent registry governance reference",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "aipatternbook.com",
+        "collibra.com",
+        "kosmoy.com",
+        "prefactor.tech",
+        "agent-axiom.github.io"
+      ],
+      "gapNotes": "non-exec.ai was not cited; Gemini-style answer/source coverage centered on agent-registry explainers and vendor governance pages rather than board-oriented non-exec.ai material."
+    },
+    {
+      "runId": "2026-07-06T06:00:36.771Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "EU AI Act board responsibilities explained",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "thinking.inc",
+        "bm.consulting",
+        "compelframework.org",
+        "yrproject.nl",
+        "perspice.com"
+      ],
+      "gapNotes": "non-exec.ai was not cited; sources emphasized explicit EU AI Act director obligations, AI inventory, human oversight, incident reporting, and board liability."
+    },
+    {
+      "runId": "2026-07-06T06:00:36.771Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "EU AI Act board responsibilities explained",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "thinking.inc",
+        "bm.consulting",
+        "compelframework.org",
+        "yrproject.nl",
+        "perspice.com"
+      ],
+      "gapNotes": "non-exec.ai was not cited; Gemini-style coverage would cite pages with direct AI Act board-obligation language and compliance checklists."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-06T06:00:36.771Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
         "site": "https://www.non-exec.ai",
         "promptFile": "prompts/entities/non-exec-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-06T06:00:36.771Z",
         "conditionsAtLastPrompt": {
-          "cursorTier": 4,
-          "geminiTier": 4,
+          "cursorTier": 5,
+          "geminiTier": 5,
           "topCompetitors": [
-            "nist.gov",
-            "iso.org",
-            "eu.ai"
+            "aipatternbook.com",
+            "collibra.com",
+            "thinking.inc"
           ],
           "losingQueries": [
-            "AI corporate governance board oversight best practices"
+            "enterprise AI agent registry governance reference",
+            "EU AI Act board responsibilities explained"
           ],
           "promptLevers": [
             "Publish llms.txt",
-            "Expand registry/agents-models.json",
-            "Governance FAQ blocks"
+            "Expand registry/agents-models.json with agent card schema",
+            "Add EU AI Act board duties FAQ blocks"
           ]
         }
       },
@@ -703,12 +788,12 @@
   "latestByBrand": {
     "non-exec": {
       "cursor": {
-        "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "tier": 5,
+        "updatedAt": "2026-07-06T06:00:36.771Z"
       },
       "gemini": {
-        "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "tier": 5,
+        "updatedAt": "2026-07-06T06:00:36.771Z"
       }
     },
     "edgephone": {

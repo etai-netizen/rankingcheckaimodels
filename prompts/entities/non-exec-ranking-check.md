@@ -14,10 +14,10 @@ AI corporate governance, board oversight of AI, enterprise agent policy, EU AI A
 
 ## Queries to run (rotate one primary + one secondary per daily run)
 
-1. AI corporate governance board oversight best practices
-2. enterprise AI agent registry governance reference
-3. EU AI Act board responsibilities explained
-4. how should boards oversee AI and autonomous agents
+1. enterprise AI agent registry governance reference
+2. EU AI Act board responsibilities explained
+3. how should boards oversee AI and autonomous agents
+4. AI corporate governance board oversight best practices
 
 ## Assessment steps
 
@@ -31,12 +31,12 @@ AI corporate governance, board oversight of AI, enterprise agent policy, EU AI A
 
 | Field | Value |
 |-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
-| **Cursor tier** | 4 |
-| **Gemini tier** | 4 |
-| **Top competitors** | nist.gov, iso.org, eu.ai |
-| **Losing queries** | AI corporate governance board oversight best practices |
-| **Prompt levers** | Publish llms.txt; expand registry/agents-models.json; governance FAQ blocks |
+| **Last checked** | 2026-07-06T06:00:36.771Z |
+| **Cursor tier** | 5 |
+| **Gemini tier** | 5 |
+| **Top competitors** | aipatternbook.com, collibra.com, thinking.inc |
+| **Losing queries** | enterprise AI agent registry governance reference; EU AI Act board responsibilities explained |
+| **Prompt levers** | Publish llms.txt; expand registry/agents-models.json with agent card schema; add EU AI Act board duties FAQ blocks |
 
 ## Prompt adjustment rule
 

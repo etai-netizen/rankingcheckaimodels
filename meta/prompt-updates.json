@@ -1,3 +1,27 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "runId": "2026-07-06T06:00:36.771Z",
+      "date": "2026-07-06",
+      "brand": "non-exec",
+      "model": "gpt-5.5-high",
+      "promptFile": "prompts/entities/non-exec-ranking-check.md",
+      "changed": ["cursorTier", "geminiTier", "topCompetitors", "losingQueries", "promptLevers"],
+      "previousConditions": {
+        "cursorTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": ["nist.gov", "iso.org", "eu.ai"],
+        "losingQueries": ["AI corporate governance board oversight best practices"],
+        "promptLevers": ["Publish llms.txt", "Expand registry/agents-models.json", "Governance FAQ blocks"]
+      },
+      "newConditions": {
+        "cursorTier": 5,
+        "geminiTier": 5,
+        "topCompetitors": ["aipatternbook.com", "collibra.com", "thinking.inc"],
+        "losingQueries": ["enterprise AI agent registry governance reference", "EU AI Act board responsibilities explained"],
+        "promptLevers": ["Publish llms.txt", "Expand registry/agents-models.json with agent card schema", "Add EU AI Act board duties FAQ blocks"]
+      },
+      "reason": "Generic registry and EU AI Act board-duty probes did not cite non-exec.ai on Cursor-style or Gemini-style source lists; competitors shifted from broad standards bodies to concrete registry references and AI Act director-obligation pages."
+    }
+  ]
 }
