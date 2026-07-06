@@ -36,11 +36,24 @@
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "cursor", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 3, "inTop3": false, "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "gemini", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 4, "inTop3": false, "topCompetitors": ["chip.computer", "qualcomm.com", "apple.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "cursor", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
-    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] }
+    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
+
+    { "runId": "2026-07-06T06:00:00Z", "date": "2026-07-06", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "cursor", "queryType": "generic-topic", "query": "RFNBO certification green hydrogen requirements", "tier": 4, "inTop3": false, "topCompetitors": ["hydrogen.europa.eu", "ec.europa.eu", "irena.org"], "gapNotes": "EU delegated acts and IRENA dominate; greenh2s.ai absent from top citations for RFNBO compliance queries." },
+    { "runId": "2026-07-06T06:00:00Z", "date": "2026-07-06", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "RFNBO certification green hydrogen requirements", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"], "gapNotes": "Gemini surfaces EU regulators and IEA/IRENA first; no greenh2s.ai in source list." }
   ],
   "latestByBrand": {
     "non-exec": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
     "edgephone": { "cursor": { "tier": 3, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
-    "greenh2s": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } }
+    "greenh2s": { "cursor": { "tier": 4, "updatedAt": "2026-07-06T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-06T06:00:00Z" } }
+  },
+  "dailySnapshots": {
+    "2026-07-06": {
+      "greenh2s": {
+        "model": "composer-2.5-fast",
+        "query": "RFNBO certification green hydrogen requirements",
+        "cursor": { "tier": 4, "inTop3": false },
+        "gemini": { "tier": 4, "inTop3": false }
+      }
+    }
   }
 }

@@ -1,3 +1,25 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "date": "2026-07-06",
+      "runId": "2026-07-06T06:00:00Z",
+      "brand": "greenh2s",
+      "model": "composer-2.5-fast",
+      "reason": "Top competitors shifted to EU regulatory sources (hydrogen.europa.eu, ec.europa.eu); primary losing query rotated to RFNBO certification.",
+      "changes": {
+        "topCompetitors": {
+          "from": ["iea.org", "irena.org", "hydrogen.europa.eu"],
+          "to": ["hydrogen.europa.eu", "ec.europa.eu", "irena.org"]
+        },
+        "losingQueries": {
+          "from": ["green hydrogen electrolyzer selection industrial scale"],
+          "to": ["RFNBO certification green hydrogen requirements"]
+        },
+        "promptLevers": {
+          "from": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"],
+          "to": ["RFNBO compliance hub (DR 2023/1184/1185)", "CertifHy/ISCC scheme comparison", "Cross-link greenh2s.com sustainability"]
+        }
+      }
+    }
+  ]
 }
