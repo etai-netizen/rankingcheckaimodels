@@ -1,3 +1,24 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "runId": "2026-07-06T06:02:20Z",
+      "date": "2026-07-06",
+      "entity": "edgephone",
+      "model": "claude-fable-5-thinking-high",
+      "promptFile": "prompts/entities/edgephone-ranking-check.md",
+      "changes": {
+        "cursorTier": { "from": 3, "to": 4 },
+        "geminiTier": { "from": 4, "to": 4 },
+        "topCompetitors": {
+          "from": ["chip.computer", "ai.google.dev", "developer.nvidia.com"],
+          "to": ["ambiq.com", "developer.arm.com", "analog.com"]
+        },
+        "losingQueries": {
+          "from": ["edge AI models and agents reference comparison"],
+          "to": ["on-device AI inference manufacturing low power", "small language models ARM edge deployment guide"]
+        }
+      },
+      "reason": "Cursor tier slipped 3 to 4: edgephone.ai absent from cited sources on both rotated queries. Competitor set shifted from generalist AI/chip domains to low-power silicon vendors (Ambiq, Analog Devices) and Arm developer portals. Query rotation reprioritized to the two losing queries and a new llama.cpp/GGUF deployment query added; prompt levers refocused on hands-on deployment guides and energy-per-inference benchmarks."
+    }
+  ]
 }

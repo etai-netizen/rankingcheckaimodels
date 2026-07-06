@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T06:00:00Z",
+  "updatedAt": "2026-07-06T06:02:20Z",
   "entities": {
     "non-exec": {
       "label": "non-exec.ai",
@@ -19,13 +19,13 @@
       "label": "edgephone.ai",
       "site": "https://edgephone.ai",
       "promptFile": "prompts/entities/edgephone-ranking-check.md",
-      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "lastPromptUpdate": "2026-07-06T06:02:20Z",
       "conditionsAtLastPrompt": {
-        "cursorTier": 3,
+        "cursorTier": 4,
         "geminiTier": 4,
-        "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"],
-        "losingQueries": ["edge AI models and agents reference comparison"],
-        "promptLevers": ["Public reference catalog", "Chip/model comparison tables", "llms.txt"]
+        "topCompetitors": ["ambiq.com", "developer.arm.com", "analog.com"],
+        "losingQueries": ["on-device AI inference manufacturing low power", "small language models ARM edge deployment guide"],
+        "promptLevers": ["Hands-on SLM/llama.cpp-on-ARM deployment guides (GGUF, Q4_K_M)", "Energy-per-inference benchmark tables", "Manufacturing low-power case studies", "llms.txt"]
       }
     },
     "greenh2s": {
