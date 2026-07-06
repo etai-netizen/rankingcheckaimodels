@@ -1,3 +1,47 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "runId": "2026-07-06T06:01:31.372Z",
+      "date": "2026-07-06",
+      "brand": "edgephone",
+      "model": "gpt-5.5-high",
+      "promptFile": "prompts/entities/edgephone-ranking-check.md",
+      "reason": "Cursor/Gemini tiers, top competitors, and losing queries changed during the Edgephone G5.5H daily check.",
+      "oldConditions": {
+        "cursorTier": 3,
+        "geminiTier": 4,
+        "topCompetitors": [
+          "chip.computer",
+          "ai.google.dev",
+          "developer.nvidia.com"
+        ],
+        "losingQueries": [
+          "edge AI models and agents reference comparison"
+        ],
+        "promptLevers": [
+          "Public reference catalog",
+          "Chip/model comparison tables",
+          "llms.txt"
+        ]
+      },
+      "newConditions": {
+        "cursorTier": 5,
+        "geminiTier": 5,
+        "topCompetitors": [
+          "ambiq.com",
+          "blog.4geeks.io",
+          "learn.arm.com"
+        ],
+        "losingQueries": [
+          "on-device AI inference manufacturing low power",
+          "small language models ARM edge deployment guide"
+        ],
+        "promptLevers": [
+          "Manufacturing low-power inference guide",
+          "ARM SLM deployment guide",
+          "llms.txt source catalog"
+        ]
+      }
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T10:20:21.818Z",
+  "generatedAt": "2026-07-06T06:03:26.538Z",
   "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -9,7 +9,8 @@
         "2026-07-02",
         "2026-07-03",
         "2026-07-04",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-06"
       ],
       "datasets": [
         {
@@ -19,7 +20,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#6366f1",
           "backgroundColor": "#6366f133",
@@ -33,7 +35,8 @@
             3.5,
             3.5,
             3.5,
-            3.5
+            3.5,
+            5
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -47,7 +50,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#10b981",
           "backgroundColor": "#10b98133",
@@ -74,7 +78,7 @@
         {
           "label": "edgephone.ai",
           "data": [
-            3.5
+            3.9
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -111,7 +115,7 @@
         {
           "label": "edgephone.ai",
           "data": [
-            3.5
+            3.9
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -623,11 +627,89 @@
         "irena.org",
         "hydrogen.europa.eu"
       ]
+    },
+    {
+      "runId": "2026-07-06T06:01:31.372Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "ambiq.com",
+        "eejournal.com",
+        "ipxchange.tech",
+        "arxiv.org"
+      ],
+      "gapNotes": "edgephone.ai was not cited in visible generic sources; results favored low-power silicon announcements and model optimization references over an Edgephone manufacturing deployment guide."
+    },
+    {
+      "runId": "2026-07-06T06:01:31.372Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "ambiq.com",
+        "eejournal.com",
+        "ipxchange.tech",
+        "arxiv.org"
+      ],
+      "gapNotes": "edgephone.ai was not cited in visible generic sources; results favored low-power silicon announcements and model optimization references over an Edgephone manufacturing deployment guide."
+    },
+    {
+      "runId": "2026-07-06T06:01:31.372Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "blog.4geeks.io",
+        "mjrovai.github.io",
+        "thomasvanlaere.com",
+        "learn.arm.com",
+        "tunder.cloud"
+      ],
+      "gapNotes": "edgephone.ai was not cited in visible generic sources; results favored step-by-step SLM deployment guides, Arm learning paths, and Raspberry Pi edge AI references."
+    },
+    {
+      "runId": "2026-07-06T06:01:31.372Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "blog.4geeks.io",
+        "mjrovai.github.io",
+        "learn.arm.com",
+        "tunder.cloud",
+        "thomasvanlaere.com"
+      ],
+      "gapNotes": "edgephone.ai was not cited in visible generic sources; results favored step-by-step SLM deployment guides, Arm learning paths, and Raspberry Pi edge AI references."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-06T06:01:31.372Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
@@ -656,22 +738,23 @@
         "label": "edgephone.ai",
         "site": "https://edgephone.ai",
         "promptFile": "prompts/entities/edgephone-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-06T06:01:31.372Z",
         "conditionsAtLastPrompt": {
-          "cursorTier": 3,
-          "geminiTier": 4,
+          "cursorTier": 5,
+          "geminiTier": 5,
           "topCompetitors": [
-            "chip.computer",
-            "ai.google.dev",
-            "developer.nvidia.com"
+            "ambiq.com",
+            "blog.4geeks.io",
+            "learn.arm.com"
           ],
           "losingQueries": [
-            "edge AI models and agents reference comparison"
+            "on-device AI inference manufacturing low power",
+            "small language models ARM edge deployment guide"
           ],
           "promptLevers": [
-            "Public reference catalog",
-            "Chip/model comparison tables",
-            "llms.txt"
+            "Manufacturing low-power inference guide",
+            "ARM SLM deployment guide",
+            "llms.txt source catalog"
           ]
         }
       },
@@ -713,12 +796,24 @@
     },
     "edgephone": {
       "cursor": {
-        "tier": 3,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "tier": 5,
+        "updatedAt": "2026-07-06T06:01:31.372Z",
+        "query": "on-device AI inference manufacturing low power",
+        "topCompetitors": [
+          "ambiq.com",
+          "eejournal.com",
+          "ipxchange.tech"
+        ]
       },
       "gemini": {
-        "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "tier": 5,
+        "updatedAt": "2026-07-06T06:01:31.372Z",
+        "query": "on-device AI inference manufacturing low power",
+        "topCompetitors": [
+          "ambiq.com",
+          "eejournal.com",
+          "ipxchange.tech"
+        ]
       }
     },
     "greenh2s": {
