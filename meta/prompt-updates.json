@@ -1,3 +1,24 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "timestamp": "2026-07-06T06:01:12Z",
+      "entity": "greenh2s",
+      "model": "claude-fable-5-thinking-high",
+      "automation": "Ranking Check - greenh2sAI - F5H",
+      "changed": ["topCompetitors", "losingQueries", "promptLevers", "queryRotation"],
+      "before": {
+        "cursorTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"],
+        "losingQueries": ["green hydrogen electrolyzer selection industrial scale"]
+      },
+      "after": {
+        "cursorTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": ["energy.ec.europa.eu", "tuv.com", "osti.gov"],
+        "losingQueries": ["RFNBO certification green hydrogen requirements"]
+      },
+      "reason": "2026-07-06 probes (RFNBO certification + port-scale storage) show regulators/certifiers (EC, EUR-Lex, RVO, TUV/CertifHy) and research institutions (OSTI/PNNL, ESMAP) dominating citations instead of the earlier IEA/IRENA set. greenh2s.ai still tier 4 on both platforms; rotated primary query to RFNBO and updated prompt levers toward citation-ready RFNBO and storage-comparison content."
+    }
+  ]
 }

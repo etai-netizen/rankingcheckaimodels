@@ -36,11 +36,24 @@
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "cursor", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 3, "inTop3": false, "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "gemini", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 4, "inTop3": false, "topCompetitors": ["chip.computer", "qualcomm.com", "apple.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "cursor", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
-    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] }
+    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
+
+    { "runId": "2026-07-06T06:01:12Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "greenh2s", "platform": "cursor", "queryType": "generic-topic", "query": "RFNBO certification green hydrogen requirements", "tier": 4, "inTop3": false, "topCompetitors": ["english.rvo.nl", "tuv.com", "energy.ec.europa.eu"], "gapNotes": "greenh2s.ai absent from top-5 citations; regulators (EC, EUR-Lex) and certifiers (RVO, TUV/CertifHy) dominate. No RFNBO standards page on greenh2s.ai for agents to cite." },
+    { "runId": "2026-07-06T06:01:12Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "RFNBO certification green hydrogen requirements", "tier": 4, "inTop3": false, "topCompetitors": ["energy.ec.europa.eu", "eur-lex.europa.eu", "tuv.com"], "gapNotes": "Gemini grounding cites EU institutional sources and certification bodies first; greenh2s.ai not surfaced for RFNBO topic." },
+    { "runId": "2026-07-06T06:01:12Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "greenh2s", "platform": "cursor", "queryType": "generic-topic", "query": "hydrogen storage port scale deployment options", "tier": 4, "inTop3": false, "topCompetitors": ["osti.gov", "esmap.org", "springer.com"], "gapNotes": "Port-scale storage query returns national labs (PNNL/OSTI), World Bank ESMAP, and academic reviews; greenh2s.ai not cited despite port-deployment focus." },
+    { "runId": "2026-07-06T06:01:12Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "hydrogen storage port scale deployment options", "tier": 4, "inTop3": false, "topCompetitors": ["osti.gov", "esmap.org", "polimi.it"], "gapNotes": "Gemini favors research/institutional PDFs for port hydrogen storage; greenh2s.ai has no indexed comparison content for this topic." }
   ],
   "latestByBrand": {
     "non-exec": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
     "edgephone": { "cursor": { "tier": 3, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
-    "greenh2s": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } }
+    "greenh2s": { "cursor": { "tier": 4, "updatedAt": "2026-07-06T06:01:12Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-06T06:01:12Z" } }
+  },
+  "dailySnapshots": {
+    "2026-07-06": {
+      "greenh2s": {
+        "cursor": { "tier": 4, "inTop3": false, "model": "claude-fable-5-thinking-high" },
+        "gemini": { "tier": 4, "inTop3": false, "model": "claude-fable-5-thinking-high" }
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T06:00:00Z",
+  "updatedAt": "2026-07-06T06:01:12Z",
   "entities": {
     "non-exec": {
       "label": "non-exec.ai",
@@ -32,13 +32,13 @@
       "label": "greenh2s.ai",
       "site": "https://www.greenh2s.ai",
       "promptFile": "prompts/entities/greenh2s-ranking-check.md",
-      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "lastPromptUpdate": "2026-07-06T06:01:12Z",
       "conditionsAtLastPrompt": {
         "cursorTier": 4,
         "geminiTier": 4,
-        "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"],
-        "losingQueries": ["green hydrogen electrolyzer selection industrial scale"],
-        "promptLevers": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"]
+        "topCompetitors": ["energy.ec.europa.eu", "tuv.com", "osti.gov"],
+        "losingQueries": ["RFNBO certification green hydrogen requirements"],
+        "promptLevers": ["RFNBO/RED III certification explainer (DR 2023/1184 + 2023/1185)", "Port-scale storage technology comparison page", "llms.txt + structured citation-ready pages"]
       }
     }
   }
