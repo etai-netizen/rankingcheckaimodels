@@ -1,3 +1,28 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "timestamp": "2026-07-06T06:00:00Z",
+      "brand": "edgephone",
+      "model": "composer-2.5-fast",
+      "reason": "Top competitors and primary losing query changed after 2026-07-06 ranking probe",
+      "changes": {
+        "topCompetitors": {
+          "from": ["chip.computer", "ai.google.dev", "developer.nvidia.com"],
+          "to": ["developer.nvidia.com", "mirantis.com", "arm.com"]
+        },
+        "losingQueries": {
+          "from": ["edge AI models and agents reference comparison"],
+          "to": ["on-device AI inference manufacturing low power"]
+        },
+        "promptLevers": {
+          "from": ["Public reference catalog", "Chip/model comparison tables", "llms.txt"],
+          "to": ["Manufacturing inference case studies", "NVIDIA/Jetson comparison tables", "ARM SLM deployment guide", "llms.txt"]
+        }
+      },
+      "filesUpdated": [
+        "prompts/entities/edgephone-ranking-check.md",
+        "meta/agent-prompts-used.json"
+      ]
+    }
+  ]
 }

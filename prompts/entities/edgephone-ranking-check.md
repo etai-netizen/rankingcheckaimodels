@@ -31,12 +31,12 @@ Edge AI models and agents, on-device inference, edge AI in manufacturing and com
 
 | Field | Value |
 |-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
+| **Last checked** | 2026-07-06T06:00:00Z |
 | **Cursor tier** | 3 |
 | **Gemini tier** | 4 |
-| **Top competitors** | chip.computer, ai.google.dev, developer.nvidia.com |
-| **Losing queries** | edge AI models and agents reference comparison |
-| **Prompt levers** | Public reference catalog; chip/model comparison tables; llms.txt |
+| **Top competitors** | developer.nvidia.com, mirantis.com, arm.com |
+| **Losing queries** | on-device AI inference manufacturing low power |
+| **Prompt levers** | Manufacturing inference case studies; NVIDIA/Jetson comparison tables; ARM SLM deployment guide; llms.txt |
 
 ## Prompt adjustment rule
 
