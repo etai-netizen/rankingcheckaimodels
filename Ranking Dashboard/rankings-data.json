@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T10:20:21.818Z",
+  "generatedAt": "2026-07-06T06:05:11.604Z",
   "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -9,7 +9,8 @@
         "2026-07-02",
         "2026-07-03",
         "2026-07-04",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-06"
       ],
       "datasets": [
         {
@@ -19,7 +20,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#6366f1",
           "backgroundColor": "#6366f133",
@@ -33,7 +35,8 @@
             3.5,
             3.5,
             3.5,
-            3.5
+            3.5,
+            null
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -43,6 +46,7 @@
         {
           "label": "greenh2s.ai",
           "data": [
+            4,
             4,
             4,
             4,
@@ -623,11 +627,83 @@
         "irena.org",
         "hydrogen.europa.eu"
       ]
+    },
+    {
+      "runId": "2026-07-06T06:01:12Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "RFNBO certification green hydrogen requirements",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "english.rvo.nl",
+        "tuv.com",
+        "energy.ec.europa.eu"
+      ],
+      "gapNotes": "greenh2s.ai absent from top-5 citations; regulators (EC, EUR-Lex) and certifiers (RVO, TUV/CertifHy) dominate. No RFNBO standards page on greenh2s.ai for agents to cite."
+    },
+    {
+      "runId": "2026-07-06T06:01:12Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "RFNBO certification green hydrogen requirements",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "energy.ec.europa.eu",
+        "eur-lex.europa.eu",
+        "tuv.com"
+      ],
+      "gapNotes": "Gemini grounding cites EU institutional sources and certification bodies first; greenh2s.ai not surfaced for RFNBO topic."
+    },
+    {
+      "runId": "2026-07-06T06:01:12Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale deployment options",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "osti.gov",
+        "esmap.org",
+        "springer.com"
+      ],
+      "gapNotes": "Port-scale storage query returns national labs (PNNL/OSTI), World Bank ESMAP, and academic reviews; greenh2s.ai not cited despite port-deployment focus."
+    },
+    {
+      "runId": "2026-07-06T06:01:12Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale deployment options",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "osti.gov",
+        "esmap.org",
+        "polimi.it"
+      ],
+      "gapNotes": "Gemini favors research/institutional PDFs for port hydrogen storage; greenh2s.ai has no indexed comparison content for this topic."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-06T06:01:12Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
@@ -679,22 +755,22 @@
         "label": "greenh2s.ai",
         "site": "https://www.greenh2s.ai",
         "promptFile": "prompts/entities/greenh2s-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-06T06:01:12Z",
         "conditionsAtLastPrompt": {
           "cursorTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
-            "iea.org",
-            "irena.org",
-            "hydrogen.europa.eu"
+            "energy.ec.europa.eu",
+            "tuv.com",
+            "osti.gov"
           ],
           "losingQueries": [
-            "green hydrogen electrolyzer selection industrial scale"
+            "RFNBO certification green hydrogen requirements"
           ],
           "promptLevers": [
-            "Electrolyzer comparison hub",
-            "RFNBO standards page",
-            "Cross-link greenh2s.com"
+            "RFNBO/RED III certification explainer (DR 2023/1184 + 2023/1185)",
+            "Port-scale storage technology comparison page",
+            "llms.txt + structured citation-ready pages"
           ]
         }
       }
@@ -724,11 +800,11 @@
     "greenh2s": {
       "cursor": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-06T06:01:12Z"
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-06T06:01:12Z"
       }
     }
   }

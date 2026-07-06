@@ -14,9 +14,9 @@ Green hydrogen production, electrolyzers, RFNBO certification, hydrogen storage,
 
 ## Queries to run (rotate one primary + one secondary per daily run)
 
-1. green hydrogen electrolyzer selection industrial scale
-2. RFNBO certification green hydrogen requirements
-3. hydrogen storage port scale deployment options
+1. RFNBO certification green hydrogen requirements
+2. hydrogen storage port scale deployment options
+3. green hydrogen electrolyzer selection industrial scale
 4. green hydrogen offtake agreement compliance standards
 
 ## Assessment steps
@@ -31,12 +31,14 @@ Green hydrogen production, electrolyzers, RFNBO certification, hydrogen storage,
 
 | Field | Value |
 |-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
+| **Last checked** | 2026-07-06T06:01:12Z |
 | **Cursor tier** | 4 |
 | **Gemini tier** | 4 |
-| **Top competitors** | iea.org, irena.org, hydrogen.europa.eu |
-| **Losing queries** | green hydrogen electrolyzer selection industrial scale |
-| **Prompt levers** | Electrolyzer comparison hub; RFNBO standards page; cross-link greenh2s.com |
+| **Top competitors** | energy.ec.europa.eu, tuv.com, osti.gov |
+| **Losing queries** | RFNBO certification green hydrogen requirements |
+| **Prompt levers** | RFNBO/RED III certification explainer (DR 2023/1184 + 2023/1185); port-scale storage technology comparison page; llms.txt + structured citation-ready pages |
+
+**Competitor shift (2026-07-06, Fable 5 High):** on RFNBO and port-storage queries, agents cite regulators and certifiers (energy.ec.europa.eu, eur-lex.europa.eu, english.rvo.nl, tuv.com/CertifHy) and research institutions (osti.gov/PNNL, esmap.org) ahead of the earlier iea.org/irena.org set. greenh2s.ai is not surfaced; it lacks indexed RFNBO-criteria and storage-comparison content that agents can cite.
 
 ## Prompt adjustment rule
 
