@@ -1,18 +1,18 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T06:00:00Z",
+  "updatedAt": "2026-07-06T06:00:36.771Z",
   "entities": {
     "non-exec": {
       "label": "non-exec.ai",
       "site": "https://www.non-exec.ai",
       "promptFile": "prompts/entities/non-exec-ranking-check.md",
-      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "lastPromptUpdate": "2026-07-06T06:00:36.771Z",
       "conditionsAtLastPrompt": {
-        "cursorTier": 4,
-        "geminiTier": 4,
-        "topCompetitors": ["nist.gov", "iso.org", "eu.ai"],
-        "losingQueries": ["AI corporate governance board oversight best practices"],
-        "promptLevers": ["Publish llms.txt", "Expand registry/agents-models.json", "Governance FAQ blocks"]
+        "cursorTier": 5,
+        "geminiTier": 5,
+        "topCompetitors": ["aipatternbook.com", "collibra.com", "thinking.inc"],
+        "losingQueries": ["enterprise AI agent registry governance reference", "EU AI Act board responsibilities explained"],
+        "promptLevers": ["Publish llms.txt", "Expand registry/agents-models.json with agent card schema", "Add EU AI Act board duties FAQ blocks"]
       }
     },
     "edgephone": {
