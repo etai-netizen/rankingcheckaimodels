@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T10:20:21.818Z",
+  "generatedAt": "2026-07-06T06:03:25.891Z",
   "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -9,7 +9,8 @@
         "2026-07-02",
         "2026-07-03",
         "2026-07-04",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-06"
       ],
       "datasets": [
         {
@@ -19,7 +20,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#6366f1",
           "backgroundColor": "#6366f133",
@@ -33,7 +35,8 @@
             3.5,
             3.5,
             3.5,
-            3.5
+            3.5,
+            3.8
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -47,7 +50,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#10b981",
           "backgroundColor": "#10b98133",
@@ -74,7 +78,7 @@
         {
           "label": "edgephone.ai",
           "data": [
-            3.5
+            3.6
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -111,7 +115,7 @@
         {
           "label": "edgephone.ai",
           "data": [
-            3.5
+            3.6
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -623,11 +627,91 @@
         "irena.org",
         "hydrogen.europa.eu"
       ]
+    },
+    {
+      "runId": "2026-07-06T06:00:00Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 3,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.nvidia.com",
+        "mirantis.com",
+        "arm.com",
+        "flolive.net",
+        "emergentmind.com"
+      ],
+      "gapNotes": "edgephone.ai cited peripherally for on-device AI but lacks manufacturing-specific reference content; NVIDIA Jetson and enterprise edge guides dominate top citations."
+    },
+    {
+      "runId": "2026-07-06T06:00:00Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.nvidia.com",
+        "mirantis.com",
+        "arm.com",
+        "qualcomm.com",
+        "flolive.net"
+      ],
+      "gapNotes": "Gemini surfaces vendor blogs and NVIDIA/ARM docs; edgephone.ai absent from manufacturing low-power inference source lists."
+    },
+    {
+      "runId": "2026-07-06T06:00:00Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.arm.com",
+        "blog.4geeks.io",
+        "mjrovai.github.io",
+        "huggingface.co",
+        "arm.com"
+      ],
+      "gapNotes": "SLM deployment guides cite Arm KleidiAI, llama.cpp, and Ollama tutorials; no edgephone.ai ARM deployment reference."
+    },
+    {
+      "runId": "2026-07-06T06:00:00Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.arm.com",
+        "blog.4geeks.io",
+        "huggingface.co",
+        "steelph0enix.github.io",
+        "tunder.cloud"
+      ],
+      "gapNotes": "Gemini prioritizes Arm community posts and practical SLM guides; edgephone.ai not indexed for ARM SLM deployment topics."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-06T06:00:00Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
@@ -656,21 +740,22 @@
         "label": "edgephone.ai",
         "site": "https://edgephone.ai",
         "promptFile": "prompts/entities/edgephone-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-06T06:00:00Z",
         "conditionsAtLastPrompt": {
           "cursorTier": 3,
           "geminiTier": 4,
           "topCompetitors": [
-            "chip.computer",
-            "ai.google.dev",
-            "developer.nvidia.com"
+            "developer.nvidia.com",
+            "mirantis.com",
+            "arm.com"
           ],
           "losingQueries": [
-            "edge AI models and agents reference comparison"
+            "on-device AI inference manufacturing low power"
           ],
           "promptLevers": [
-            "Public reference catalog",
-            "Chip/model comparison tables",
+            "Manufacturing inference case studies",
+            "NVIDIA/Jetson comparison tables",
+            "ARM SLM deployment guide",
             "llms.txt"
           ]
         }
@@ -714,11 +799,11 @@
     "edgephone": {
       "cursor": {
         "tier": 3,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-06T06:00:00Z"
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-06T06:00:00Z"
       }
     },
     "greenh2s": {
