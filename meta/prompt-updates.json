@@ -1,3 +1,17 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "runId": "2026-07-06T06:00:08Z",
+      "date": "2026-07-06",
+      "entity": "non-exec",
+      "model": "claude-fable-5-thinking-high",
+      "reason": "Top competitors changed from regulators (nist.gov, iso.org, eu.ai) to commercial vendors and niche explainers (kosmoy.com, collibra.com, thinking.inc); primary losing query shifted to 'enterprise AI agent registry governance reference'.",
+      "changes": [
+        "Reordered query rotation to lead with the agent-registry query where the citation gap is widest",
+        "Updated 'Conditions at last run' table: competitors, losing queries, last-checked timestamp",
+        "Prompt levers refreshed: llms.txt confirmed missing (404), agent-registry reference page with FAQ blocks, EU AI Act board-obligations checklist"
+      ],
+      "filesTouched": ["prompts/entities/non-exec-ranking-check.md", "meta/agent-prompts-used.json"]
+    }
+  ]
 }

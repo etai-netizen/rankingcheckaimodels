@@ -36,11 +36,24 @@
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "cursor", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 3, "inTop3": false, "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "edgephone", "platform": "gemini", "queryType": "generic-topic", "query": "edge AI models and agents reference comparison", "tier": 4, "inTop3": false, "topCompetitors": ["chip.computer", "qualcomm.com", "apple.com"] },
     { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "cursor", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
-    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] }
+    { "runId": "2026-07-05T06:00:00Z", "date": "2026-07-05", "slot": "daily-check", "model": "composer-2.5-fast", "brand": "greenh2s", "platform": "gemini", "queryType": "generic-topic", "query": "green hydrogen electrolyzer selection industrial scale", "tier": 4, "inTop3": false, "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"] },
+
+    { "runId": "2026-07-06T06:00:08Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "non-exec", "platform": "cursor", "queryType": "generic-topic", "query": "enterprise AI agent registry governance reference", "tier": 4, "inTop3": false, "topCompetitors": ["kosmoy.com", "collibra.com", "truefoundry.com"], "gapNotes": "Not cited in top 5 (aipatternbook.com, kosmoy.com, truefoundry.com, prefactor.tech, collibra.com). Landscape shifted from regulators to commercial agent-registry vendors; non-exec.ai lacks a public agent-registry reference page and llms.txt (verified 404)." },
+    { "runId": "2026-07-06T06:00:08Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "non-exec", "platform": "gemini", "queryType": "generic-topic", "query": "enterprise AI agent registry governance reference", "tier": 4, "inTop3": false, "topCompetitors": ["kosmoy.com", "collibra.com", "prefactor.tech"], "gapNotes": "Assessed via Google search-grounding proxy for Gemini source list; non-exec.ai absent, vendor blogs with FAQ/definition blocks dominate the answer citations." },
+    { "runId": "2026-07-06T06:00:08Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "non-exec", "platform": "cursor", "queryType": "generic-topic", "query": "EU AI Act board responsibilities explained", "tier": 4, "inTop3": false, "topCompetitors": ["thinking.inc", "yrproject.nl", "compelframework.org"], "gapNotes": "Not cited; niche governance explainers plus law.stanford.edu outrank. Structured obligation checklists win citations for this query." },
+    { "runId": "2026-07-06T06:00:08Z", "date": "2026-07-06", "slot": "daily-check", "model": "claude-fable-5-thinking-high", "brand": "non-exec", "platform": "gemini", "queryType": "generic-topic", "query": "EU AI Act board responsibilities explained", "tier": 4, "inTop3": false, "topCompetitors": ["thinking.inc", "compelframework.org", "quantamixsolutions.com"], "gapNotes": "Assessed via Google search-grounding proxy for Gemini source list; non-exec.ai absent from answer + sources." }
   ],
   "latestByBrand": {
-    "non-exec": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
+    "non-exec": { "cursor": { "tier": 4, "updatedAt": "2026-07-06T06:00:08Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-06T06:00:08Z" } },
     "edgephone": { "cursor": { "tier": 3, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } },
     "greenh2s": { "cursor": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" }, "gemini": { "tier": 4, "updatedAt": "2026-07-05T06:00:00Z" } }
+  },
+  "dailySnapshots": {
+    "2026-07-01": { "non-exec": { "cursor": 4, "gemini": 4 }, "edgephone": { "cursor": 3, "gemini": 4 }, "greenh2s": { "cursor": 4, "gemini": 4 } },
+    "2026-07-02": { "non-exec": { "cursor": 4, "gemini": 4 }, "edgephone": { "cursor": 3, "gemini": 4 }, "greenh2s": { "cursor": 4, "gemini": 4 } },
+    "2026-07-03": { "non-exec": { "cursor": 4, "gemini": 4 }, "edgephone": { "cursor": 3, "gemini": 4 }, "greenh2s": { "cursor": 4, "gemini": 4 } },
+    "2026-07-04": { "non-exec": { "cursor": 4, "gemini": 4 }, "edgephone": { "cursor": 3, "gemini": 4 }, "greenh2s": { "cursor": 4, "gemini": 4 } },
+    "2026-07-05": { "non-exec": { "cursor": 4, "gemini": 4 }, "edgephone": { "cursor": 3, "gemini": 4 }, "greenh2s": { "cursor": 4, "gemini": 4 } },
+    "2026-07-06": { "non-exec": { "cursor": 4, "gemini": 4 } }
   }
 }
