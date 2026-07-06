@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T10:20:21.818Z",
+  "generatedAt": "2026-07-06T06:04:50.444Z",
   "schedule": "06:00 GMT daily · 4 Cloud Automations (Composer 2.5, GPT-5.5 High, Codex 5.3 High, Fable 5 High)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -9,12 +9,14 @@
         "2026-07-02",
         "2026-07-03",
         "2026-07-04",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-06"
       ],
       "datasets": [
         {
           "label": "non-exec.ai",
           "data": [
+            4,
             4,
             4,
             4,
@@ -33,7 +35,8 @@
             3.5,
             3.5,
             3.5,
-            3.5
+            3.5,
+            null
           ],
           "borderColor": "#8b5cf6",
           "backgroundColor": "#8b5cf633",
@@ -47,7 +50,8 @@
             4,
             4,
             4,
-            4
+            4,
+            null
           ],
           "borderColor": "#10b981",
           "backgroundColor": "#10b98133",
@@ -623,32 +627,105 @@
         "irena.org",
         "hydrogen.europa.eu"
       ]
+    },
+    {
+      "runId": "2026-07-06T06:00:08Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "enterprise AI agent registry governance reference",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "kosmoy.com",
+        "collibra.com",
+        "truefoundry.com"
+      ],
+      "gapNotes": "Not cited in top 5 (aipatternbook.com, kosmoy.com, truefoundry.com, prefactor.tech, collibra.com). Landscape shifted from regulators to commercial agent-registry vendors; non-exec.ai lacks a public agent-registry reference page and llms.txt (verified 404)."
+    },
+    {
+      "runId": "2026-07-06T06:00:08Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "enterprise AI agent registry governance reference",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "kosmoy.com",
+        "collibra.com",
+        "prefactor.tech"
+      ],
+      "gapNotes": "Assessed via Google search-grounding proxy for Gemini source list; non-exec.ai absent, vendor blogs with FAQ/definition blocks dominate the answer citations."
+    },
+    {
+      "runId": "2026-07-06T06:00:08Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "non-exec",
+      "platform": "cursor",
+      "queryType": "generic-topic",
+      "query": "EU AI Act board responsibilities explained",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "thinking.inc",
+        "yrproject.nl",
+        "compelframework.org"
+      ],
+      "gapNotes": "Not cited; niche governance explainers plus law.stanford.edu outrank. Structured obligation checklists win citations for this query."
+    },
+    {
+      "runId": "2026-07-06T06:00:08Z",
+      "date": "2026-07-06",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "non-exec",
+      "platform": "gemini",
+      "queryType": "generic-topic",
+      "query": "EU AI Act board responsibilities explained",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "thinking.inc",
+        "compelframework.org",
+        "quantamixsolutions.com"
+      ],
+      "gapNotes": "Assessed via Google search-grounding proxy for Gemini source list; non-exec.ai absent from answer + sources."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-06T06:00:08Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
         "site": "https://www.non-exec.ai",
         "promptFile": "prompts/entities/non-exec-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-06T06:00:08Z",
         "conditionsAtLastPrompt": {
           "cursorTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
-            "nist.gov",
-            "iso.org",
-            "eu.ai"
+            "kosmoy.com",
+            "collibra.com",
+            "thinking.inc"
           ],
           "losingQueries": [
-            "AI corporate governance board oversight best practices"
+            "enterprise AI agent registry governance reference",
+            "EU AI Act board responsibilities explained"
           ],
           "promptLevers": [
-            "Publish llms.txt",
-            "Expand registry/agents-models.json",
-            "Governance FAQ blocks"
+            "Publish llms.txt (verified 404 on 2026-07-06)",
+            "Public agent-registry reference page with FAQ/definition blocks",
+            "EU AI Act board-obligations checklist page"
           ]
         }
       },
@@ -704,11 +781,11 @@
     "non-exec": {
       "cursor": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-06T06:00:08Z"
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T06:00:00Z"
+        "updatedAt": "2026-07-06T06:00:08Z"
       }
     },
     "edgephone": {
