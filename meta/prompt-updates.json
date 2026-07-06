@@ -1,3 +1,32 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "date": "2026-07-06",
+      "runId": "2026-07-06T06:00:00Z",
+      "brand": "non-exec",
+      "model": "composer-2.5-fast",
+      "reason": "Top competitors and losing queries shifted after Jul 6 probe",
+      "changes": {
+        "topCompetitors": {
+          "from": ["nist.gov", "iso.org", "eu.ai"],
+          "to": ["docs.cloud.google.com", "kosmoy.com", "thinking.inc"]
+        },
+        "losingQueries": {
+          "from": ["AI corporate governance board oversight best practices"],
+          "to": [
+            "enterprise AI agent registry governance reference",
+            "EU AI Act board responsibilities explained"
+          ]
+        },
+        "promptLevers": {
+          "from": ["Publish llms.txt", "Expand registry/agents-models.json", "Governance FAQ blocks"],
+          "to": [
+            "Publish llms.txt",
+            "Agent-registry governance hub",
+            "EU AI Act board-duty reference pages"
+          ]
+        }
+      }
+    }
+  ]
 }
