@@ -1,3 +1,47 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "timestamp": "2026-07-07T06:01:42Z",
+      "brand": "greenh2s",
+      "model": "gpt-5.5-high",
+      "promptFile": "prompts/entities/greenh2s-ranking-check.md",
+      "reason": "RFNBO certification query shifted both Cursor and Gemini to tier 5 with certification and EU/RVO sources leading.",
+      "previousConditions": {
+        "cursorTier": 4,
+        "googleWebTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": [
+          "iea.org",
+          "irena.org",
+          "hydrogen.europa.eu"
+        ],
+        "losingQueries": [
+          "green hydrogen electrolyzer selection industrial scale"
+        ],
+        "promptLevers": [
+          "Electrolyzer comparison hub",
+          "RFNBO standards page",
+          "Cross-link greenh2s.com"
+        ]
+      },
+      "newConditions": {
+        "cursorTier": 5,
+        "googleWebTier": 4,
+        "geminiTier": 5,
+        "topCompetitors": [
+          "rvo.nl",
+          "certifhy.eu",
+          "energy.ec.europa.eu"
+        ],
+        "losingQueries": [
+          "RFNBO certification green hydrogen requirements"
+        ],
+        "promptLevers": [
+          "RFNBO certification explainer",
+          "Certification scheme comparison",
+          "EU RED III compliance FAQ"
+        ]
+      }
+    }
+  ]
 }

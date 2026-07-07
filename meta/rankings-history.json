@@ -1140,6 +1140,48 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:01:42Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "RFNBO certification green hydrogen requirements",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "energy.ec.europa.eu",
+        "rvo.nl",
+        "iea.org",
+        "irena.org",
+        "certifhy.eu"
+      ],
+      "gapNotes": "GPT-5.5/Cursor-style RFNBO answers cite EU policy, RVO guidance, IEA/IRENA analysis, and CertifHy; greenh2s.ai was absent from the generic source set."
+    },
+    {
+      "runId": "2026-07-07T06:01:42Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "RFNBO certification green hydrogen requirements",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "rvo.nl",
+        "tuv.com",
+        "rina.org",
+        "certifhy.eu",
+        "hydrogenera.eu"
+      ],
+      "gapNotes": "Gemini-style generic RFNBO results favor RVO and certification bodies such as T\u00dcV, RINA, and CertifHy; greenh2s.ai was not cited."
     }
   ],
   "latestByBrand": {
@@ -1209,23 +1251,25 @@
     },
     "greenh2s": {
       "cursor": {
-        "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 5,
+        "updatedAt": "2026-07-07T06:01:42Z",
         "topCompetitors": [
+          "energy.ec.europa.eu",
+          "rvo.nl",
           "iea.org",
           "irena.org",
-          "hydrogen.europa.eu",
-          "hydrogencouncil.com"
+          "certifhy.eu"
         ]
       },
       "gemini": {
-        "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 5,
+        "updatedAt": "2026-07-07T06:01:42Z",
         "topCompetitors": [
-          "iea.org",
-          "irena.org",
-          "hydrogen.europa.eu",
-          "worldbank.org"
+          "rvo.nl",
+          "tuv.com",
+          "rina.org",
+          "certifhy.eu",
+          "hydrogenera.eu"
         ]
       },
       "google-web": {
@@ -1240,5 +1284,37 @@
       }
     }
   },
-  "lastLiveCheck": "2026-07-05T10:41:23Z"
+  "lastLiveCheck": "2026-07-07T06:01:42Z",
+  "dailySnapshots": {
+    "2026-07-07": {
+      "greenh2s": {
+        "runId": "2026-07-07T06:01:42Z",
+        "model": "gpt-5.5-high",
+        "queryType": "generic-topic",
+        "query": "RFNBO certification green hydrogen requirements",
+        "cursor": {
+          "tier": 5,
+          "inTop3": false,
+          "topCompetitors": [
+            "energy.ec.europa.eu",
+            "rvo.nl",
+            "iea.org",
+            "irena.org",
+            "certifhy.eu"
+          ]
+        },
+        "gemini": {
+          "tier": 5,
+          "inTop3": false,
+          "topCompetitors": [
+            "rvo.nl",
+            "tuv.com",
+            "rina.org",
+            "certifhy.eu",
+            "hydrogenera.eu"
+          ]
+        }
+      }
+    }
+  }
 }
