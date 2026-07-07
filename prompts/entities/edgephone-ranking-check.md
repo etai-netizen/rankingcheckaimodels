@@ -18,6 +18,7 @@ Edge AI models and agents, on-device inference, edge AI in manufacturing and com
 2. on-device AI inference manufacturing low power
 3. small language models ARM edge deployment guide
 4. edge AI deployment commerce compliance best practices
+5. quantized SLM deployment llama.cpp GGUF edge hardware guide
 
 ## Assessment steps
 
@@ -31,12 +32,12 @@ Edge AI models and agents, on-device inference, edge AI in manufacturing and com
 
 | Field | Value |
 |-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
-| **Cursor tier** | 3 |
+| **Last checked** | 2026-07-07T06:00:28Z |
+| **Cursor tier** | 4 |
 | **Gemini tier** | 4 |
-| **Top competitors** | chip.computer, ai.google.dev, developer.nvidia.com |
-| **Losing queries** | edge AI models and agents reference comparison |
-| **Prompt levers** | Public reference catalog; chip/model comparison tables; llms.txt |
+| **Top competitors** | ambiq.com, st.com, learn.arm.com, axelera.ai, deepx.ai |
+| **Losing queries** | on-device AI inference manufacturing low power; small language models ARM edge deployment guide |
+| **Prompt levers** | Hands-on deployment tutorials (llama.cpp/GGUF/Q4_K_M on ARM); energy-per-inference and TOPS/W benchmark pages; NPU/accelerator comparison with concrete power envelopes; llms.txt |
 
 ## Prompt adjustment rule
 

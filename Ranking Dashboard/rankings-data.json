@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T07:53:44.716Z",
+  "generatedAt": "2026-07-07T06:04:34.777Z",
   "schedule": "06:00 GMT daily · 9 Cloud Automations (3 entities × 3 models: C2.5, G5.5H, F5H)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -10,7 +10,8 @@
           "2026-07-02",
           "2026-07-03",
           "2026-07-04",
-          "2026-07-05"
+          "2026-07-05",
+          "2026-07-07"
         ],
         "datasets": [
           {
@@ -20,7 +21,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#6366f1",
             "backgroundColor": "#6366f133",
@@ -34,7 +36,8 @@
               3.7,
               3.7,
               3.7,
-              3.7
+              3.7,
+              4
             ],
             "borderColor": "#8b5cf6",
             "backgroundColor": "#8b5cf633",
@@ -48,7 +51,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#10b981",
             "backgroundColor": "#10b98133",
@@ -139,7 +143,8 @@
           "2026-07-02",
           "2026-07-03",
           "2026-07-04",
-          "2026-07-05"
+          "2026-07-05",
+          "2026-07-07"
         ],
         "datasets": [
           {
@@ -152,7 +157,8 @@
               null,
               null,
               null,
-              3.7
+              3.7,
+              null
             ],
             "borderColor": "#3b82f6",
             "backgroundColor": "#3b82f633",
@@ -166,6 +172,7 @@
             "data": [
               null,
               3.7,
+              null,
               null,
               null,
               null
@@ -184,7 +191,8 @@
               null,
               null,
               3.7,
-              null
+              null,
+              4
             ],
             "borderColor": "#d97706",
             "backgroundColor": "#d9770633",
@@ -200,7 +208,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#ea4335",
             "backgroundColor": "#ea433533",
@@ -212,6 +221,7 @@
             "label": "Google Gemini",
             "logo": "brand/agent-gemini.svg",
             "data": [
+              4,
               4,
               4,
               4,
@@ -260,7 +270,7 @@
             "label": "Fable 5 High",
             "logo": "brand/agent-anthropic.svg",
             "data": [
-              3.7
+              3.8
             ],
             "borderColor": "#d97706",
             "backgroundColor": "#d9770633",
@@ -328,7 +338,7 @@
             "label": "Fable 5 High",
             "logo": "brand/agent-anthropic.svg",
             "data": [
-              3.7
+              3.8
             ],
             "borderColor": "#d97706",
             "backgroundColor": "#d9770633",
@@ -600,7 +610,8 @@
             "2026-07-02",
             "2026-07-03",
             "2026-07-04",
-            "2026-07-05"
+            "2026-07-05",
+            "2026-07-07"
           ],
           "datasets": [
             {
@@ -613,7 +624,8 @@
                 null,
                 null,
                 null,
-                3
+                3,
+                null
               ],
               "borderColor": "#3b82f6",
               "backgroundColor": "#3b82f633",
@@ -627,6 +639,7 @@
               "data": [
                 null,
                 3,
+                null,
                 null,
                 null,
                 null
@@ -645,7 +658,8 @@
                 null,
                 null,
                 3,
-                null
+                null,
+                4
               ],
               "borderColor": "#d97706",
               "backgroundColor": "#d9770633",
@@ -661,7 +675,8 @@
                 4,
                 4,
                 4,
-                4
+                4,
+                null
               ],
               "borderColor": "#ea4335",
               "backgroundColor": "#ea433533",
@@ -673,6 +688,7 @@
               "label": "Google Gemini",
               "logo": "brand/agent-gemini.svg",
               "data": [
+                4,
                 4,
                 4,
                 4,
@@ -721,7 +737,7 @@
               "label": "Fable 5 High",
               "logo": "brand/agent-anthropic.svg",
               "data": [
-                3
+                3.7
               ],
               "borderColor": "#d97706",
               "backgroundColor": "#d9770633",
@@ -789,7 +805,7 @@
               "label": "Fable 5 High",
               "logo": "brand/agent-anthropic.svg",
               "data": [
-                3
+                3.7
               ],
               "borderColor": "#d97706",
               "backgroundColor": "#d9770633",
@@ -2322,11 +2338,91 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ambiq.com",
+        "st.com",
+        "arxiv.org",
+        "ipxchange.tech"
+      ],
+      "gapNotes": "Silicon vendors (Ambiq Atomiq/SPOT, ST STM32N6 Neural-ART) and academic surveys own this query; edgephone.ai not cited. Winning content is NPU spec sheets and quantization/pruning how-tos, not catalogs."
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "axelera.ai",
+        "deepx.ai",
+        "nvidia.com",
+        "st.com"
+      ],
+      "gapNotes": "Gemini grounds on edge-accelerator vendors (Axelera Metis, DEEPX DX-M1, NVIDIA IGX/Jetson Thor) with concrete TOPS/W and power-envelope numbers; edgephone.ai absent."
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "learn.arm.com",
+        "premai.io",
+        "blog.4geeks.io",
+        "dodatathings.dev"
+      ],
+      "gapNotes": "Arm Learning Paths and hands-on llama.cpp/GGUF/Q4_K_M tutorials (Pi 5, Cortex-A76) dominate; edgephone.ai not cited. Step-by-step deployment guides win, comparison tables do not."
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "markaicode.com",
+        "blog.4geeks.io",
+        "turingpi.com",
+        "aimagicx.com"
+      ],
+      "gapNotes": "Gemini cites practitioner blogs with copy-paste llama.cpp build flags and RK3588/Pi benchmarks; edgephone.ai absent from grounded sources."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-07T06:00:28Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
@@ -2356,22 +2452,26 @@
         "label": "edgephone.ai",
         "site": "https://edgephone.ai",
         "promptFile": "prompts/entities/edgephone-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-07T06:00:28Z",
         "conditionsAtLastPrompt": {
-          "cursorTier": 3,
+          "cursorTier": 4,
           "googleWebTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
-            "chip.computer",
-            "ai.google.dev",
-            "developer.nvidia.com"
+            "ambiq.com",
+            "st.com",
+            "learn.arm.com",
+            "axelera.ai",
+            "deepx.ai"
           ],
           "losingQueries": [
-            "edge AI models and agents reference comparison"
+            "on-device AI inference manufacturing low power",
+            "small language models ARM edge deployment guide"
           ],
           "promptLevers": [
-            "Public reference catalog",
-            "Chip/model comparison tables",
+            "Hands-on ARM deployment tutorials (llama.cpp/GGUF/Q4_K_M)",
+            "Energy-per-inference and TOPS/W benchmark pages",
+            "NPU/accelerator comparison with power envelopes",
             "llms.txt"
           ]
         }
@@ -2437,23 +2537,23 @@
     },
     "edgephone": {
       "cursor": {
-        "tier": 3,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 4,
+        "updatedAt": "2026-07-07T06:00:28Z",
         "topCompetitors": [
-          "chip.computer",
-          "ai.google.dev",
-          "developer.nvidia.com",
-          "huggingface.co"
+          "ambiq.com",
+          "st.com",
+          "learn.arm.com",
+          "premai.io"
         ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:00:28Z",
         "topCompetitors": [
-          "chip.computer",
-          "qualcomm.com",
-          "apple.com",
-          "ai.google.dev"
+          "axelera.ai",
+          "deepx.ai",
+          "nvidia.com",
+          "markaicode.com"
         ]
       },
       "google-web": {

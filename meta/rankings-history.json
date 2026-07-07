@@ -1140,6 +1140,86 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "ambiq.com",
+        "st.com",
+        "arxiv.org",
+        "ipxchange.tech"
+      ],
+      "gapNotes": "Silicon vendors (Ambiq Atomiq/SPOT, ST STM32N6 Neural-ART) and academic surveys own this query; edgephone.ai not cited. Winning content is NPU spec sheets and quantization/pruning how-tos, not catalogs."
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "on-device AI inference manufacturing low power",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "axelera.ai",
+        "deepx.ai",
+        "nvidia.com",
+        "st.com"
+      ],
+      "gapNotes": "Gemini grounds on edge-accelerator vendors (Axelera Metis, DEEPX DX-M1, NVIDIA IGX/Jetson Thor) with concrete TOPS/W and power-envelope numbers; edgephone.ai absent."
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "learn.arm.com",
+        "premai.io",
+        "blog.4geeks.io",
+        "dodatathings.dev"
+      ],
+      "gapNotes": "Arm Learning Paths and hands-on llama.cpp/GGUF/Q4_K_M tutorials (Pi 5, Cortex-A76) dominate; edgephone.ai not cited. Step-by-step deployment guides win, comparison tables do not."
+    },
+    {
+      "runId": "2026-07-07T06:00:28Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "markaicode.com",
+        "blog.4geeks.io",
+        "turingpi.com",
+        "aimagicx.com"
+      ],
+      "gapNotes": "Gemini cites practitioner blogs with copy-paste llama.cpp build flags and RK3588/Pi benchmarks; edgephone.ai absent from grounded sources."
     }
   ],
   "latestByBrand": {
@@ -1177,23 +1257,23 @@
     },
     "edgephone": {
       "cursor": {
-        "tier": 3,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 4,
+        "updatedAt": "2026-07-07T06:00:28Z",
         "topCompetitors": [
-          "chip.computer",
-          "ai.google.dev",
-          "developer.nvidia.com",
-          "huggingface.co"
+          "ambiq.com",
+          "st.com",
+          "learn.arm.com",
+          "premai.io"
         ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:00:28Z",
         "topCompetitors": [
-          "chip.computer",
-          "qualcomm.com",
-          "apple.com",
-          "ai.google.dev"
+          "axelera.ai",
+          "deepx.ai",
+          "nvidia.com",
+          "markaicode.com"
         ]
       },
       "google-web": {
@@ -1237,6 +1317,30 @@
           "hydrogen.europa.eu",
           "worldbank.org"
         ]
+      }
+    }
+  },
+  "dailySnapshots": {
+    "2026-07-07": {
+      "edgephone": {
+        "cursor": {
+          "tier": 4,
+          "topCompetitors": [
+            "ambiq.com",
+            "st.com",
+            "learn.arm.com",
+            "premai.io"
+          ]
+        },
+        "gemini": {
+          "tier": 4,
+          "topCompetitors": [
+            "axelera.ai",
+            "deepx.ai",
+            "nvidia.com",
+            "markaicode.com"
+          ]
+        }
       }
     }
   },
