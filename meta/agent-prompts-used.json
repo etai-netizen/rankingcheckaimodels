@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T06:00:00Z",
+  "updatedAt": "2026-07-07T06:00:00Z",
   "entities": {
     "non-exec": {
       "label": "non-exec.ai",
@@ -34,14 +34,14 @@
       "label": "greenh2s.ai",
       "site": "https://www.greenh2s.ai",
       "promptFile": "prompts/entities/greenh2s-ranking-check.md",
-      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "lastPromptUpdate": "2026-07-07T06:00:00Z",
       "conditionsAtLastPrompt": {
         "cursorTier": 4,
         "googleWebTier": 4,
         "geminiTier": 4,
-        "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"],
-        "losingQueries": ["green hydrogen electrolyzer selection industrial scale"],
-        "promptLevers": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"]
+        "topCompetitors": ["link.springer.com", "osti.gov", "hydrogen.europa.eu"],
+        "losingQueries": ["hydrogen storage port scale deployment options"],
+        "promptLevers": ["Port-scale hydrogen storage hub", "LOHC/cryogenic deployment comparison", "Cross-link maritime case studies"]
       }
     }
   }
