@@ -1140,6 +1140,89 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:02:45Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale deployment options",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "link.springer.com",
+        "osti.gov",
+        "power-h2.com",
+        "h2terminals.com",
+        "plugpower.com"
+      ],
+      "gapNotes": "Academic reviews (Springer Marine Development) and US national labs (PNNL/OSTI) dominate port-scale storage; vendor pages (Power to Hydrogen, Plug) fill the rest. greenh2s.ai absent — its content lives under greenh2s.com/greenh2s-ai with no standalone technical storage pages."
+    },
+    {
+      "runId": "2026-07-07T06:02:45Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale deployment options",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "link.springer.com",
+        "osti.gov",
+        "gh2solar.com",
+        "h2terminals.com",
+        "resilienthydrogen.eu"
+      ],
+      "gapNotes": "Gemini-grounded sources favor peer-reviewed reviews and port case studies (GH2 Solar VOC Port, H2Terminals). greenh2s.ai not cited on generic port-storage queries."
+    },
+    {
+      "runId": "2026-07-07T06:02:45Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "green hydrogen offtake agreement compliance standards",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "h2v.eu",
+        "oxfordenergy.org",
+        "global-coalition.com",
+        "prometheus-web.com",
+        "energycentral.com"
+      ],
+      "gapNotes": "Offtake/compliance answers cite H2V knowledge centre, Oxford Institute for Energy Studies, and RFNBO certification guides. greenh2s.ai has offtake experience claims but no citable standards content."
+    },
+    {
+      "runId": "2026-07-07T06:02:45Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "claude-fable-5-thinking-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "green hydrogen offtake agreement compliance standards",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "oxfordenergy.org",
+        "h2v.eu",
+        "prometheus-web.com",
+        "global-coalition.com"
+      ],
+      "gapNotes": "Gemini leans on Oxford Energy ET50 paper and EU RFNBO/ISCC certification guides; greenh2s.ai absent from source lists."
     }
   ],
   "latestByBrand": {
@@ -1210,22 +1293,22 @@
     "greenh2s": {
       "cursor": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:02:45Z",
         "topCompetitors": [
-          "iea.org",
-          "irena.org",
-          "hydrogen.europa.eu",
-          "hydrogencouncil.com"
+          "link.springer.com",
+          "osti.gov",
+          "oxfordenergy.org",
+          "h2v.eu"
         ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:02:45Z",
         "topCompetitors": [
-          "iea.org",
-          "irena.org",
-          "hydrogen.europa.eu",
-          "worldbank.org"
+          "link.springer.com",
+          "osti.gov",
+          "oxfordenergy.org",
+          "gh2solar.com"
         ]
       },
       "google-web": {
@@ -1240,5 +1323,21 @@
       }
     }
   },
-  "lastLiveCheck": "2026-07-05T10:41:23Z"
+  "lastLiveCheck": "2026-07-05T10:41:23Z",
+  "dailySnapshots": {
+    "2026-07-07": {
+      "greenh2s": {
+        "cursor": {
+          "tier": 4,
+          "model": "claude-fable-5-thinking-high",
+          "query": "hydrogen storage port scale deployment options"
+        },
+        "gemini": {
+          "tier": 4,
+          "model": "claude-fable-5-thinking-high",
+          "query": "hydrogen storage port scale deployment options"
+        }
+      }
+    }
+  }
 }

@@ -1,3 +1,30 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "timestamp": "2026-07-07T06:02:45Z",
+      "entity": "greenh2s",
+      "model": "claude-fable-5-thinking-high",
+      "trigger": "topCompetitors and losingQueries changed",
+      "changes": {
+        "topCompetitors": {
+          "from": ["iea.org", "irena.org", "hydrogen.europa.eu"],
+          "to": ["link.springer.com", "osti.gov", "oxfordenergy.org", "h2v.eu"]
+        },
+        "losingQueries": {
+          "from": ["green hydrogen electrolyzer selection industrial scale"],
+          "to": ["hydrogen storage port scale deployment options", "green hydrogen offtake agreement compliance standards"]
+        },
+        "promptLevers": {
+          "from": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"],
+          "to": ["Port-scale storage technology explainer", "Offtake/RFNBO compliance checklist page", "Standalone indexed pages for greenh2s.ai (not greenh2s.com subpage)"]
+        },
+        "tiers": { "cursor": 4, "gemini": 4, "note": "unchanged" }
+      },
+      "notes": "Competitor set shifted from IEA/IRENA policy portals to academic reviews (Springer), national labs (OSTI/PNNL), Oxford Energy offtake papers, and H2V knowledge-centre PDFs. greenh2s.ai content is hosted as a greenh2s.com subpage, limiting standalone citability.",
+      "files": [
+        "prompts/entities/greenh2s-ranking-check.md",
+        "meta/agent-prompts-used.json"
+      ]
+    }
+  ]
 }
