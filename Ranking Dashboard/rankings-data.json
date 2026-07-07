@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T07:53:44.716Z",
+  "generatedAt": "2026-07-07T06:06:10.912Z",
   "schedule": "06:00 GMT daily · 9 Cloud Automations (3 entities × 3 models: C2.5, G5.5H, F5H)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -10,7 +10,8 @@
           "2026-07-02",
           "2026-07-03",
           "2026-07-04",
-          "2026-07-05"
+          "2026-07-05",
+          "2026-07-07"
         ],
         "datasets": [
           {
@@ -20,7 +21,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#6366f1",
             "backgroundColor": "#6366f133",
@@ -34,7 +36,8 @@
               3.7,
               3.7,
               3.7,
-              3.7
+              3.7,
+              4
             ],
             "borderColor": "#8b5cf6",
             "backgroundColor": "#8b5cf633",
@@ -48,7 +51,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#10b981",
             "backgroundColor": "#10b98133",
@@ -139,7 +143,8 @@
           "2026-07-02",
           "2026-07-03",
           "2026-07-04",
-          "2026-07-05"
+          "2026-07-05",
+          "2026-07-07"
         ],
         "datasets": [
           {
@@ -152,7 +157,8 @@
               null,
               null,
               null,
-              3.7
+              3.7,
+              null
             ],
             "borderColor": "#3b82f6",
             "backgroundColor": "#3b82f633",
@@ -168,7 +174,8 @@
               3.7,
               null,
               null,
-              null
+              null,
+              4
             ],
             "borderColor": "#10a37f",
             "backgroundColor": "#10a37f33",
@@ -184,6 +191,7 @@
               null,
               null,
               3.7,
+              null,
               null
             ],
             "borderColor": "#d97706",
@@ -200,7 +208,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#ea4335",
             "backgroundColor": "#ea433533",
@@ -212,6 +221,7 @@
             "label": "Google Gemini",
             "logo": "brand/agent-gemini.svg",
             "data": [
+              4,
               4,
               4,
               4,
@@ -248,7 +258,7 @@
             "label": "GPT-5.5 High",
             "logo": "brand/agent-openai.svg",
             "data": [
-              3.7
+              3.8
             ],
             "borderColor": "#10a37f",
             "backgroundColor": "#10a37f33",
@@ -316,7 +326,7 @@
             "label": "GPT-5.5 High",
             "logo": "brand/agent-openai.svg",
             "data": [
-              3.7
+              3.8
             ],
             "borderColor": "#10a37f",
             "backgroundColor": "#10a37f33",
@@ -600,7 +610,8 @@
             "2026-07-02",
             "2026-07-03",
             "2026-07-04",
-            "2026-07-05"
+            "2026-07-05",
+            "2026-07-07"
           ],
           "datasets": [
             {
@@ -613,7 +624,8 @@
                 null,
                 null,
                 null,
-                3
+                3,
+                null
               ],
               "borderColor": "#3b82f6",
               "backgroundColor": "#3b82f633",
@@ -629,7 +641,8 @@
                 3,
                 null,
                 null,
-                null
+                null,
+                4
               ],
               "borderColor": "#10a37f",
               "backgroundColor": "#10a37f33",
@@ -645,6 +658,7 @@
                 null,
                 null,
                 3,
+                null,
                 null
               ],
               "borderColor": "#d97706",
@@ -661,7 +675,8 @@
                 4,
                 4,
                 4,
-                4
+                4,
+                null
               ],
               "borderColor": "#ea4335",
               "backgroundColor": "#ea433533",
@@ -673,6 +688,7 @@
               "label": "Google Gemini",
               "logo": "brand/agent-gemini.svg",
               "data": [
+                4,
                 4,
                 4,
                 4,
@@ -709,7 +725,7 @@
               "label": "GPT-5.5 High",
               "logo": "brand/agent-openai.svg",
               "data": [
-                3
+                3.7
               ],
               "borderColor": "#10a37f",
               "backgroundColor": "#10a37f33",
@@ -777,7 +793,7 @@
               "label": "GPT-5.5 High",
               "logo": "brand/agent-openai.svg",
               "data": [
-                3
+                3.7
               ],
               "borderColor": "#10a37f",
               "backgroundColor": "#10a37f33",
@@ -2322,11 +2338,99 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.arm.com",
+        "pytorch.org",
+        "developers.googleblog.com",
+        "essenn.associates",
+        "sitepoint.com"
+      ],
+      "gapNotes": "Arm, PyTorch, Google AI Edge, and SLM deployment guides dominated the source set; edgephone.ai was not in the top generic sources.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "blog.4geeks.io",
+        "tunder.cloud",
+        "pidiylab.com",
+        "specpicks.com",
+        "sitepoint.com"
+      ],
+      "gapNotes": "Gemini-style grounded source evidence favored Raspberry Pi, llama.cpp, and general SLM deployment guides; edgephone.ai was absent from the cited domains.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "edge AI deployment commerce compliance best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "openempower.com",
+        "foresthub.ai",
+        "shopify.com",
+        "flolive.net",
+        "cloudian.com"
+      ],
+      "gapNotes": "Regulated-industry edge inference, EU AI Act/CRA, retail edge computing, and infrastructure best-practice sources led; edgephone.ai was not surfaced.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "edge AI deployment commerce compliance best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "thenovacene.com",
+        "doi.org",
+        "elevateconsult.com",
+        "shopify.com",
+        "flolive.net"
+      ],
+      "gapNotes": "Gemini-style grounded source evidence emphasized bounded inference, retail AI governance, NIST/EU AI Act controls, and retail edge computing; edgephone.ai was absent.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-07T06:02:59Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
@@ -2356,23 +2460,24 @@
         "label": "edgephone.ai",
         "site": "https://edgephone.ai",
         "promptFile": "prompts/entities/edgephone-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-07T06:02:59Z",
         "conditionsAtLastPrompt": {
-          "cursorTier": 3,
+          "cursorTier": 4,
           "googleWebTier": 4,
           "geminiTier": 4,
           "topCompetitors": [
-            "chip.computer",
-            "ai.google.dev",
-            "developer.nvidia.com"
+            "developer.arm.com",
+            "pytorch.org",
+            "openempower.com"
           ],
           "losingQueries": [
-            "edge AI models and agents reference comparison"
+            "small language models ARM edge deployment guide",
+            "edge AI deployment commerce compliance best practices"
           ],
           "promptLevers": [
-            "Public reference catalog",
-            "Chip/model comparison tables",
-            "llms.txt"
+            "ARM SLM deployment benchmarks",
+            "Compliance deployment playbooks",
+            "llms.txt source map"
           ]
         }
       },
@@ -2437,23 +2542,25 @@
     },
     "edgephone": {
       "cursor": {
-        "tier": 3,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 4,
+        "updatedAt": "2026-07-07T06:02:59Z",
         "topCompetitors": [
-          "chip.computer",
-          "ai.google.dev",
-          "developer.nvidia.com",
-          "huggingface.co"
+          "developer.arm.com",
+          "pytorch.org",
+          "developers.googleblog.com",
+          "openempower.com",
+          "foresthub.ai"
         ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:02:59Z",
         "topCompetitors": [
-          "chip.computer",
-          "qualcomm.com",
-          "apple.com",
-          "ai.google.dev"
+          "blog.4geeks.io",
+          "tunder.cloud",
+          "pidiylab.com",
+          "thenovacene.com",
+          "shopify.com"
         ]
       },
       "google-web": {

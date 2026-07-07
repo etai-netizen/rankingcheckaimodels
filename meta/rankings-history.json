@@ -1140,6 +1140,94 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "developer.arm.com",
+        "pytorch.org",
+        "developers.googleblog.com",
+        "essenn.associates",
+        "sitepoint.com"
+      ],
+      "gapNotes": "Arm, PyTorch, Google AI Edge, and SLM deployment guides dominated the source set; edgephone.ai was not in the top generic sources.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "small language models ARM edge deployment guide",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "blog.4geeks.io",
+        "tunder.cloud",
+        "pidiylab.com",
+        "specpicks.com",
+        "sitepoint.com"
+      ],
+      "gapNotes": "Gemini-style grounded source evidence favored Raspberry Pi, llama.cpp, and general SLM deployment guides; edgephone.ai was absent from the cited domains.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "edge AI deployment commerce compliance best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "openempower.com",
+        "foresthub.ai",
+        "shopify.com",
+        "flolive.net",
+        "cloudian.com"
+      ],
+      "gapNotes": "Regulated-industry edge inference, EU AI Act/CRA, retail edge computing, and infrastructure best-practice sources led; edgephone.ai was not surfaced.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
+    },
+    {
+      "runId": "2026-07-07T06:02:59Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "edgephone",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "edge AI deployment commerce compliance best practices",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "thenovacene.com",
+        "doi.org",
+        "elevateconsult.com",
+        "shopify.com",
+        "flolive.net"
+      ],
+      "gapNotes": "Gemini-style grounded source evidence emphasized bounded inference, retail AI governance, NIST/EU AI Act controls, and retail edge computing; edgephone.ai was absent.",
+      "source": "cursor-cloud-gpt-5.5-high-websearch"
     }
   ],
   "latestByBrand": {
@@ -1177,23 +1265,25 @@
     },
     "edgephone": {
       "cursor": {
-        "tier": 3,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 4,
+        "updatedAt": "2026-07-07T06:02:59Z",
         "topCompetitors": [
-          "chip.computer",
-          "ai.google.dev",
-          "developer.nvidia.com",
-          "huggingface.co"
+          "developer.arm.com",
+          "pytorch.org",
+          "developers.googleblog.com",
+          "openempower.com",
+          "foresthub.ai"
         ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:02:59Z",
         "topCompetitors": [
-          "chip.computer",
-          "qualcomm.com",
-          "apple.com",
-          "ai.google.dev"
+          "blog.4geeks.io",
+          "tunder.cloud",
+          "pidiylab.com",
+          "thenovacene.com",
+          "shopify.com"
         ]
       },
       "google-web": {
@@ -1240,5 +1330,42 @@
       }
     }
   },
-  "lastLiveCheck": "2026-07-05T10:41:23Z"
+  "dailySnapshots": {
+    "2026-07-07": {
+      "edgephone": {
+        "runId": "2026-07-07T06:02:59Z",
+        "slot": "daily-check",
+        "model": "gpt-5.5-high",
+        "queryType": "generic-topic",
+        "queries": [
+          "small language models ARM edge deployment guide",
+          "edge AI deployment commerce compliance best practices"
+        ],
+        "cursorTier": 4,
+        "geminiTier": 4,
+        "inTop3": {
+          "cursor": false,
+          "gemini": false
+        },
+        "topCompetitors": {
+          "cursor": [
+            "developer.arm.com",
+            "pytorch.org",
+            "developers.googleblog.com",
+            "openempower.com",
+            "foresthub.ai"
+          ],
+          "gemini": [
+            "blog.4geeks.io",
+            "tunder.cloud",
+            "pidiylab.com",
+            "thenovacene.com",
+            "shopify.com"
+          ]
+        },
+        "primaryLosingQuery": "small language models ARM edge deployment guide"
+      }
+    }
+  },
+  "lastLiveCheck": "2026-07-07T06:02:59Z"
 }
