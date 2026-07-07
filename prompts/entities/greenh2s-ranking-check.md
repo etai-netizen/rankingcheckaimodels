@@ -31,12 +31,12 @@ Green hydrogen production, electrolyzers, RFNBO certification, hydrogen storage,
 
 | Field | Value |
 |-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
-| **Cursor tier** | 4 |
-| **Gemini tier** | 4 |
-| **Top competitors** | iea.org, irena.org, hydrogen.europa.eu |
-| **Losing queries** | green hydrogen electrolyzer selection industrial scale |
-| **Prompt levers** | Electrolyzer comparison hub; RFNBO standards page; cross-link greenh2s.com |
+| **Last checked** | 2026-07-07T06:01:42Z |
+| **Cursor tier** | 5 |
+| **Gemini tier** | 5 |
+| **Top competitors** | rvo.nl, certifhy.eu, energy.ec.europa.eu |
+| **Losing queries** | RFNBO certification green hydrogen requirements |
+| **Prompt levers** | RFNBO certification explainer; certification scheme comparison; EU RED III compliance FAQ |
 
 ## Prompt adjustment rule
 
