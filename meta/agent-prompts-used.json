@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T06:00:00Z",
+  "updatedAt": "2026-07-07T06:02:59Z",
   "entities": {
     "non-exec": {
       "label": "non-exec.ai",
@@ -20,14 +20,14 @@
       "label": "edgephone.ai",
       "site": "https://edgephone.ai",
       "promptFile": "prompts/entities/edgephone-ranking-check.md",
-      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "lastPromptUpdate": "2026-07-07T06:02:59Z",
       "conditionsAtLastPrompt": {
-        "cursorTier": 3,
+        "cursorTier": 4,
         "googleWebTier": 4,
         "geminiTier": 4,
-        "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"],
-        "losingQueries": ["edge AI models and agents reference comparison"],
-        "promptLevers": ["Public reference catalog", "Chip/model comparison tables", "llms.txt"]
+        "topCompetitors": ["developer.arm.com", "pytorch.org", "openempower.com"],
+        "losingQueries": ["small language models ARM edge deployment guide", "edge AI deployment commerce compliance best practices"],
+        "promptLevers": ["ARM SLM deployment benchmarks", "Compliance deployment playbooks", "llms.txt source map"]
       }
     },
     "greenh2s": {
