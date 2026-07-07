@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T06:03:40.384Z",
+  "generatedAt": "2026-07-07T06:04:09.425Z",
   "schedule": "06:00 GMT daily · 9 Cloud Automations (3 entities × 3 models: C2.5, G5.5H, F5H)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
