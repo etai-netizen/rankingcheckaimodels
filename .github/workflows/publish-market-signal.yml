@@ -1,0 +1,76 @@
+name: Publish market signal
+
+on:
+  schedule:
+    # After Cursor Cloud ranking checks (06:00 GMT)
+    - cron: "30 7 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "Ranking Dashboard/rankings-data.json"
+      - "meta/rankings-history.json"
+      - "scripts/generate-profile-snippet.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-market-signal
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Optional PAT so commits count on your contribution graph.
+          # Create a classic/fine-grained token with Contents: Read/Write on this repo,
+          # then add repo secret MARKET_SIGNAL_TOKEN.
+          token: ${{ secrets.MARKET_SIGNAL_TOKEN || github.token }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate profile snippet
+        run: node scripts/generate-profile-snippet.mjs
+
+      - name: Commit snippet if changed
+        id: commit
+        env:
+          GIT_AUTHOR_NAME: etai-netizen
+          GIT_AUTHOR_EMAIL: 263374363+etai-netizen@users.noreply.github.com
+          GIT_COMMITTER_NAME: etai-netizen
+          GIT_COMMITTER_EMAIL: 263374363+etai-netizen@users.noreply.github.com
+        run: |
+          git add meta/profile-market-signal.md meta/profile-market-signal.json
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No snippet changes."
+            exit 0
+          fi
+          git commit -m "$(cat <<'EOF'
+          chore: refresh profile market-signal snippet
+
+          Rebuild compact ranking tiers for the etai-netizen profile README.
+          EOF
+          )"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Notify profile README repo
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.MARKET_SIGNAL_TOKEN || github.token }}
+        run: |
+          # repository_dispatch needs a token with access to etai-netizen.
+          # With only GITHUB_TOKEN this step is skipped/fails soft if cross-repo is blocked.
+          gh api repos/etai-netizen/etai-netizen/dispatches \
+            -f event_type='market-signal-updated' \
+            -f client_payload[source]='rankingcheckaimodels' \
+            -f client_payload[sha]="$GITHUB_SHA" \
+            || echo "Could not dispatch to profile repo (add MARKET_SIGNAL_TOKEN with access to etai-netizen/etai-netizen)."

@@ -411,3 +411,8 @@ html = html
 
 fs.writeFileSync(outHtml, html);
 console.log(`Wrote ${outHtml}`);
+
+spawnSync(process.execPath, [path.join(root, "scripts", "generate-profile-snippet.mjs")], {
+  cwd: root,
+  stdio: "inherit",
+});

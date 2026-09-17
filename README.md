@@ -69,4 +69,11 @@ Prompts are **adjusted after each run** when tier, competitors, or losing querie
 | `meta/rankings-history.json` | Time series for charts |
 | `meta/agent-prompts-used.json` | Prompt + conditions shown in HTML |
 | `meta/prompt-updates.json` | Prompt change log |
+| `meta/profile-market-signal.md` | Compact tier table synced into [etai-netizen](https://github.com/etai-netizen/etai-netizen) profile README |
 | `Ranking Dashboard/rankings-data.json` | Dashboard export |
+
+## Profile README sync
+
+GitHub Action **Publish market signal** (`07:30 UTC` daily + on ranking data push) regenerates `meta/profile-market-signal.*` and notifies the profile repo. The profile repo Action **Sync market signal** (`08:00 UTC`) patches the live table between `<!-- MARKET-SIGNAL:* -->` markers.
+
+For contribution-graph credit, add repo secret `MARKET_SIGNAL_TOKEN` (PAT with Contents write on both repos) so commits are authored as you, not `github-actions[bot]`.

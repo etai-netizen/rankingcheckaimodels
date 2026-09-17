@@ -1,0 +1,69 @@
+{
+  "asOf": "2026-07-05T10:41:23Z",
+  "generatedAt": "2026-07-06T07:53:44.716Z",
+  "rows": [
+    {
+      "id": "edgephone",
+      "label": "edgephone.ai",
+      "url": "https://www.edgephone.ai/",
+      "tiers": {
+        "cursor": 3,
+        "gemini": 4,
+        "google-web": 4
+      },
+      "competitors": {
+        "cursor": [
+          "chip.computer",
+          "ai.google.dev"
+        ],
+        "gemini": [
+          "chip.computer",
+          "qualcomm.com"
+        ]
+      }
+    },
+    {
+      "id": "non-exec",
+      "label": "non-exec.ai",
+      "url": "https://www.non-exec.ai",
+      "tiers": {
+        "cursor": 4,
+        "gemini": 4,
+        "google-web": 4
+      },
+      "competitors": {
+        "cursor": [
+          "nist.gov",
+          "iso.org"
+        ],
+        "gemini": [
+          "nist.gov",
+          "eu.ai"
+        ]
+      }
+    },
+    {
+      "id": "greenh2s",
+      "label": "greenh2s.ai",
+      "url": "https://www.greenh2s.ai",
+      "tiers": {
+        "cursor": 4,
+        "gemini": 4,
+        "google-web": 4
+      },
+      "competitors": {
+        "cursor": [
+          "iea.org",
+          "irena.org"
+        ],
+        "gemini": [
+          "iea.org",
+          "irena.org"
+        ]
+      }
+    }
+  ],
+  "source": "rankings-data.json",
+  "builtAt": "2026-09-17T09:16:43.286Z",
+  "contentHash": "eyJhc09mIjoiMjAyNi0wNy0wNVQxMDo0MToyM1oiLCJyb3dzIjpbeyJpZCI6ImVkZ2VwaG9uZSIsImxhYmVsIjoiZWRnZXBob25lLmFpIiwidXJsIjoiaHR0cHM6Ly93d3cuZWRnZXBob25lLmFpLyIsInRpZXJzIjp7ImN1cnNvciI6MywiZ2VtaW5pIjo0LCJnb29nbGUtd2ViIjo0fSwiY29tcGV0aXRvcnMiOnsiY3Vyc29yIjpbImNoaXAuY29tcHV0ZXIiLCJhaS5nb29nbGUuZGV2Il0sImdlbWluaSI6WyJjaGlwLmNvbXB1dGVyIiwicXVhbGNvbW0uY29tIl19fSx7ImlkIjoibm9uLWV4ZWMiLCJsYWJlbCI6Im5vbi1leGVjLmFpIiwidXJsIjoiaHR0cHM6Ly93d3cubm9uLWV4ZWMuYWkiLCJ0aWVycyI6eyJjdXJzb3IiOjQsImdlbWluaSI6NCwiZ29vZ2xlLXdlYiI6NH0sImNvbXBldGl0b3JzIjp7ImN1cnNvciI6WyJuaXN0LmdvdiIsImlzby5vcmciXSwiZ2VtaW5pIjpbIm5pc3QuZ292IiwiZXUuYWkiXX19LHsiaWQiOiJncmVlbmgycyIsImxhYmVsIjoiZ3JlZW5oMnMuYWkiLCJ1cmwiOiJodHRwczovL3d3dy5ncmVlbmgycy5haSIsInRpZXJzIjp7ImN1cnNvciI6NCwiZ2VtaW5pIjo0LCJnb29nbGUtd2ViIjo0fSwiY29tcGV0aXRvcnMiOnsiY3Vyc29yIjpbImllYS5vcmciLCJpcmVuYS5vcmciXSwiZ2VtaW5pIjpbImllYS5vcmciLCJpcmVuYS5vcmciXX19XX0"
+}
