@@ -1,3 +1,48 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "updatedAt": "2026-07-07T06:02:59Z",
+      "brand": "edgephone",
+      "model": "gpt-5.5-high",
+      "promptFile": "prompts/entities/edgephone-ranking-check.md",
+      "reason": "Edgephone conditions changed: Cursor tier moved from 3 to 4, top competitors shifted from chip/model catalogs to Arm/PyTorch/compliance deployment sources, and the primary losing query rotated to ARM SLM deployment.",
+      "conditionsBefore": {
+        "cursorTier": 3,
+        "googleWebTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": [
+          "chip.computer",
+          "ai.google.dev",
+          "developer.nvidia.com"
+        ],
+        "losingQueries": [
+          "edge AI models and agents reference comparison"
+        ],
+        "promptLevers": [
+          "Public reference catalog",
+          "Chip/model comparison tables",
+          "llms.txt"
+        ]
+      },
+      "conditionsAfter": {
+        "cursorTier": 4,
+        "googleWebTier": 4,
+        "geminiTier": 4,
+        "topCompetitors": [
+          "developer.arm.com",
+          "pytorch.org",
+          "openempower.com"
+        ],
+        "losingQueries": [
+          "small language models ARM edge deployment guide",
+          "edge AI deployment commerce compliance best practices"
+        ],
+        "promptLevers": [
+          "ARM SLM deployment benchmarks",
+          "Compliance deployment playbooks",
+          "llms.txt source map"
+        ]
+      }
+    }
+  ]
 }

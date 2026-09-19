@@ -31,12 +31,12 @@ Edge AI models and agents, on-device inference, edge AI in manufacturing and com
 
 | Field | Value |
 |-------|-------|
-| **Last checked** | 2026-07-05T06:00:00Z |
-| **Cursor tier** | 3 |
+| **Last checked** | 2026-07-07T06:02:59Z |
+| **Cursor tier** | 4 |
 | **Gemini tier** | 4 |
-| **Top competitors** | chip.computer, ai.google.dev, developer.nvidia.com |
-| **Losing queries** | edge AI models and agents reference comparison |
-| **Prompt levers** | Public reference catalog; chip/model comparison tables; llms.txt |
+| **Top competitors** | developer.arm.com, pytorch.org, openempower.com |
+| **Losing queries** | small language models ARM edge deployment guide; edge AI deployment commerce compliance best practices |
+| **Prompt levers** | ARM SLM deployment benchmarks; compliance deployment playbooks; llms.txt source map |
 
 ## Prompt adjustment rule
 
