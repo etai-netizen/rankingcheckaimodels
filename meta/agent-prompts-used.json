@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T06:00:00Z",
+  "updatedAt": "2026-07-07T06:01:42Z",
   "entities": {
     "non-exec": {
       "label": "non-exec.ai",
@@ -11,9 +11,19 @@
         "cursorTier": 4,
         "googleWebTier": 4,
         "geminiTier": 4,
-        "topCompetitors": ["nist.gov", "iso.org", "eu.ai"],
-        "losingQueries": ["AI corporate governance board oversight best practices"],
-        "promptLevers": ["Publish llms.txt", "Expand registry/agents-models.json", "Governance FAQ blocks"]
+        "topCompetitors": [
+          "nist.gov",
+          "iso.org",
+          "eu.ai"
+        ],
+        "losingQueries": [
+          "AI corporate governance board oversight best practices"
+        ],
+        "promptLevers": [
+          "Publish llms.txt",
+          "Expand registry/agents-models.json",
+          "Governance FAQ blocks"
+        ]
       }
     },
     "edgephone": {
@@ -25,23 +35,43 @@
         "cursorTier": 3,
         "googleWebTier": 4,
         "geminiTier": 4,
-        "topCompetitors": ["chip.computer", "ai.google.dev", "developer.nvidia.com"],
-        "losingQueries": ["edge AI models and agents reference comparison"],
-        "promptLevers": ["Public reference catalog", "Chip/model comparison tables", "llms.txt"]
+        "topCompetitors": [
+          "chip.computer",
+          "ai.google.dev",
+          "developer.nvidia.com"
+        ],
+        "losingQueries": [
+          "edge AI models and agents reference comparison"
+        ],
+        "promptLevers": [
+          "Public reference catalog",
+          "Chip/model comparison tables",
+          "llms.txt"
+        ]
       }
     },
     "greenh2s": {
       "label": "greenh2s.ai",
       "site": "https://www.greenh2s.ai",
       "promptFile": "prompts/entities/greenh2s-ranking-check.md",
-      "lastPromptUpdate": "2026-07-05T06:00:00Z",
+      "lastPromptUpdate": "2026-07-07T06:01:42Z",
       "conditionsAtLastPrompt": {
-        "cursorTier": 4,
+        "cursorTier": 5,
         "googleWebTier": 4,
-        "geminiTier": 4,
-        "topCompetitors": ["iea.org", "irena.org", "hydrogen.europa.eu"],
-        "losingQueries": ["green hydrogen electrolyzer selection industrial scale"],
-        "promptLevers": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"]
+        "geminiTier": 5,
+        "topCompetitors": [
+          "rvo.nl",
+          "certifhy.eu",
+          "energy.ec.europa.eu"
+        ],
+        "losingQueries": [
+          "RFNBO certification green hydrogen requirements"
+        ],
+        "promptLevers": [
+          "RFNBO certification explainer",
+          "Certification scheme comparison",
+          "EU RED III compliance FAQ"
+        ]
       }
     }
   }

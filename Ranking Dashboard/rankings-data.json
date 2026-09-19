@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T07:53:44.716Z",
+  "generatedAt": "2026-07-07T06:04:09.425Z",
   "schedule": "06:00 GMT daily · 9 Cloud Automations (3 entities × 3 models: C2.5, G5.5H, F5H)",
   "mission": "Measure how non-exec.ai, edgephone.ai, and greenh2s.ai rank on generic topic search in AI agents on Cursor and Google Gemini — then edit sibling-repo prompts to improve those rankings.",
   "charts": {
@@ -10,7 +10,8 @@
           "2026-07-02",
           "2026-07-03",
           "2026-07-04",
-          "2026-07-05"
+          "2026-07-05",
+          "2026-07-07"
         ],
         "datasets": [
           {
@@ -20,7 +21,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#6366f1",
             "backgroundColor": "#6366f133",
@@ -34,7 +36,8 @@
               3.7,
               3.7,
               3.7,
-              3.7
+              3.7,
+              null
             ],
             "borderColor": "#8b5cf6",
             "backgroundColor": "#8b5cf633",
@@ -48,7 +51,8 @@
               4,
               4,
               4,
-              4
+              4,
+              5
             ],
             "borderColor": "#10b981",
             "backgroundColor": "#10b98133",
@@ -85,7 +89,7 @@
           {
             "label": "greenh2s.ai",
             "data": [
-              4
+              4.1
             ],
             "borderColor": "#10b981",
             "backgroundColor": "#10b98133",
@@ -122,7 +126,7 @@
           {
             "label": "greenh2s.ai",
             "data": [
-              4
+              4.1
             ],
             "borderColor": "#10b981",
             "backgroundColor": "#10b98133",
@@ -139,7 +143,8 @@
           "2026-07-02",
           "2026-07-03",
           "2026-07-04",
-          "2026-07-05"
+          "2026-07-05",
+          "2026-07-07"
         ],
         "datasets": [
           {
@@ -152,7 +157,8 @@
               null,
               null,
               null,
-              3.7
+              3.7,
+              null
             ],
             "borderColor": "#3b82f6",
             "backgroundColor": "#3b82f633",
@@ -168,7 +174,8 @@
               3.7,
               null,
               null,
-              null
+              null,
+              5
             ],
             "borderColor": "#10a37f",
             "backgroundColor": "#10a37f33",
@@ -184,6 +191,7 @@
               null,
               null,
               3.7,
+              null,
               null
             ],
             "borderColor": "#d97706",
@@ -200,7 +208,8 @@
               4,
               4,
               4,
-              4
+              4,
+              null
             ],
             "borderColor": "#ea4335",
             "backgroundColor": "#ea433533",
@@ -216,7 +225,8 @@
               4,
               4,
               4,
-              4
+              4,
+              5
             ],
             "borderColor": "#34a853",
             "backgroundColor": "#34a85333",
@@ -248,7 +258,7 @@
             "label": "GPT-5.5 High",
             "logo": "brand/agent-openai.svg",
             "data": [
-              3.7
+              4
             ],
             "borderColor": "#10a37f",
             "backgroundColor": "#10a37f33",
@@ -316,7 +326,7 @@
             "label": "GPT-5.5 High",
             "logo": "brand/agent-openai.svg",
             "data": [
-              3.7
+              4
             ],
             "borderColor": "#10a37f",
             "backgroundColor": "#10a37f33",
@@ -830,7 +840,8 @@
             "2026-07-02",
             "2026-07-03",
             "2026-07-04",
-            "2026-07-05"
+            "2026-07-05",
+            "2026-07-07"
           ],
           "datasets": [
             {
@@ -843,7 +854,8 @@
                 null,
                 null,
                 null,
-                4
+                4,
+                null
               ],
               "borderColor": "#3b82f6",
               "backgroundColor": "#3b82f633",
@@ -859,7 +871,8 @@
                 4,
                 null,
                 null,
-                null
+                null,
+                5
               ],
               "borderColor": "#10a37f",
               "backgroundColor": "#10a37f33",
@@ -875,6 +888,7 @@
                 null,
                 null,
                 4,
+                null,
                 null
               ],
               "borderColor": "#d97706",
@@ -891,7 +905,8 @@
                 4,
                 4,
                 4,
-                4
+                4,
+                null
               ],
               "borderColor": "#ea4335",
               "backgroundColor": "#ea433533",
@@ -907,7 +922,8 @@
                 4,
                 4,
                 4,
-                4
+                4,
+                5
               ],
               "borderColor": "#34a853",
               "backgroundColor": "#34a85333",
@@ -939,7 +955,7 @@
               "label": "GPT-5.5 High",
               "logo": "brand/agent-openai.svg",
               "data": [
-                4
+                4.5
               ],
               "borderColor": "#10a37f",
               "backgroundColor": "#10a37f33",
@@ -975,7 +991,7 @@
               "label": "Google Gemini",
               "logo": "brand/agent-gemini.svg",
               "data": [
-                4
+                4.1
               ],
               "borderColor": "#34a853",
               "backgroundColor": "#34a85333",
@@ -1007,7 +1023,7 @@
               "label": "GPT-5.5 High",
               "logo": "brand/agent-openai.svg",
               "data": [
-                4
+                4.5
               ],
               "borderColor": "#10a37f",
               "backgroundColor": "#10a37f33",
@@ -1043,7 +1059,7 @@
               "label": "Google Gemini",
               "logo": "brand/agent-gemini.svg",
               "data": [
-                4
+                4.1
               ],
               "borderColor": "#34a853",
               "backgroundColor": "#34a85333",
@@ -2322,11 +2338,53 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:01:42Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "RFNBO certification green hydrogen requirements",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "energy.ec.europa.eu",
+        "rvo.nl",
+        "iea.org",
+        "irena.org",
+        "certifhy.eu"
+      ],
+      "gapNotes": "GPT-5.5/Cursor-style RFNBO answers cite EU policy, RVO guidance, IEA/IRENA analysis, and CertifHy; greenh2s.ai was absent from the generic source set."
+    },
+    {
+      "runId": "2026-07-07T06:01:42Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "gpt-5.5-high",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "RFNBO certification green hydrogen requirements",
+      "tier": 5,
+      "inTop3": false,
+      "topCompetitors": [
+        "rvo.nl",
+        "tuv.com",
+        "rina.org",
+        "certifhy.eu",
+        "hydrogenera.eu"
+      ],
+      "gapNotes": "Gemini-style generic RFNBO results favor RVO and certification bodies such as TÜV, RINA, and CertifHy; greenh2s.ai was not cited."
     }
   ],
   "agentPromptsUsed": {
     "version": 1,
-    "updatedAt": "2026-07-05T06:00:00Z",
+    "updatedAt": "2026-07-07T06:01:42Z",
     "entities": {
       "non-exec": {
         "label": "non-exec.ai",
@@ -2380,23 +2438,23 @@
         "label": "greenh2s.ai",
         "site": "https://www.greenh2s.ai",
         "promptFile": "prompts/entities/greenh2s-ranking-check.md",
-        "lastPromptUpdate": "2026-07-05T06:00:00Z",
+        "lastPromptUpdate": "2026-07-07T06:01:42Z",
         "conditionsAtLastPrompt": {
-          "cursorTier": 4,
+          "cursorTier": 5,
           "googleWebTier": 4,
-          "geminiTier": 4,
+          "geminiTier": 5,
           "topCompetitors": [
-            "iea.org",
-            "irena.org",
-            "hydrogen.europa.eu"
+            "rvo.nl",
+            "certifhy.eu",
+            "energy.ec.europa.eu"
           ],
           "losingQueries": [
-            "green hydrogen electrolyzer selection industrial scale"
+            "RFNBO certification green hydrogen requirements"
           ],
           "promptLevers": [
-            "Electrolyzer comparison hub",
-            "RFNBO standards page",
-            "Cross-link greenh2s.com"
+            "RFNBO certification explainer",
+            "Certification scheme comparison",
+            "EU RED III compliance FAQ"
           ]
         }
       }
@@ -2469,23 +2527,25 @@
     },
     "greenh2s": {
       "cursor": {
-        "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 5,
+        "updatedAt": "2026-07-07T06:01:42Z",
         "topCompetitors": [
+          "energy.ec.europa.eu",
+          "rvo.nl",
           "iea.org",
           "irena.org",
-          "hydrogen.europa.eu",
-          "hydrogencouncil.com"
+          "certifhy.eu"
         ]
       },
       "gemini": {
-        "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "tier": 5,
+        "updatedAt": "2026-07-07T06:01:42Z",
         "topCompetitors": [
-          "iea.org",
-          "irena.org",
-          "hydrogen.europa.eu",
-          "worldbank.org"
+          "rvo.nl",
+          "tuv.com",
+          "rina.org",
+          "certifhy.eu",
+          "hydrogenera.eu"
         ]
       },
       "google-web": {
