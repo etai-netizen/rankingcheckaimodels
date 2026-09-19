@@ -1,3 +1,25 @@
 {
-  "updates": []
+  "updates": [
+    {
+      "date": "2026-07-07",
+      "runId": "2026-07-07T06:00:00Z",
+      "brand": "greenh2s",
+      "model": "composer-2.5-fast",
+      "reason": "Top competitors shifted to academic and maritime hydrogen sources (link.springer.com, osti.gov); primary losing query rotated to port-scale storage deployment.",
+      "changes": {
+        "topCompetitors": {
+          "from": ["iea.org", "irena.org", "hydrogen.europa.eu"],
+          "to": ["link.springer.com", "osti.gov", "hydrogen.europa.eu"]
+        },
+        "losingQueries": {
+          "from": ["green hydrogen electrolyzer selection industrial scale"],
+          "to": ["hydrogen storage port scale deployment options"]
+        },
+        "promptLevers": {
+          "from": ["Electrolyzer comparison hub", "RFNBO standards page", "Cross-link greenh2s.com"],
+          "to": ["Port-scale hydrogen storage hub", "LOHC/cryogenic deployment comparison", "Cross-link maritime case studies"]
+        }
+      }
+    }
+  ]
 }

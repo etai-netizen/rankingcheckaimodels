@@ -1140,6 +1140,46 @@
       ],
       "gapNotes": "Policy and multilateral sources dominate RFNBO/electrolyzer generic search.",
       "source": "scripts/run-ranking-check-now.py"
+    },
+    {
+      "runId": "2026-07-07T06:00:00Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "greenh2s",
+      "platform": "cursor",
+      "platformLabel": "AI agents on Cursor",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale deployment options",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "link.springer.com",
+        "osti.gov",
+        "mdpi.com",
+        "hydrogen.europa.eu"
+      ],
+      "gapNotes": "Academic maritime hydrogen reviews and DOE/MDPI studies dominate port-scale storage queries; greenh2s.ai absent from top citations."
+    },
+    {
+      "runId": "2026-07-07T06:00:00Z",
+      "date": "2026-07-07",
+      "slot": "daily-check",
+      "model": "composer-2.5-fast",
+      "brand": "greenh2s",
+      "platform": "gemini",
+      "platformLabel": "Google Gemini",
+      "queryType": "generic-topic",
+      "query": "hydrogen storage port scale deployment options",
+      "tier": 4,
+      "inTop3": false,
+      "topCompetitors": [
+        "iea.org",
+        "irena.org",
+        "hydrogen.europa.eu",
+        "link.springer.com"
+      ],
+      "gapNotes": "IEA/IRENA/EU hydrogen portals and academic reviews lead Gemini source lists; greenh2s.ai not cited for port deployment queries."
     }
   ],
   "latestByBrand": {
@@ -1210,22 +1250,22 @@
     "greenh2s": {
       "cursor": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:00:00Z",
         "topCompetitors": [
-          "iea.org",
-          "irena.org",
-          "hydrogen.europa.eu",
-          "hydrogencouncil.com"
+          "link.springer.com",
+          "osti.gov",
+          "mdpi.com",
+          "hydrogen.europa.eu"
         ]
       },
       "gemini": {
         "tier": 4,
-        "updatedAt": "2026-07-05T10:41:23Z",
+        "updatedAt": "2026-07-07T06:00:00Z",
         "topCompetitors": [
           "iea.org",
           "irena.org",
           "hydrogen.europa.eu",
-          "worldbank.org"
+          "link.springer.com"
         ]
       },
       "google-web": {
@@ -1240,5 +1280,22 @@
       }
     }
   },
-  "lastLiveCheck": "2026-07-05T10:41:23Z"
+  "lastLiveCheck": "2026-07-05T10:41:23Z",
+  "dailySnapshots": {
+    "2026-07-07": {
+      "greenh2s": {
+        "model": "composer-2.5-fast",
+        "query": "hydrogen storage port scale deployment options",
+        "secondaryQuery": "green hydrogen offtake agreement compliance standards",
+        "cursor": {
+          "tier": 4,
+          "inTop3": false
+        },
+        "gemini": {
+          "tier": 4,
+          "inTop3": false
+        }
+      }
+    }
+  }
 }
